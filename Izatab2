@@ -1,0 +1,193 @@
+@import url("https://cdn.jsdelivr.net/gh/seiyria/gameicons-font@master/css/gameicons.css");
+
+@font-face {
+  font-family: "Snavirus";
+  src: url("https://www.dropbox.com/scl/fi/bums8qaitrivoz6rticwm/Snavirus.ttf?rlkey=25tgef5wj62b9zlbfy9918soy&st=ipf8p0re") format("truetype");
+}
+
+@font-face {
+  font-family: "Reftilian Stinger";
+  src: url("https://www.dropbox.com/scl/fi/3jcrj8bnabvxce3784ptk/ReftilianStinger-Regular.ttf?rlkey=h3tsjatacx3jxc3563gnnxanb&st=gb0iw8s1") format("truetype");
+}
+
+
+
+.izanami-container {
+  --base: #4a4a4a;
+  --glow: #e0e0e0;
+  --bg: transparent;
+  max-width: 470px;
+  margin: 0 auto;
+  position: relative;
+}
+
+
+.izanami-dagger {
+  position: absolute;
+  opacity: 0.6;
+  font-size: 45px;
+  color: var(--groups);
+  filter: drop-shadow(2px 3px 3px rgba(0,0,0,1));
+  z-index: 10;
+}
+
+.top-left {
+  top: -6px;
+  left: -26px;
+  transform: rotate(75deg);
+}
+
+.bottom-right {
+  bottom: -6px;
+  right: -26px;
+  transform: rotate(-105deg);
+}
+
+.izanami-tablilla {
+  padding: 65px 30px;
+  font-family: "IM Fell French Canon", serif;
+  background-color: var(--bg);
+  box-sizing: border-box;
+  clip-path: polygon(30px 0, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%, 0 30px);
+  
+  /* Patrón de escamas difuminadas */
+  background-image: 
+    radial-gradient(circle at 15px 0, transparent 14px, color-mix(in srgb, var(--groups) 20%, transparent) 15px, color-mix(in srgb, var(--groups) 20%, transparent) 16px, transparent 17px),
+    radial-gradient(circle at 15px 0, transparent 14px, color-mix(in srgb, var(--groups) 15%, transparent) 15px, color-mix(in srgb, var(--groups) 15%, transparent) 16px, transparent 17px),
+    radial-gradient(circle at 15px 0, transparent 14px, color-mix(in srgb, var(--groups) 9%, transparent) 15px, color-mix(in srgb, var(--groups) 9%, transparent) 16px, transparent 17px),
+    radial-gradient(circle at 15px 0, transparent 14px, color-mix(in srgb, var(--groups) 4%, transparent) 15px, color-mix(in srgb, var(--groups) 4%, transparent) 16px, transparent 17px),
+    radial-gradient(circle at 15px 30px, transparent 14px, color-mix(in srgb, var(--groups) 20%, transparent) 15px, color-mix(in srgb, var(--groups) 20%, transparent) 16px, transparent 17px),
+    radial-gradient(circle at 15px 30px, transparent 14px, color-mix(in srgb, var(--groups) 15%, transparent) 15px, color-mix(in srgb, var(--groups) 15%, transparent) 16px, transparent 17px),
+    radial-gradient(circle at 15px 30px, transparent 14px, color-mix(in srgb, var(--groups) 9%, transparent) 15px, color-mix(in srgb, var(--groups) 9%, transparent) 16px, transparent 17px),
+    radial-gradient(circle at 15px 30px, transparent 14px, color-mix(in srgb, var(--groups) 4%, transparent) 15px, color-mix(in srgb, var(--groups) 4%, transparent) 16px, transparent 17px);
+  
+  background-size: 30px 30px;
+  background-repeat: repeat-x;
+  background-position: 0 0, 15px 15px, 0 30px, 15px 45px, 0 100%, 15px calc(100% - 15px), 0 calc(100% - 30px), 15px calc(100% - 45px);
+}
+
+.izanami-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.izanami-icon {
+  font-size: 55px;
+  color: var(--glow);
+  animation: iconGlitch 3.5s infinite;
+}
+
+.izanami-title {
+  margin: 0;
+  font-family: "Reftilian Stinger", serif;
+  font-size: 70px;
+  line-height: .9;
+  text-align: center;
+  font-weight: normal;
+  background: linear-gradient(110deg, #ffffff 20%, #1a1a1a 50%, #ffffff 80%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: titleGlow 4s ease-in-out infinite;
+}
+
+
+.izanami-phrase {
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  line-height: 1.3;
+  font-size: 10px;
+  text-align: center;
+  margin: 15px 0;
+  color: color-mix(in srgb, var(--text) 50%, transparent);
+}
+
+.izanami-text {
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: justify;
+  padding: 10px 0;
+}
+
+.izanami-text::first-letter {
+  font-family: "Snavirus", serif;
+  font-size: 100px;
+  line-height: .8;
+  float: left;
+  padding: 10px 15px 5px 0;
+  color: var(--groups);
+  filter: drop-shadow(2px 3px 2px rgba(0,0,0,0.8));
+}
+
+.izanami-line {
+  height: 1px;
+  width: 100%;
+  margin: 35px 0 20px;
+  background: linear-gradient(90deg, transparent 10%, var(--groups) 50%, transparent 90%);
+  position: relative;
+}
+
+.izanami-line::after {
+  content: "";
+  position: absolute;
+  top: -2.5px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 6px;
+  height: 6px;
+  background: var(--groups);
+  box-shadow: 0 0 2px rgba(0,0,0,1);
+}
+
+.izanami-meta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  font-size: 8.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.98px;
+  color: #c0c0c0;
+}
+
+.izanami-sep {
+  font-size: 12px;
+  color: var(--groups);
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,1));
+}
+
+
+@keyframes iconGlitch {
+  0%, 92%, 100% {
+    transform: translate(0);
+    color: var(--glow);
+    filter: drop-shadow(0 0 10px var(--groups));
+  }
+  94% {
+    transform: translate(-3px, 2px) skewX(10deg);
+    color: var(--groups);
+    filter: drop-shadow(4px -2px 0 rgba(0,0,0,1));
+  }
+  96% {
+    transform: translate(3px, -2px);
+    color: #ffffff;
+    filter: drop-shadow(-4px 2px 0 var(--groups));
+  }
+  98% {
+    transform: translate(-1px, 1px);
+    color: var(--groups);
+    filter: drop-shadow(0 0 20px var(--groups));
+  }
+}
+
+@keyframes titleGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 4px var(--groups)) drop-shadow(0 0 6px color-mix(in srgb, var(--groups) 40%, transparent));
+  }
+  50% {
+    filter: drop-shadow(0 0 8px var(--groups)) drop-shadow(0 0 18px var(--groups));
+  }
+}
