@@ -95,7 +95,7 @@
   line-height: .9;
   text-align: center;
   font-weight: normal;
-  background: linear-gradient(110deg, var(--groups) 10%, var(--glow) 50%, var(--base) 90%);
+  background: linear-gradient(110deg, var(--groups) 10%, var(--glow) 40%, var(--groups) 90%);
   background-size: 200% auto;
   animation: slither 4s linear infinite;
   -webkit-background-clip: text;
