@@ -95,7 +95,7 @@
   line-height: .9;
   text-align: center;
   font-weight: normal;
-  background: linear-gradient(110deg, var(--base) 10%, var(--glow) 50%, var(--base) 90%);
+  background: linear-gradient(110deg, var(--groups) 10%, var(--glow) 50%, var(--base) 90%);
   background-size: 200% auto;
   animation: slither 4s linear infinite;
   -webkit-background-clip: text;
@@ -127,7 +127,7 @@
   line-height: .8;
   float: left;
   padding: 10px 15px 5px 0;
-  color: var(--base);
+  color: var(--groups);
   animation: toxicPulse 4s infinite ease-in-out alternate;
 }
 
