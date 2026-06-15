@@ -17,8 +17,7 @@
   --base: #4a4a4a;
   --glow: #e0e0e0;
   --bg: transparent;
-  --text: #d1d1d1;
-  max-width: 450px;
+  max-width: 470px;
   margin: 0 auto;
   position: relative;
 }
@@ -53,7 +52,6 @@
 .izanami-tablilla {
   padding: 65px 30px;
   font-family: "IM Fell French Canon", serif;
-  color: var(--text);
   background-color: var(--bg);
   box-sizing: border-box;
   clip-path: polygon(30px 0, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%, 0 30px);
@@ -97,7 +95,6 @@
   line-height: .9;
   text-align: center;
   font-weight: normal;
-  /* Degradado limpio de Arriba (Blanco) a Abajo (Negro) */
   background: linear-gradient(180deg, #ffffff 0%, #1a1a1a 90%);
   -webkit-background-clip: text;
   background-clip: text;
@@ -105,7 +102,6 @@
   animation: titleGlow 4s ease-in-out infinite;
 }
 
-/* Etiqueta <b> para colorear palabras específicas del título */
 .izanami-title b {
   font-weight: normal;
   color: var(--groups);
@@ -127,16 +123,15 @@
 }
 
 .izanami-text {
-  font-size: 16px;
+  font-size: 16.5px;
   line-height: 1.6;
   text-align: justify;
   padding: 10px 0;
 }
 
-/* Nueva clase para la letra capital */
 .iza-letra {
   font-family: "Snavirus", serif;
-  font-size: 98px;
+  font-size: 110px;
   line-height: .8;
   float: left;
   padding: 10px 15px 5px 0;
@@ -144,9 +139,7 @@
   filter: drop-shadow(2px 3px 2px rgba(0,0,0,0.8));
 }
 
-/* =========================================
-   SEPARADOR Y DATOS INFERIORES
-========================================= */
+
 .izanami-line {
   height: 1px;
   width: 100%;
@@ -185,9 +178,6 @@
   filter: drop-shadow(0 1px 2px rgba(0,0,0,1));
 }
 
-/* =========================================
-   ANIMACIONES (Keyframes)
-========================================= */
 @keyframes iconGlitch {
   0%, 92%, 100% {
     transform: translate(0);
@@ -205,3 +195,18 @@
     filter: drop-shadow(-4px 2px 0 var(--groups));
   }
   98% {
+    transform: translate(-1px, 1px);
+    color: var(--groups);
+    filter: drop-shadow(0 0 20px var(--groups));
+  }
+}
+
+/* Sombra limpia sin fallos para móviles */
+@keyframes titleGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 4px var(--groups));
+  }
+  50% {
+    filter: drop-shadow(0 0 14px var(--groups));
+  }
+}
