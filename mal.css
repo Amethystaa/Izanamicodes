@@ -3,65 +3,87 @@
     src: url("https://cdn.jsdelivr.net/gh/Amethystaa/Izanamicodes/Demonstars-Regular.ttf") format("truetype");
     font-display: swap;
 }
+
+
+@font-face {
+    font-family: "Rebella";
+    src: url("https://cdn.jsdelivr.net/gh/Amethystaa/Izanamicodes@4a3a7c6047a0f6e5c8c60dd872c6e6813cd6676b/Rebella-Regular.ttf") format("truetype");
+    font-display: swap;
+}
+
 .KApostbody {
     width: -webkit-fill-available;
 }
+
+
 .ficha-nombre {
-    font-family: "Demonstars", cursive;
+    font-family: "Rebella", cursive !important;
     font-size: 80px;
     margin-top: -10px;
-    text-transform: uppercase;
+    color: var(--groups) !important;
+    text-shadow: 0 0 8px var(--groups); 
+    text-transform: none !important; 
     font-weight: 100;
     font-style: initial;
     margin-left: -5px;
 }
+
 .Mal-header {
     text-align: center;
     margin-bottom: 35px;
     margin-top: 15px;
 }
+
 .Mal-chapter {
     font-family: "Demonstars", sans-serif;
-    font-size: 45px;
+    font-size: 25px; 
     text-transform: uppercase;
     line-height: .8;
     color: #fff;
-    text-shadow: 0 0 10px var(--sombrias), 0 0 20px var(--sombrias);
+    text-shadow: 0 0 10px var(--groups), 0 0 20px var(--groups);
     animation: Mal-flicker 3s infinite alternate;
 }
+
+
 .Mal-title {
-    font-family: "Demonstars", sans-serif;
-    font-size: 25px;
-    color: #fff;
-    text-transform: uppercase;
-    text-shadow: 0 0 8px var(--sombrias), 0 0 15px var(--sombrias);
+    font-family: "Rebella", cursive !important;
+    font-size: 55px; 
+    color: var(--groups) !important; 
+    text-shadow: 0 0 8px var(--groups), 0 0 15px var(--groups);
+    text-transform: none !important; 
     margin-top: 5px;
     animation: Mal-flicker 4s infinite alternate-reverse;
 }
+
 .Mal-line {
     width: 1px;
     height: 60px;
-    background: linear-gradient(to bottom, transparent, var(--sombrias), transparent);
+    background: linear-gradient(to bottom, transparent, var(--groups), transparent);
     margin: 15px auto;
-    box-shadow: 0 0 8px var(--sombrias);
+    box-shadow: 0 0 8px var(--groups);
 }
+
 .Mal-icon {
     color: #fff;
-    text-shadow: 0 0 10px var(--sombrias), 0 0 20px var(--sombrias);
+    text-shadow: 0 0 10px var(--groups), 0 0 20px var(--groups);
     animation: Mal-float 3s infinite ease-in-out;
     font-size: 30px;
 }
+
 .Mal-cols {
     column-count: 2;
     column-gap: 30px;
-    column-rule: 1px solid var(--sombrias);
+    column-rule: 1px solid var(--groups);
     text-align: justify;
 }
+
 @keyframes Mal-flicker {
-    0%, 100% { opacity: 1; text-shadow: 0 0 10px var(--sombrias), 0 0 25px var(--sombrias); }
-    50% { opacity: 0.5; text-shadow: 0 0 2px var(--sombrias), 0 0 5px var(--sombrias); }
+    0%, 100% { opacity: 1; text-shadow: 0 0 10px var(--groups), 0 0 25px var(--groups); }
+    50% { opacity: 0.5; text-shadow: 0 0 2px var(--groups), 0 0 5px var(--groups); }
 }
+
 @keyframes Mal-float {
     0%, 100% { transform: translateY(0); opacity: 1; }
     50% { transform: translateY(-6px); opacity: 0.7; }
 }
+
