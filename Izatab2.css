@@ -1,13 +1,8 @@
 @import url("https://cdn.jsdelivr.net/gh/seiyria/gameicons-font@master/css/gameicons.css");
 
 @font-face {
-  font-family: "Snavirus";
-  src: url("https://www.dropbox.com/scl/fi/bums8qaitrivoz6rticwm/Snavirus.ttf?rlkey=25tgef5wj62b9zlbfy9918soy&st=ipf8p0re") format("truetype");
-}
-
-@font-face {
   font-family: "Reftilian Stinger";
-  src: url("https://www.dropbox.com/scl/fi/3jcrj8bnabvxce3784ptk/ReftilianStinger-Regular.ttf?rlkey=h3tsjatacx3jxc3563gnnxanb&st=gb0iw8s1") format("truetype");
+  src: url("https://cdn.jsdelivr.net/gh/Amethystaa/Izanamicodes@5db4e6eaf4226d7c6ec825e73d449f8c8cedcdfb/ReftilianStinger-Regular.ttf") format("truetype");
 }
 
 .izanami-container {
@@ -51,7 +46,7 @@
 }
 
 .izanami-tablilla {
-  padding: 65px 30px;
+  padding: 35px 30px;
   font-family: "IM Fell French Canon", serif;
   background-color: var(--bg);
   box-sizing: border-box;
