@@ -14,7 +14,7 @@
   --base: #4a4a4a;
   --glow: #e0e0e0;
   --bg: transparent;
-  max-width: 500px;
+  max-width: 550px;
   margin: 0 auto;
   position: relative;
 }
@@ -81,7 +81,7 @@
 }
 
 .izanami-icon {
-  font-size: 55px;
+  font-size: 50px;
   color: var(--glow);
   animation: iconGlitch 3.5s infinite; 
 }
