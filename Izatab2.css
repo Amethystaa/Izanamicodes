@@ -101,15 +101,14 @@
 
 
 .izanami-phrase-line {
-  display: block !important;
-  width: 2px !important;
-  height: 35px !important;
-  margin: 15px auto !important;
+  display: inline-block !important; 
+  width: 2px !important;        
+  height: 35px !important;         
   background-color: var(--groups) !important;
+  margin: 15px auto !important;
   filter: drop-shadow(0 0 4px var(--groups));
   opacity: 0.85;
 }
-
 
 .izanami-text {
   font-size: 16.5px;
