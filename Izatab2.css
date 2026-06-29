@@ -101,21 +101,15 @@
 
 
 .izanami-phrase-line {
-  width: 0px;
-  height: 35px;
-  margin: 15px auto 15px auto;
-  border-left: 1.5px solid var(--groups);
+  display: block !important;
+  width: 2px !important;
+  height: 35px !important;
+  margin: 15px auto !important;
+  background-color: var(--groups) !important;
   filter: drop-shadow(0 0 4px var(--groups));
   opacity: 0.85;
 }
 
-
-.izanami-phrase-line {
-  height: 1px;
-  width: 35%;
-  margin: 0 auto 15px auto;
-  background: linear-gradient(90deg, transparent, var(--groups) 50%, transparent);
-}
 
 .izanami-text {
   font-size: 16.5px;
