@@ -100,14 +100,13 @@
 }
 
 
-.izanami-phrase {
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  line-height: 1.3;
-  font-size: 10px;
-  text-align: center;
-  margin: 15px 0 5px 0;
-  color: color-mix(in srgb, var(--text) 50%, transparent);
+.izanami-phrase-line {
+  width: 0px;
+  height: 35px;
+  margin: 15px auto 15px auto;
+  border-left: 1.5px solid var(--groups);
+  filter: drop-shadow(0 0 4px var(--groups));
+  opacity: 0.85;
 }
 
 
