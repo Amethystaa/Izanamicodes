@@ -19,6 +19,15 @@
   position: relative;
 }
 
+.izanami-phrase {
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  line-height: 1.3;
+  font-size: 10px;
+  text-align: center;
+  margin: 15px 0 0px 0;
+  color: color-mix(in srgb, var(--text) 50%, transparent);
+}
 
 .izanami-dagger {
   position: absolute;
