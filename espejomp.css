@@ -34,14 +34,14 @@
 .espejo-mensaje {
     background: rgba(10, 10, 10, 0.85);
     padding: 25px;
-    border: 1px solid var(--groups, #8c70a9);
+    border: 1px solid var(--groups);
     border-radius: 5px;
-    text-align: justify; /* Texto justificado */
+    text-align: justify; 
     color: #d1d1d1;
     font-family: Arial, sans-serif;
     font-size: 13px;
     line-height: 1.6;
-    box-shadow: 0 0 15px var(--groups, #8c70a9);
+    box-shadow: 0 0 15px var(--groups);
     
    
     max-height: 340px; 
@@ -55,7 +55,7 @@
     color: #fff;
     font-size: 28px;
     margin: 0 0 10px 0;
-    text-shadow: 0 0 10px var(--groups, #8c70a9);
+    text-shadow: 0 0 10px var(--groups);
     text-align: center; 
 }
 
@@ -70,7 +70,7 @@
 }
 
 .espejo-mensaje::-webkit-scrollbar-thumb {
-    background: var(--groups, #8c70a9); 
+    background: var(--groups); 
     border-radius: 5px;
 }
 
