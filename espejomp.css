@@ -61,7 +61,7 @@
 
 
 .espejo-mensaje::-webkit-scrollbar {
-    width: 6px; 
+    width: 2px; 
 }
 
 .espejo-mensaje::-webkit-scrollbar-track {
