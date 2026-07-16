@@ -34,22 +34,48 @@
 .espejo-mensaje {
     background: rgba(10, 10, 10, 0.85);
     padding: 25px;
-    border: 1px solid var(--groups, #222a2f);
+    border: 1px solid var(--groups, #8c70a9);
     border-radius: 5px;
-    text-align: center;
+    text-align: justify; /* Texto justificado */
     color: #d1d1d1;
     font-family: Arial, sans-serif;
     font-size: 13px;
     line-height: 1.6;
-    box-shadow: 0 0 15px var(--groups, #222a2f);
+    box-shadow: 0 0 15px var(--groups, #8c70a9);
+    
+   
+    max-height: 340px; 
+    overflow-y: auto; 
+    box-sizing: border-box;
 }
+
 
 .espejo-mensaje h3 {
     font-family: "Demonstars", sans-serif;
     color: #fff;
     font-size: 28px;
     margin: 0 0 10px 0;
-    text-shadow: 0 0 10px var(--groups, #222a2f);
+    text-shadow: 0 0 10px var(--groups, #8c70a9);
+    text-align: center; 
+}
+
+
+.espejo-mensaje::-webkit-scrollbar {
+    width: 6px; 
+}
+
+.espejo-mensaje::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.3); 
+    border-radius: 5px;
+}
+
+.espejo-mensaje::-webkit-scrollbar-thumb {
+    background: var(--groups, #8c70a9); 
+    border-radius: 5px;
+}
+
+.espejo-mensaje::-webkit-scrollbar-thumb:hover {
+    background: #fff; 
 }
 
 
