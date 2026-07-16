@@ -1,0 +1,121 @@
+.rpg-dice-box {
+    width: 300px;
+    margin: 20px auto;
+    background: #111;
+    border: 1px solid #222;
+    border-top: 3px solid #444;
+    padding: 25px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+.rpg-dice-img {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(100%) brightness(0.3); 
+    opacity: 0.6;
+    z-index: 0;
+    transition: all 0.5s ease;
+}
+.rpg-dice-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: transparent;
+    z-index: 1;
+    transition: all 0.5s ease;
+    pointer-events: none;
+}
+.rpg-content {
+    position: relative;
+    z-index: 2; 
+}
+.rpg-dice-header {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #999;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    text-shadow: 1px 1px 2px #000;
+}
+.rpg-dice-stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 15px;
+}
+.rpg-stat {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 48%;
+}
+.rpg-label {
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: #888;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    text-shadow: 1px 1px 2px #000;
+}
+.rpg-val {
+    font-family: 'Times New Roman', serif;
+    font-size: 36px;
+    color: #ccc;
+    font-weight: bold;
+    line-height: 1;
+    text-shadow: 2px 2px 4px #000;
+}
+.rpg-math {
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    color: #777;
+    margin-top: 8px;
+}
+.rpg-dice-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #555, transparent);
+    margin: 20px 0;
+}
+.rpg-dice-result {
+    text-align: center;
+    font-family: 'Times New Roman', serif;
+    font-size: 24px;
+    letter-spacing: 4px;
+    font-weight: bold;
+    color: #666;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px #000;
+}
+
+
+.rpg-dice-box.exito {
+    border-top-color: var(--groups);
+    box-shadow: inset 0 40px 50px -40px var(--groups), 0 5px 15px rgba(0,0,0,0.6);
+}
+.rpg-dice-box.exito .rpg-dice-img {
+    filter: grayscale(20%) brightness(0.8); 
+    opacity: 0.8;
+}
+.rpg-dice-box.exito .rpg-dice-overlay {
+    background: var(--groups);
+    mix-blend-mode: multiply; 
+    opacity: 0.8;
+}
+.rpg-dice-box.exito .rpg-val {
+    color: #fff;
+    text-shadow: 0 0 10px var(--groups), 2px 2px 4px #000;
+}
+.rpg-dice-box.exito .rpg-dice-result {
+    color: var(--groups);
+    text-shadow: 0 0 15px var(--groups), 2px 2px 4px #000;
+}
+.rpg-dice-box.exito .rpg-dice-divider {
+    background: linear-gradient(90deg, transparent, var(--groups), transparent);
+}
