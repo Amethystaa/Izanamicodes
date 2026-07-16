@@ -1,0 +1,78 @@
+@font-face {
+    font-family: "Demonstars";
+    src: url("https://cdn.jsdelivr.net/gh/Amethystaa/Izanamicodes/Demonstars-Regular.ttf") format("truetype");
+    font-display: swap;
+}
+
+.espejo-mision {
+    position: relative;
+    width: 400px; 
+    height: 450px; 
+    margin: 20px auto;
+    border: 8px solid #1a1a1a;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.8), inset 0 0 15px rgba(255,255,255,0.1);
+    background: #0a0a0a;
+}
+
+
+.espejo-fondo {
+    position: absolute;
+    top: 0; left: 0; 
+    width: 100%; height: 100%;
+    background-image: url('https://i.pinimg.com/736x/f0/ce/33/f0ce3368b6d4c337a3ac84075f114e53.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.espejo-mensaje {
+    background: rgba(10, 10, 10, 0.85);
+    padding: 25px;
+    border: 1px solid var(--groups, #8c70a9);
+    border-radius: 5px;
+    text-align: center;
+    color: #d1d1d1;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    line-height: 1.6;
+    box-shadow: 0 0 15px var(--groups, #8c70a9);
+}
+
+.espejo-mensaje h3 {
+    font-family: "Demonstars", sans-serif;
+    color: #fff;
+    font-size: 28px;
+    margin: 0 0 10px 0;
+    text-shadow: 0 0 10px var(--groups, #8c70a9);
+}
+
+
+.espejo-suciedad {
+    position: absolute;
+    top: 0; left: 0; 
+    width: 100%; height: 100%;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    z-index: 2;
+}
+
+.espejo-suciedad i {
+    background: rgba(30, 30, 30, 0.95);
+    backdrop-filter: blur(8px) grayscale(1);
+    -webkit-backdrop-filter: blur(8px) grayscale(1);
+    transition: opacity 9999s ease-out, backdrop-filter 9999s ease-out;
+}
+
+.espejo-suciedad i:hover {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    transition: opacity 0.4s ease-out, backdrop-filter 0.4s ease-out;
+}
