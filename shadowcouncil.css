@@ -8,16 +8,13 @@
   font-display: swap;
 }
 
-
 @font-face {
   font-family: "Consejo Titulo";
   src: url("https://cdn.jsdelivr.net/gh/Amethystaa/Izanamicodes@19dbce21835818269ebb353b66584793309a7a00/metal-macabre.regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-
-  unicode-range:
-    U+0020-007E;
+  unicode-range: U+0020-007E;
 }
 
 @font-face {
@@ -27,36 +24,56 @@
   font-style: normal;
   font-display: swap;
   size-adjust: 150%;
-  unicode-range:
-    U+00A0-024F,
-    U+0300-036F,
-    U+1E00-1EFF;
+  unicode-range: U+00A0-024F, U+0300-036F, U+1E00-1EFF;
 }
 
 
 
 .consejo-post {
+  --consejo-color: var(--groups, var(--var, #888));
+
   width: 560px;
   max-width: 100%;
   margin: 35px auto;
   padding: 0 0 35px;
   box-sizing: border-box;
-  container-type: inline-size;
+  background: transparent;
 }
 
-
-.consejo-post * {
+.consejo-post *,
+.consejo-post *::before,
+.consejo-post *::after {
   box-sizing: border-box;
 }
-
 
 
 
 .consejo-cabecera {
   position: relative;
   isolation: isolate;
-  padding: 48px 20px 35px;
+  padding: 30px 20px 35px;
   text-align: center;
+}
+
+
+
+.consejo-musica {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 24px;
+}
+
+.consejo-musica audio {
+  display: block;
+  width: 280px;
+  max-width: 100%;
+  height: 40px;
+  color-scheme: dark;
+  border-radius: 22px;
+  box-shadow: 0 0 10px
+    color-mix(in srgb, var(--consejo-color) 20%, transparent);
 }
 
 
@@ -65,8 +82,10 @@
   position: absolute;
   inset: 0;
   z-index: -1;
+  isolation: isolate;
   overflow: hidden;
   pointer-events: none;
+
   -webkit-mask-image: linear-gradient(
     to bottom,
     #000 0%,
@@ -88,8 +107,6 @@
   );
 }
 
-
-
 .consejo-imagen img {
   position: absolute;
   inset: 0;
@@ -99,547 +116,13 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
-  filter:
-    grayscale(1)
-    brightness(.22)
-    contrast(1.12);
-  transform: none;
-  animation: none;
-}
-
-
-
-.consejo-imagen::before {
-  content: "";
-  position: absolute;
-  inset: -25%;
-  z-index: 1;
-  pointer-events: none;
-  background:
-    radial-gradient(
-      ellipse at 25% 15%,
-      color-mix(
-        in srgb,
-        var(--groups, var(--groups)) 32%,
-        transparent
-      ) 0%,
-      transparent 48%
-    ),
-    
-    radial-gradient(
-      ellipse at 75% 32%,
-      color-mix(
-        in srgb,
-        var(--groups, var(--groups)) 24%,
-        transparent
-      ) 0%,
-      transparent 52%
-    ),
-
-    radial-gradient(
-      ellipse at 45% 62%,
-      color-mix(
-        in srgb,
-        var(--groups, var(--groups)) 16%,
-        transparent
-      ) 0%,
-      transparent 58%
-    );
-
-
-  filter: blur(28px);
-
-  opacity: .9;
-
-  animation:
-    consejo-bruma
-    18s
-    ease-in-out
-    infinite
-    alternate;
-}
-
-
-
-
-.consejo-imagen::after {
-  content: "";
-
-  position: absolute;
-  inset: 0;
-
-  z-index: 2;
-
-  pointer-events: none;
-
-
-  background: linear-gradient(
-    to bottom,
-
-    color-mix(
-      in srgb,
-      var(--groups, var(--groups)) 48%,
-      transparent
-    ) 0%,
-
-    color-mix(
-      in srgb,
-      var(--groups, var(--groups)) 32%,
-      transparent
-    ) 20%,
-
-    color-mix(
-      in srgb,
-      var(--groups, var(--groups)) 18%,
-      transparent
-    ) 40%,
-
-    color-mix(
-      in srgb,
-      var(--groups, var(--groups)) 7%,
-      transparent
-    ) 60%,
-
-    transparent 82%
-  );
-}
-
-
-
-
-@keyframes consejo-bruma {
-
-  0% {
-    transform:
-      translate3d(-2%, -5%, 0)
-      scale(1);
-  }
-
-  35% {
-    transform:
-      translate3d(1%, -1%, 0)
-      scale(1.025);
-  }
-
-  70% {
-    transform:
-      translate3d(-1%, 3%, 0)
-      scale(1.015);
-  }
-
-  100% {
-    transform:
-      translate3d(2%, 7%, 0)
-      scale(1.035);
-  }
-
-}
-
-
-
-.consejo-icon {
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  width: 100px;
-  height: 130px;
-
-  margin: 0 auto 28px;
-
-  border: none;
-  border-radius: 0;
-
-  background: transparent;
-
-  box-shadow: none;
-}
-
-
-.consejo-icon .consejo-icono {
-  position: static;
-
-  display: block;
-
-  margin: 0;
-  padding: 0;
-
-  transform: none;
-
-
-  color: #090909;
-
-  font-size: 65px;
-  font-style: normal;
-  line-height: 1;
-
-  text-shadow:
-
-    1px 1px 0
-      var(--groups, var(--groups)),
-
-    2px 2px 0
-      color-mix(
-        in srgb,
-        var(--groups, var(--groups)) 75%,
-        #080808
-      ),
-
-    3px 3px 0
-      color-mix(
-        in srgb,
-        var(--groups, var(--groups)) 45%,
-        #080808
-      ),
-
-    5px 5px 9px
-      color-mix(
-        in srgb,
-        var(--groups, var(--groups)) 20%,
-        transparent
-      );
-}
-
-
-.consejo-post .consejo-titulo {
-  display: block;
-  width: 100%;
-  max-width: none;
-  margin: 0;
-  padding: 12px 0 20px;
-  color: var(--groups);
-  font-family:
-    "Consejo Titulo", Georgia, serif;
-  font-size: 40px;
-  font-weight: 400;
-  font-style: normal;
-  line-height: 1.3;
-  letter-spacing: normal;
-  text-align: center;
-  text-transform: none;
-  white-space: normal;
-  word-break: normal;
-  overflow-wrap: normal;
-  hyphens: none;
-}
-
-
-.consejo-titulo .consejo-palabra {
-  white-space: nowrap;
-}
-
-@supports (background-clip: text) {
-
-  .consejo-post .consejo-titulo {
-
-    background-image: linear-gradient(
-      180deg,
-
-      var(--groups) 0%,
-
-      var(--groups) 25%,
-
-      color-mix(
-        in srgb,
-        var(--groups) 55%,
-        #080808
-      ) 50%,
-
-      var(--groups) 75%,
-
-      var(--groups) 100%
-    );
-
-    background-size: 100% 220%;
-    background-repeat: no-repeat;
-
-    -webkit-background-clip: text;
-    background-clip: text;
-
-    color: transparent;
-
-    -webkit-text-fill-color: transparent;
-
-    animation:
-      consejo-penumbra
-      10s
-      ease-in-out
-      infinite
-      alternate;
-  }
-
-}
-
-
-@keyframes consejo-penumbra {
-
-  from {
-    background-position: 50% 20%;
-  }
-
-  to {
-    background-position: 50% 80%;
-  }
-
-}
-
-
-
-.consejo-frase {
-  max-width: 340px;
-
-  margin: 0 auto;
-
-  color: var(--groups);
-
-  font:
-    400
-    9px/1.6
-    "Consejo Texto",
-    serif;
-
-  letter-spacing: 2px;
-
-  text-transform: uppercase;
-}
-
-.consejo-cuerpo {
-  display: flow-root;
-
-  width: calc(100% - 48px);
-  max-width: 440px;
-
-  margin: 15px auto 0;
-
-  font:
-    400
-    16px/1.5
-    "Consejo Texto",
-    serif;
-
-  text-align: justify;
-
-  overflow-wrap: break-word;
-}
-
-
-.consejo-cuerpo .consejo-capitular {
-  display: block;
-  float: left;
-  margin: 5px 12px 0 0;
-  padding: 0;
-  color: #090909;
-  font-family:
-    "Consejo Titulo",
-    Georgia,
-    serif;
-  font-size: 66px;
-  font-weight: 400;
-  font-style: normal;
-  line-height: .85;
-  text-shadow:
-    1px 1px 0
-      var(--groups, var(--groups)),
-
-    2px 2px 0
-      color-mix(
-        in srgb,
-        var(--groups, var(--groups)) 75%,
-        #080808
-      ),
-
-    3px 3px 0
-      color-mix(
-        in srgb,
-        var(--groups, var(--groups)) 45%,
-        #080808
-      ),
-
-    5px 5px 9px
-      color-mix(
-        in srgb,
-        var(--groups, var(--groups)) 20%,
-        transparent
-      );
-}
-
-
-.consejo-cuerpo b,
-.consejo-cuerpo strong,
-.consejo-cuerpo i,
-.consejo-cuerpo em,
-.consejo-cuerpo a {
-  color: var(--groups);
-}
-
-
-.consejo-pie {
-  width: calc(100% - 48px);
-  max-width: 440px;
-
-  margin: 30px auto 0;
-
-  text-align: center;
-}
-
-
-.consejo-separador {
-  display: flex;
-
-  align-items: center;
-
-  gap: 16px;
-
-  margin-bottom: 18px;
-}
-
-
-.consejo-separador::before,
-.consejo-separador::after {
-  content: "";
-
-  flex: 1;
-
-  height: 1.5px;
-
-  background:
-    color-mix(
-      in srgb,
-      var(--groups) 35%,
-      transparent
-    );
-}
-
-
-.consejo-separador img {
-  display: block;
-
-  flex: 0 0 auto;
-
-  width: 65px;
-  height: 65px;
-
-  object-fit: contain;
-
-  filter:
-
-    grayscale(1)
-
-    drop-shadow(
-      0 0 5px
-      color-mix(
-        in srgb,
-        var(--groups) 60%,
-        transparent
-      )
-    )
-
-    drop-shadow(
-      0 0 12px
-      color-mix(
-        in srgb,
-        var(--groups) 30%,
-        transparent
-      )
-    );
-}
-
-
-
-.consejo-ubicacion {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 14px minmax(0, 1fr);
-  align-items: center;
-  gap: 12px;
-  width: 100%;
-  font: 400 12px/1.6 "Consejo Texto", serif;
-}
-
-.consejo-ubicacion > span {
-  min-width: 0;
-  white-space: normal;
-  overflow-wrap: anywhere;
-}
-
-.consejo-ubicacion > span:first-child {
-  text-align: right;
-}
-
-.consejo-ubicacion > span:last-child {
-  text-align: left;
-}
-
-.consejo-ubicacion .consejo-dato-icono {
-  justify-self: center;
-  margin: 0;
-  text-align: center;
-}
-
-.consejo-personajes {
-  margin-top: 16px;
-
-  color: var(--groups);
-
-  font:
-    400
-    18px/1.4
-    "Consejo Titulo",
-    Georgia,
-    serif;
-
-  text-align: center;
-
-  overflow-wrap: anywhere;
-}
-
-
-
-@media (max-width: 440px) {
-
-  .consejo-cabecera {
-    padding:
-      35px
-      18px
-      25px;
-  }
-
-  .consejo-cuerpo,
-  .consejo-pie {
-    width: calc(100% - 40px);
-  }
-}
-
-
-
-@media (prefers-reduced-motion: reduce) {
-  .consejo-post .consejo-titulo {
-    animation: none;
-    background-position: 50% 50%;
-  }
-
-  .consejo-imagen::before {
-    animation: none;
-    transform: none;
-  }
-}
-
-/* BASE: IMAGEN FIJA CON DETALLE VISIBLE */
-
-.consejo-imagen {
-  isolation: isolate;
-  overflow: hidden;
-}
-
-.consejo-imagen img {
-  z-index: 0;
   filter: grayscale(1) brightness(.85) contrast(1.05);
   opacity: 1;
   transform: none;
   animation: none;
 }
 
-/* COLOR SOBRE LA IMAGEN, DEBAJO DE LAS SOMBRAS */
+
 
 .consejo-imagen::before {
   content: "";
@@ -652,26 +135,18 @@
     to bottom,
     transparent 0%,
     color-mix(
-      in srgb,
-      var(--groups, var(--var, #888)) 35%,
-      transparent
+      in srgb, var(--consejo-color) 35%, transparent
     ) 25%,
     color-mix(
-      in srgb,
-      var(--groups, var(--var, #888)) 80%,
-      transparent
+      in srgb, var(--consejo-color) 80%, transparent
     ) 65%,
-    var(--groups, var(--var, #888)) 100%
+    var(--consejo-color) 100%
   );
 
   mix-blend-mode: multiply;
-  opacity: 1;
-  filter: none;
-  transform: none;
-  animation: none;
 }
 
-/* BRUMA OSCURA POR ENCIMA */
+
 
 .consejo-imagen::after {
   content: "";
@@ -700,15 +175,12 @@
       transparent 100%
     );
 
-  mix-blend-mode: normal;
   filter: blur(12px);
   opacity: .9;
-
-  animation: consejo-oscuridad-visible
-    12s ease-in-out infinite alternate;
+  animation: consejo-bruma 12s ease-in-out infinite alternate;
 }
 
-@keyframes consejo-oscuridad-visible {
+@keyframes consejo-bruma {
   from {
     transform: translate3d(-5%, 12%, 0);
     opacity: .65;
@@ -720,7 +192,267 @@
   }
 }
 
+
+
+.consejo-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 130px;
+  margin: 0 auto 28px;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.consejo-icon .consejo-icono {
+  position: static;
+  display: block;
+  margin: 0;
+  padding: 0;
+  transform: none;
+  color: #090909;
+  font-size: 65px;
+  font-style: normal;
+  line-height: 1;
+
+  text-shadow:
+    1px 1px 0 var(--consejo-color),
+    2px 2px 0
+      color-mix(in srgb, var(--consejo-color) 75%, #080808),
+    3px 3px 0
+      color-mix(in srgb, var(--consejo-color) 45%, #080808),
+    5px 5px 9px
+      color-mix(in srgb, var(--consejo-color) 20%, transparent);
+}
+
+
+
+.consejo-post .consejo-titulo {
+  display: block;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 12px 0 20px;
+
+  color: var(--consejo-color);
+  font-family: "Consejo Titulo", Georgia, serif;
+  font-size: 40px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.3;
+
+  letter-spacing: normal;
+  text-align: center;
+  text-transform: none;
+  white-space: normal;
+  word-break: normal;
+  overflow-wrap: normal;
+  hyphens: none;
+}
+
+
+
+@supports (background-clip: text) {
+  .consejo-post .consejo-titulo {
+    background-image: linear-gradient(
+      180deg,
+      var(--consejo-color) 0%,
+      var(--consejo-color) 25%,
+      color-mix(
+        in srgb, var(--consejo-color) 55%, #080808
+      ) 50%,
+      var(--consejo-color) 75%,
+      var(--consejo-color) 100%
+    );
+
+    background-size: 100% 220%;
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    animation: consejo-penumbra 10s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes consejo-penumbra {
+  from { background-position: 50% 20%; }
+  to { background-position: 50% 80%; }
+}
+
+
+.consejo-frase {
+  max-width: 340px;
+  margin: 0 auto;
+  color: var(--consejo-color);
+  font: 400 9px/1.6 "Consejo Texto", serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+
+
+.consejo-cuerpo {
+  display: flow-root;
+  width: calc(100% - 48px);
+  max-width: 440px;
+  margin: 15px auto 0;
+  font: 400 16px/1.5 "Consejo Texto", serif;
+  text-align: justify;
+  overflow-wrap: break-word;
+}
+
+
+
+.consejo-cuerpo .consejo-capitular {
+  display: block;
+  float: left;
+  margin: 5px 12px 0 0;
+  padding: 0;
+
+  color: #090909;
+  font-family: "Consejo Titulo", Georgia, serif;
+  font-size: 66px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: .85;
+
+  text-shadow:
+    1px 1px 0 var(--consejo-color),
+    2px 2px 0
+      color-mix(in srgb, var(--consejo-color) 75%, #080808),
+    3px 3px 0
+      color-mix(in srgb, var(--consejo-color) 45%, #080808),
+    5px 5px 9px
+      color-mix(in srgb, var(--consejo-color) 20%, transparent);
+}
+
+.consejo-cuerpo b,
+.consejo-cuerpo strong,
+.consejo-cuerpo i,
+.consejo-cuerpo em,
+.consejo-cuerpo a {
+  color: var(--consejo-color);
+}
+
+
+
+.consejo-pie {
+  width: calc(100% - 48px);
+  max-width: 440px;
+  margin: 30px auto 0;
+  text-align: center;
+}
+
+
+
+.consejo-separador {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.consejo-separador::before,
+.consejo-separador::after {
+  content: "";
+  flex: 1;
+  height: 1.5px;
+  background:
+    color-mix(in srgb, var(--consejo-color) 35%, transparent);
+}
+
+.consejo-separador img {
+  display: block;
+  flex: 0 0 auto;
+  width: 65px;
+  height: 65px;
+  object-fit: contain;
+
+  filter:
+    grayscale(1)
+    drop-shadow(
+      0 0 5px
+      color-mix(in srgb, var(--consejo-color) 60%, transparent)
+    )
+    drop-shadow(
+      0 0 12px
+      color-mix(in srgb, var(--consejo-color) 30%, transparent)
+    );
+}
+
+
+
+.consejo-ubicacion {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font: 400 12px/1.6 "Consejo Texto", serif;
+  text-transform: uppercase;
+  letter-spacing: .7px;
+}
+
+.consejo-ubicacion > span {
+  display: inline;
+  white-space: normal;
+  word-break: normal;
+  overflow-wrap: normal;
+}
+
+.consejo-ubicacion > span + span::before {
+  content: " · ";
+  padding: 0 5px;
+  color: var(--consejo-color);
+}
+
+
+
+.consejo-personajes {
+  margin-top: 12px;
+  color: var(--consejo-color);
+  font: 400 18px/1.4 "Consejo Titulo", Georgia, serif;
+  text-align: center;
+  white-space: normal;
+  word-break: normal;
+  overflow-wrap: normal;
+  hyphens: none;
+}
+
+.consejo-personajes a {
+  color: inherit;
+  font: inherit;
+  text-decoration: none;
+}
+
+.consejo-personajes a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+
+
+@media (max-width: 440px) {
+  .consejo-cabecera {
+    padding: 24px 18px 25px;
+  }
+
+  .consejo-cuerpo,
+  .consejo-pie {
+    width: calc(100% - 40px);
+  }
+}
+
+
+
 @media (prefers-reduced-motion: reduce) {
+  .consejo-post .consejo-titulo {
+    animation: none;
+    background-position: 50% 50%;
+  }
+
   .consejo-imagen::after {
     animation: none;
     transform: none;
