@@ -1,0 +1,368 @@
+
+
+@font-face {
+  font-family: "Consejo Texto";
+  src: url("https://fonts.gstatic.com/s/gideonroman/v13/e3tmeuGrVOys8sxzZgWlmXogew.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+@font-face {
+  font-family: "Consejo Titulo";
+  src: url("https://cdn.jsdelivr.net/gh/Amethystaa/Izanamicodes@19dbce21835818269ebb353b66584793309a7a00/metal-macabre.regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0020-007E;
+}
+
+
+@font-face {
+  font-family: "Consejo Titulo";
+  src: url("https://cdn.jsdelivr.net/gh/Amethystaa/Izanamicodes@c2b7a4b177270a239430f5ea392e92caf76b4b8f/Blackside%20Personal%20Use%20Only.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  size-adjust: 150%;
+  unicode-range: U+00A0-024F, U+0300-036F, U+1E00-1EFF;
+}
+
+
+
+.consejo-post {
+  width: 560px;
+  max-width: 100%;
+  margin: 35px auto;
+  padding: 0 0 35px;
+  box-sizing: border-box;
+  background: transparent;
+  color: #bcbcbc;
+  container-type: inline-size;
+}
+
+.consejo-post * {
+  box-sizing: border-box;
+}
+
+
+
+.consejo-cabecera {
+  position: relative;
+  isolation: isolate;
+  padding: 48px 20px 35px;
+  text-align: center;
+}
+
+.consejo-imagen {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    #000 0%,
+    #000 35%,
+    rgba(0, 0, 0, .65) 65%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    #000 0%,
+    #000 35%,
+    rgba(0, 0, 0, .65) 65%,
+    transparent 100%
+  );
+}
+
+.consejo-imagen img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: grayscale(1) brightness(.4);
+}
+
+
+
+.consejo-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 130px;
+  margin: 0 auto 28px;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.consejo-icon .consejo-icono {
+  position: static;
+  display: block;
+  margin: 0;
+  padding: 0;
+  transform: none;
+  color: var(--var);
+  font-size: 65px;
+  font-style: normal;
+  line-height: 1;
+  text-shadow:
+    0 0 12px color-mix(in srgb, var(--var) 55%, transparent),
+    0 0 30px color-mix(in srgb, var(--var) 30%, transparent);
+}
+
+
+
+.consejo-post .consejo-titulo {
+  display: block;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 12px 0 20px;
+  color: var(--var);
+
+  font-family: "Consejo Metal", "Consejo Acentos", Georgia, serif;
+  font-size: 45px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.3;
+
+  letter-spacing: normal;
+  text-align: center;
+  text-transform: none;
+
+  white-space: normal;
+  word-break: normal;
+  overflow-wrap: normal;
+  hyphens: none;
+}
+
+.consejo-titulo .consejo-palabra {
+  white-space: nowrap;
+}
+
+
+
+.consejo-post .consejo-acento {
+  font-family: "Consejo Acentos", Georgia, serif !important;
+  font-size: inherit;
+  font-weight: 400;
+  font-style: normal;
+  line-height: inherit;
+}
+
+.consejo-titulo .consejo-acento {
+  display: inline-block;
+  vertical-align: baseline;
+  color: var(--var);
+}
+
+
+
+@supports (background-clip: text) {
+  .consejo-post .consejo-titulo,
+  .consejo-post .consejo-titulo .consejo-acento {
+    background-image: linear-gradient(
+      180deg,
+      var(--var) 0%,
+      var(--var) 25%,
+      color-mix(in srgb, var(--var) 55%, #080808) 50%,
+      var(--var) 75%,
+      var(--var) 100%
+    );
+    background-size: 100% 220%;
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    animation: consejo-penumbra 10s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes consejo-penumbra {
+  from { background-position: 50% 20%; }
+  to { background-position: 50% 80%; }
+}
+
+
+
+.consejo-frase {
+  max-width: 340px;
+  margin: 0 auto;
+  color: var(--var);
+  font: 400 9px/1.6 "Consejo Texto", serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+
+
+.consejo-cuerpo {
+  display: flow-root;
+  width: calc(100% - 48px);
+  max-width: 440px;
+  margin: 15px auto 0;
+  font: 400 16px/1.5 "Consejo Texto", serif;
+  text-align: justify;
+  overflow-wrap: break-word;
+}
+
+
+
+.consejo-cuerpo .consejo-capitular {
+  display: block;
+  float: left;
+  margin: 5px 12px 0 0;
+  padding: 0;
+  color: #090909;
+  font-family: "Consejo Metal", "Consejo Acentos", Georgia, serif;
+  font-size: 66px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: .85;
+  text-shadow:
+    1px 1px 0 var(--var),
+    2px 2px 0 color-mix(in srgb, var(--var) 75%, #080808),
+    3px 3px 0 color-mix(in srgb, var(--var) 45%, #080808),
+    5px 5px 9px color-mix(in srgb, var(--var) 20%, transparent);
+}
+
+.consejo-cuerpo b,
+.consejo-cuerpo strong,
+.consejo-cuerpo i,
+.consejo-cuerpo em,
+.consejo-cuerpo a {
+  color: var(--var);
+}
+
+
+
+.consejo-pie {
+  width: calc(100% - 48px);
+  max-width: 440px;
+  margin: 30px auto 0;
+  text-align: center;
+}
+
+
+
+.consejo-separador {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.consejo-separador::before,
+.consejo-separador::after {
+  content: "";
+  flex: 1;
+  height: 1.5px;
+  background: color-mix(in srgb, var(--var) 35%, transparent);
+}
+
+.consejo-separador img {
+  display: block;
+  flex: 0 0 auto;
+  width: 65px;
+  height: 65px;
+  object-fit: contain;
+  filter:
+    grayscale(1)
+    drop-shadow(
+      0 0 5px color-mix(in srgb, var(--var) 60%, transparent)
+    )
+    drop-shadow(
+      0 0 12px color-mix(in srgb, var(--var) 30%, transparent)
+    );
+}
+
+
+
+.consejo-ubicacion {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 6px 12px;
+  font: 400 12px/1.6 "Consejo Texto", serif;
+}
+
+.consejo-ubicacion > span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.consejo-ubicacion .consejo-dato-icono {
+  position: static;
+  display: inline-block;
+  flex: 0 0 auto;
+  margin: 0;
+  padding: 0;
+  transform: none;
+  color: var(--var);
+  font-size: 14px;
+  font-style: normal;
+  line-height: 1;
+  text-shadow:
+    0 0 5px color-mix(in srgb, var(--var) 35%, transparent);
+}
+
+
+
+.consejo-personajes {
+  margin-top: 16px;
+  color: var(--var);
+  font: 400 18px/1.4
+    "Consejo Metal", "Consejo Acentos", Georgia, serif;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+
+
+@media (max-width: 440px) {
+  .consejo-cabecera {
+    padding: 35px 18px 25px;
+  }
+
+  .consejo-cuerpo,
+  .consejo-pie {
+    width: calc(100% - 40px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .consejo-post .consejo-titulo,
+  .consejo-post .consejo-titulo .consejo-acento {
+    animation: none;
+    background-position: 50% 50%;
+  }
+}
+
+.consejo-post {
+  --var: #78433f;
+  background: #101010;
+}
+
+.consejo-post .consejo-titulo {
+  font-family: "Consejo Titulo", serif;
+  font-size: 45px;
+  font-weight: 400;
+  white-space: normal;
+  word-break: normal;
+  overflow-wrap: normal;
+  hyphens: none;
+}
+
+.consejo-post .consejo-personajes,
+.consejo-cuerpo .consejo-capitular {
+  font-family: "Consejo Titulo", serif;
+}
+
