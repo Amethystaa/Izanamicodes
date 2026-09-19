@@ -548,50 +548,33 @@
 
 
 .consejo-ubicacion {
-  display: flex;
-
-  flex-wrap: wrap;
-
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 14px minmax(0, 1fr);
   align-items: center;
-  justify-content: center;
-
-  gap: 6px 12px;
-
-  font:
-    400
-    12px/1.6
-    "Consejo Texto",
-    serif;
+  gap: 12px;
+  width: 100%;
+  font: 400 12px/1.6 "Consejo Texto", serif;
 }
-
 
 .consejo-ubicacion > span {
   min-width: 0;
-
+  white-space: normal;
   overflow-wrap: anywhere;
 }
 
-
-.consejo-ubicacion .consejo-dato-icono {
-  position: static;
-  display: inline-block;
-  flex: 0 0 auto;
-  margin: 0;
-  padding: 0;
-  transform: none;
-  color: var(--groups);
-  font-size: 14px;
-  font-style: normal;
-  line-height: 1;
-  text-shadow:
-    0 0 5px
-      color-mix(
-        in srgb,
-        var(--groups) 35%,
-        transparent
-      );
+.consejo-ubicacion > span:first-child {
+  text-align: right;
 }
 
+.consejo-ubicacion > span:last-child {
+  text-align: left;
+}
+
+.consejo-ubicacion .consejo-dato-icono {
+  justify-self: center;
+  margin: 0;
+  text-align: center;
+}
 
 .consejo-personajes {
   margin-top: 16px;
