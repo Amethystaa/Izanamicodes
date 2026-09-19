@@ -346,11 +346,6 @@
   }
 }
 
-.consejo-post {
-  --var: #78433f;
-  background: #101010;
-}
-
 .consejo-post .consejo-titulo {
   font-family: "Consejo Titulo", serif;
   font-size: 45px;
