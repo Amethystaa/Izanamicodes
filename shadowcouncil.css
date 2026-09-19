@@ -641,20 +641,22 @@
   }
 }
 
-/* IMAGEN FIJA Y CAPAS AISLADAS */
+/* BASE: IMAGEN FIJA CON DETALLE VISIBLE */
 
 .consejo-imagen {
   isolation: isolate;
+  overflow: hidden;
 }
 
 .consejo-imagen img {
   z-index: 0;
-  filter: grayscale(1) brightness(.48) contrast(1.12);
+  filter: grayscale(1) brightness(.85) contrast(1.05);
+  opacity: 1;
   transform: none;
   animation: none;
 }
 
-/* CAPA INFERIOR: DEGRADADO DE COLOR EN MULTIPLY */
+/* COLOR SOBRE LA IMAGEN, DEBAJO DE LAS SOMBRAS */
 
 .consejo-imagen::before {
   content: "";
@@ -665,10 +667,18 @@
 
   background: linear-gradient(
     to bottom,
-    color-mix(in srgb, var(--groups) 65%, transparent) 0%,
-    color-mix(in srgb, var(--groups) 45%, transparent) 35%,
-    color-mix(in srgb, var(--groups) 20%, transparent) 65%,
-    transparent 100%
+    transparent 0%,
+    color-mix(
+      in srgb,
+      var(--groups, var(--var, #888)) 35%,
+      transparent
+    ) 25%,
+    color-mix(
+      in srgb,
+      var(--groups, var(--var, #888)) 80%,
+      transparent
+    ) 65%,
+    var(--groups, var(--var, #888)) 100%
   );
 
   mix-blend-mode: multiply;
@@ -678,57 +688,52 @@
   animation: none;
 }
 
-/* CAPA SUPERIOR: BRUMA OSCURA */
+/* BRUMA OSCURA POR ENCIMA */
 
 .consejo-imagen::after {
   content: "";
   position: absolute;
-  inset: -20%;
+  inset: -25%;
   z-index: 2;
   pointer-events: none;
 
   background:
     radial-gradient(
-      ellipse at 12% 25%,
-      rgba(0, 0, 0, .9) 0%,
-      rgba(0, 0, 0, .5) 23%,
-      transparent 52%
-    ),
-    radial-gradient(
-      ellipse at 85% 42%,
-      rgba(0, 0, 0, .85) 0%,
-      rgba(0, 0, 0, .4) 25%,
-      transparent 55%
-    ),
-    radial-gradient(
-      ellipse at 45% 90%,
+      ellipse 45% 25% at 15% 35%,
       rgba(0, 0, 0, .95) 0%,
-      rgba(0, 0, 0, .5) 28%,
-      transparent 60%
+      rgba(0, 0, 0, .7) 40%,
+      transparent 100%
+    ),
+    radial-gradient(
+      ellipse 40% 30% at 90% 65%,
+      rgba(0, 0, 0, .95) 0%,
+      rgba(0, 0, 0, .65) 45%,
+      transparent 100%
+    ),
+    radial-gradient(
+      ellipse 65% 25% at 45% 100%,
+      #000 0%,
+      rgba(0, 0, 0, .8) 45%,
+      transparent 100%
     );
 
-  mix-blend-mode: multiply;
-  filter: blur(20px);
-  opacity: .8;
+  mix-blend-mode: normal;
+  filter: blur(12px);
+  opacity: .9;
 
-  animation: consejo-sombras-cabecera
-    16s ease-in-out infinite alternate;
+  animation: consejo-oscuridad-visible
+    12s ease-in-out infinite alternate;
 }
 
-@keyframes consejo-sombras-cabecera {
-  0% {
-    transform: translate3d(-4%, 5%, 0) scale(1.02);
+@keyframes consejo-oscuridad-visible {
+  from {
+    transform: translate3d(-5%, 12%, 0);
     opacity: .65;
   }
 
-  50% {
-    transform: translate3d(3%, -2%, 0) scale(1.07);
-    opacity: .85;
-  }
-
-  100% {
-    transform: translate3d(-2%, -7%, 0) scale(1.03);
-    opacity: .75;
+  to {
+    transform: translate3d(5%, -15%, 0);
+    opacity: 1;
   }
 }
 
@@ -736,6 +741,6 @@
   .consejo-imagen::after {
     animation: none;
     transform: none;
-    opacity: .75;
+    opacity: .85;
   }
 }
