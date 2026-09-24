@@ -121,6 +121,7 @@
   position: relative;
   width: 100%;
   min-height: 105px;
+  padding: 18px;
   margin: 0 auto 25px;
   display: flex;
   flex-direction: column;
