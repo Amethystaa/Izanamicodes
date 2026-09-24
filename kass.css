@@ -216,7 +216,7 @@
 
 .kass-capitulo-plumas .kcp1 {
   left: 7%;
-  top: 7px;
+  top: 17px;
   font-size: 28px;
   transform: rotate(-30deg);
 }
@@ -224,14 +224,14 @@
 .kass-capitulo-plumas .kcp2 {
   right: 8%;
   top: 25px;
-  font-size: 17px;
+  font-size: 20px;
   animation-delay: -4s;
 }
 
 .kass-capitulo-plumas .kcp3 {
   right: 27%;
   top: 5px;
-  font-size: 25px;
+  font-size: 30px;
   animation-delay: -6s;
 }
 
