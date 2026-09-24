@@ -99,21 +99,21 @@
 .kass-nombre-plumas .kp1 {
   left: 12%;
   top: 3px;
-  font-size: 9px;
+  font-size: 20px;
   transform: rotate(-25deg);
 }
 
 .kass-nombre-plumas .kp2 {
   right: 11%;
   top: 18px;
-  font-size: 7px;
+  font-size: 27px;
   animation-delay: -3s;
 }
 
 .kass-nombre-plumas .kp3 {
   right: 25%;
   top: 1px;
-  font-size: 6px;
+  font-size: 16px;
   animation-delay: -5s;
 }
 
