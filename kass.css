@@ -249,11 +249,6 @@
   pointer-events: none;
 }
 
-.ficha-diario {
-  position: relative;
-  z-index: 3;
-}
-
 @keyframes kassPluma {
   0%, 100% {
     transform: translateY(-2px) rotate(-15deg);
