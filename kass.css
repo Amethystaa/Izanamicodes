@@ -1,5 +1,5 @@
 @font-face {
-  font-family: "DeathCrow";
+  font-family: "KassHarpy";
   src: url("https://cdn.jsdelivr.net/gh/Amethystaa/Izanamicodes@d4fce8dae654fb866ecd6c4457568471e5db952e/DEATHCROW.ttf") format("truetype");
 }
 
@@ -15,7 +15,7 @@
   filter: grayscale(.3) contrast(1.08) brightness(.82);
 }
 
-.death-tint {
+.kass-tint {
   position: absolute;
   inset: 0;
   z-index: 1;
@@ -25,7 +25,7 @@
   pointer-events: none;
 }
 
-.death-tint::after {
+.kass-tint::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -34,7 +34,7 @@
     radial-gradient(circle at center, transparent 35%, rgba(0,0,0,.3) 100%);
 }
 
-.death-deco {
+.kass-deco {
   position: absolute;
   z-index: 5;
   left: 50%;
@@ -45,7 +45,37 @@
   pointer-events: none;
 }
 
-.death-icon {
+.kass-divider {
+  width: 78%;
+  margin: 10px auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  position: relative;
+  z-index: 6;
+}
+
+.kass-divider span {
+  width: 43%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--groups));
+  opacity: .7;
+  box-shadow: 0 0 5px var(--groups);
+}
+
+.kass-divider span:last-child {
+  transform: scaleX(-1);
+}
+
+.kass-divider b {
+  color: var(--groups);
+  font-size: 9px;
+  font-weight: normal;
+  text-shadow: 0 0 8px var(--groups);
+}
+
+.kass-icon {
   position: relative;
   width: 80px;
   height: 55px;
@@ -55,7 +85,7 @@
   justify-content: center;
 }
 
-.death-icon > i {
+.kass-icon > i {
   position: relative;
   z-index: 4;
   font-size: 31px;
@@ -64,12 +94,12 @@
     0 3px 5px #000,
     0 0 8px var(--groups),
     0 0 20px var(--groups);
-  animation: deathCrowFloat 5s ease-in-out infinite;
+  animation: kassHarpyFloat 5s ease-in-out infinite;
 }
 
-.death-smoke,
-.death-smoke::before,
-.death-smoke::after {
+.kass-smoke,
+.kass-smoke::before,
+.kass-smoke::after {
   content: "";
   position: absolute;
   border-radius: 50%;
@@ -77,14 +107,14 @@
   filter: blur(16px);
 }
 
-.death-smoke {
+.kass-smoke {
   width: 75px;
   height: 30px;
   opacity: .2;
-  animation: deathSmoke 6s ease-in-out infinite;
+  animation: kassSmoke 6s ease-in-out infinite;
 }
 
-.death-smoke::before {
+.kass-smoke::before {
   width: 40px;
   height: 52px;
   left: -5px;
@@ -92,7 +122,7 @@
   opacity: .5;
 }
 
-.death-smoke::after {
+.kass-smoke::after {
   width: 43px;
   height: 43px;
   right: -8px;
@@ -100,10 +130,10 @@
   opacity: .45;
 }
 
-.death-name {
+.kass-name {
   position: relative;
   z-index: 5;
-  font-family: "DeathCrow", serif;
+  font-family: "KassHarpy", serif;
   font-size: 52px;
   line-height: .85;
   letter-spacing: 2px;
@@ -114,7 +144,7 @@
     0 0 10px var(--groups);
 }
 
-.death-line {
+.kass-line {
   width: 75%;
   margin: 8px auto 0;
   display: flex;
@@ -123,7 +153,7 @@
   gap: 9px;
 }
 
-.death-line span {
+.kass-line span {
   width: 43%;
   height: 1px;
   background: linear-gradient(90deg, transparent, var(--groups));
@@ -131,18 +161,18 @@
   box-shadow: 0 0 5px var(--groups);
 }
 
-.death-line span:last-child {
+.kass-line span:last-child {
   transform: scaleX(-1);
 }
 
-.death-line b {
+.kass-line b {
   color: var(--groups);
   font-size: 5px;
   transform: rotate(45deg);
   text-shadow: 0 0 7px var(--groups);
 }
 
-.death-feathers {
+.kass-feathers {
   position: absolute;
   z-index: 4;
   inset: 0;
@@ -150,7 +180,7 @@
   pointer-events: none;
 }
 
-.death-feathers i {
+.kass-feathers i {
   position: absolute;
   left: var(--x);
   top: -25px;
@@ -160,11 +190,11 @@
   opacity: 0;
   text-shadow: 0 2px 4px #000;
   filter: drop-shadow(0 3px 4px rgba(0,0,0,.8));
-  animation: deathFeatherFall 12s linear infinite;
+  animation: kassFeatherFall 12s linear infinite;
   animation-delay: var(--d);
 }
 
-@keyframes deathCrowFloat {
+@keyframes kassHarpyFloat {
   0%, 100% {
     transform: translateY(0);
   }
@@ -174,7 +204,7 @@
   }
 }
 
-@keyframes deathSmoke {
+@keyframes kassSmoke {
   0%, 100% {
     transform: translateX(-5px) scale(.9);
     opacity: .13;
@@ -186,7 +216,7 @@
   }
 }
 
-@keyframes deathFeatherFall {
+@keyframes kassFeatherFall {
   0% {
     top: -25px;
     transform: translateX(0) rotate(0deg);
