@@ -272,3 +272,88 @@
     opacity: .32;
   }
 }
+
+.kass-capitulo-icon {
+  position: relative;
+  z-index: 4;
+  margin-bottom: 10px;
+  color: var(--groups);
+  font-size: 23px;
+  line-height: 1;
+  text-shadow:
+    0 2px 4px #000,
+    0 0 8px var(--groups),
+    0 0 16px var(--groups);
+}
+
+.kass-capitulo-icon::before {
+  content: "";
+  position: absolute;
+  width: 55px;
+  height: 30px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--groups);
+  border-radius: 50%;
+  opacity: .12;
+  filter: blur(15px);
+  z-index: -1;
+}
+
+.kass-capitulo-curiosidades .kass-capitulo-divisor {
+  width: 300px;
+  max-width: 90%;
+}
+
+.kass-capitulo-curiosidades .kass-capitulo-divisor span {
+  width: 140px;
+}
+
+.kass-curiosidad {
+  width: 100%;
+  margin: 0 0 18px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  box-sizing: border-box;
+}
+
+.kass-curiosidad .icon {
+  width: 30px;
+  min-width: 30px;
+  height: 30px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--groups);
+  font-size: 17px;
+  line-height: 1;
+  text-shadow:
+    0 2px 4px #000,
+    0 0 7px var(--groups);
+}
+
+.kass-curiosidad .icon::before {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border: 1px solid var(--groups);
+  opacity: .22;
+  transform: rotate(45deg);
+  box-shadow: 0 0 6px var(--groups);
+}
+
+.kass-curiosidad .icon i {
+  position: relative;
+  z-index: 2;
+}
+
+.kass-curiosidad-texto {
+  flex: 1;
+  padding-top: 3px;
+  line-height: 1.7;
+  text-align: justify;
+}
