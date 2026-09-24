@@ -1,0 +1,213 @@
+@font-face {
+  font-family: "DeathCrow";
+  src: url("https://cdn.jsdelivr.net/gh/Amethystaa/Izanamicodes@d4fce8dae654fb866ecd6c4457568471e5db952e/DEATHCROW.ttf") format("truetype");
+}
+
+.ficha-imagen {
+  position: relative;
+  overflow: hidden;
+}
+
+.ficha-imagen > img {
+  position: relative;
+  z-index: 0;
+  display: block;
+  filter: grayscale(.3) contrast(1.08) brightness(.82);
+}
+
+.death-tint {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: var(--groups);
+  mix-blend-mode: color;
+  opacity: .7;
+  pointer-events: none;
+}
+
+.death-tint::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to bottom, rgba(0,0,0,.05), rgba(0,0,0,.25) 55%, rgba(0,0,0,.78) 100%),
+    radial-gradient(circle at center, transparent 35%, rgba(0,0,0,.3) 100%);
+}
+
+.death-deco {
+  position: absolute;
+  z-index: 5;
+  left: 50%;
+  bottom: 20px;
+  width: 92%;
+  transform: translateX(-50%);
+  text-align: center;
+  pointer-events: none;
+}
+
+.death-icon {
+  position: relative;
+  width: 80px;
+  height: 55px;
+  margin: 0 auto -4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.death-icon > i {
+  position: relative;
+  z-index: 4;
+  font-size: 31px;
+  color: var(--groups);
+  text-shadow:
+    0 3px 5px #000,
+    0 0 8px var(--groups),
+    0 0 20px var(--groups);
+  animation: deathCrowFloat 5s ease-in-out infinite;
+}
+
+.death-smoke,
+.death-smoke::before,
+.death-smoke::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: var(--groups);
+  filter: blur(16px);
+}
+
+.death-smoke {
+  width: 75px;
+  height: 30px;
+  opacity: .2;
+  animation: deathSmoke 6s ease-in-out infinite;
+}
+
+.death-smoke::before {
+  width: 40px;
+  height: 52px;
+  left: -5px;
+  top: -12px;
+  opacity: .5;
+}
+
+.death-smoke::after {
+  width: 43px;
+  height: 43px;
+  right: -8px;
+  top: 0;
+  opacity: .45;
+}
+
+.death-name {
+  position: relative;
+  z-index: 5;
+  font-family: "DeathCrow", serif;
+  font-size: 52px;
+  line-height: .85;
+  letter-spacing: 2px;
+  color: var(--groups);
+  text-shadow:
+    0 2px 1px #000,
+    0 5px 9px #000,
+    0 0 10px var(--groups);
+}
+
+.death-line {
+  width: 75%;
+  margin: 8px auto 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+}
+
+.death-line span {
+  width: 43%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--groups));
+  opacity: .75;
+  box-shadow: 0 0 5px var(--groups);
+}
+
+.death-line span:last-child {
+  transform: scaleX(-1);
+}
+
+.death-line b {
+  color: var(--groups);
+  font-size: 5px;
+  transform: rotate(45deg);
+  text-shadow: 0 0 7px var(--groups);
+}
+
+.death-feathers {
+  position: absolute;
+  z-index: 4;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.death-feathers i {
+  position: absolute;
+  left: var(--x);
+  top: -25px;
+  font-style: normal;
+  font-size: var(--s);
+  color: var(--groups);
+  opacity: 0;
+  text-shadow: 0 2px 4px #000;
+  filter: drop-shadow(0 3px 4px rgba(0,0,0,.8));
+  animation: deathFeatherFall 12s linear infinite;
+  animation-delay: var(--d);
+}
+
+@keyframes deathCrowFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes deathSmoke {
+  0%, 100% {
+    transform: translateX(-5px) scale(.9);
+    opacity: .13;
+  }
+
+  50% {
+    transform: translateX(6px) scale(1.15);
+    opacity: .25;
+  }
+}
+
+@keyframes deathFeatherFall {
+  0% {
+    top: -25px;
+    transform: translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+
+  12% {
+    opacity: .65;
+  }
+
+  45% {
+    transform: translateX(15px) rotate(90deg);
+  }
+
+  80% {
+    opacity: .3;
+  }
+
+  100% {
+    top: calc(100% + 30px);
+    transform: translateX(-12px) rotate(210deg);
+    opacity: 0;
+  }
+}
