@@ -481,33 +481,21 @@ mask-image: linear-gradient(
   }
 }
 
-.zhiyi-ficha .zhiyi-collar {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  margin: 0 auto;
-  line-height: 0;
+.zhiyi-ficha .ficha-dos {
+  position: relative;
 }
 
-.zhiyi-ficha .zhiyi-collar img {
-  display: block;
+.zhiyi-ficha .zhiyi-collar {
+  position: absolute;
+  top: -90px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  justify-content: center;
   width: 200px;
   max-width: 100%;
-  height: auto;
-  filter: grayscale(1) brightness(0.6);
-  opacity: 0.65;
-  -webkit-mask-image: linear-gradient(
-    to bottom,
-    transparent 0%,
-    #000 15%,
-    #000 65%,
-    transparent 100%
-  );
-  mask-image: linear-gradient(
-    to bottom,
-    transparent 0%,
-    #000 15%,
-    #000 65%,
-    transparent 100%
-  );
+  margin: 0;
+  line-height: 0;
+  pointer-events: none;
 }
