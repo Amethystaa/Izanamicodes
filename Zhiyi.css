@@ -10,12 +10,14 @@
   display: inline-block;
   max-width: 100%;
   font-family: "Zhiyi Fujisan", serif;
-  font-size: 56px;
+  font-size: 64px;
   font-weight: 400;
   font-style: normal;
   line-height: 1.35;
   text-transform: none;
   text-decoration: none;
+  filter: drop-shadow(0 2px 2px #080808)
+          drop-shadow(0 0 4px rgba(0, 0, 0, 0.65));
 }
 
 .zhiyi-ficha .ficha-nombre a,
@@ -93,6 +95,21 @@
   border: 0;
   background: transparent;
   box-shadow: none;
+  --zhiyi-corte: linear-gradient(
+    to bottom,
+    transparent 0%,
+    #000 12%,
+    #000 calc(50% - 55px),
+    rgba(0, 0, 0, 0.75) calc(50% - 43px),
+    rgba(0, 0, 0, 0.25) calc(50% - 28px),
+    transparent calc(50% - 18px),
+    transparent calc(50% + 18px),
+    rgba(0, 0, 0, 0.25) calc(50% + 28px),
+    rgba(0, 0, 0, 0.75) calc(50% + 43px),
+    #000 calc(50% + 55px),
+    #000 88%,
+    transparent 100%
+  );
 }
 
 .zhiyi-ficha .zhiyi-capitulo::before,
@@ -105,26 +122,14 @@
   background-size: contain;
   background-repeat: no-repeat;
   pointer-events: none;
- -webkit-mask-image: linear-gradient(
-  to bottom,
-  #000 calc(50% - 35px),
-  transparent calc(50% - 20px),
-  transparent calc(50% + 20px),
-  #000 calc(50% + 35px)
-);
-mask-image: linear-gradient(
-  to bottom,
-  #000 calc(50% - 35px),
-  transparent calc(50% - 20px),
-  transparent calc(50% + 20px),
-  #000 calc(50% + 35px)
-);
 }
 
 .zhiyi-ficha .zhiyi-capitulo::before {
   z-index: 1;
   filter: grayscale(1) brightness(0.7) contrast(1.15);
   opacity: 0.65;
+  -webkit-mask-image: var(--zhiyi-corte);
+  mask-image: var(--zhiyi-corte);
 }
 
 .zhiyi-ficha .zhiyi-capitulo::after {
@@ -134,38 +139,23 @@ mask-image: linear-gradient(
     drop-shadow(0 0 8px var(--groups))
     drop-shadow(0 0 16px var(--groups))
     blur(8px);
+  -webkit-mask-image:
+    var(--zhiyi-corte),
+    radial-gradient(
+      ellipse closest-side at center,
+      #000 45%,
+      transparent 100%
+    );
+  -webkit-mask-composite: source-in;
+  mask-image:
+    var(--zhiyi-corte),
+    radial-gradient(
+      ellipse closest-side at center,
+      #000 45%,
+      transparent 100%
+    );
+  mask-composite: intersect;
   animation: zhiyi-vaho 8s ease-in-out infinite alternate;
-}
-
--webkit-mask-image:
-  linear-gradient(
-    to bottom,
-    #000 calc(50% - 35px),
-    transparent calc(50% - 20px),
-    transparent calc(50% + 20px),
-    #000 calc(50% + 35px)
-  ),
-  radial-gradient(
-    ellipse closest-side at center,
-    #000 45%,
-    transparent 100%
-  );
--webkit-mask-composite: source-in;
-
-mask-image:
-  linear-gradient(
-    to bottom,
-    #000 calc(50% - 35px),
-    transparent calc(50% - 20px),
-    transparent calc(50% + 20px),
-    #000 calc(50% + 35px)
-  ),
-  radial-gradient(
-    ellipse closest-side at center,
-    #000 45%,
-    transparent 100%
-  );
-mask-composite: intersect;
 }
 
 .zhiyi-ficha .zhiyi-capitulo > span {
@@ -181,29 +171,7 @@ mask-composite: intersect;
   font-style: normal;
   line-height: 1.35;
   text-align: center;
-  color: var(--groups);
-  text-shadow: none;
   background-color: transparent;
-}
-
-@supports (background-clip: text) or (-webkit-background-clip: text) {
-  .zhiyi-ficha .zhiyi-capitulo > span {
-    background-image: linear-gradient(
-      90deg,
-      var(--groups) 0%,
-      var(--groups) 42%,
-      #252525 58%,
-      #252525 100%
-    );
-    background-size: 300% 100%;
-    background-position: 100% 50%;
-    background-repeat: no-repeat;
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    -webkit-text-fill-color: transparent;
-    animation: zhiyi-tinta 9s ease-in-out infinite;
-  }
 }
 
 @keyframes zhiyi-vaho {
@@ -214,18 +182,6 @@ mask-composite: intersect;
   to {
     opacity: 0.38;
     background-position: calc(50% + 3px) center;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .zhiyi-ficha .zhiyi-capitulo > span {
-    animation: none;
-    background-position: 0% 50%;
-  }
-
-  .zhiyi-ficha .zhiyi-capitulo::after {
-    animation: none;
-    opacity: 0.25;
   }
 }
 
@@ -529,29 +485,6 @@ mask-composite: intersect;
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .zhiyi-ficha .zhiyi-petalos {
-    display: none;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .zhiyi-ficha .ficha-nombre a,
-  .zhiyi-ficha .zhiyi-capitulo > span {
-    animation: none;
-    background-position: 0% 50%;
-  }
-
-  .zhiyi-ficha .zhiyi-capitulo::after {
-    animation: none;
-    opacity: 0.25;
-  }
-
-  .zhiyi-ficha .zhiyi-petalos {
-    display: none;
-  }
-}
-
 .zhiyi-ficha .ficha-dos {
   position: relative;
 }
@@ -595,4 +528,21 @@ mask-composite: intersect;
     #000 65%,
     transparent 100%
   );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .zhiyi-ficha .ficha-nombre a,
+  .zhiyi-ficha .zhiyi-capitulo > span {
+    animation: none;
+    background-position: 0% 50%;
+  }
+
+  .zhiyi-ficha .zhiyi-capitulo::after {
+    animation: none;
+    opacity: 0.25;
+  }
+
+  .zhiyi-ficha .zhiyi-petalos {
+    display: none;
+  }
 }
