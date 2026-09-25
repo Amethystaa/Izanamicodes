@@ -137,6 +137,37 @@ mask-image: linear-gradient(
   animation: zhiyi-vaho 8s ease-in-out infinite alternate;
 }
 
+-webkit-mask-image:
+  linear-gradient(
+    to bottom,
+    #000 calc(50% - 35px),
+    transparent calc(50% - 20px),
+    transparent calc(50% + 20px),
+    #000 calc(50% + 35px)
+  ),
+  radial-gradient(
+    ellipse closest-side at center,
+    #000 45%,
+    transparent 100%
+  );
+-webkit-mask-composite: source-in;
+
+mask-image:
+  linear-gradient(
+    to bottom,
+    #000 calc(50% - 35px),
+    transparent calc(50% - 20px),
+    transparent calc(50% + 20px),
+    #000 calc(50% + 35px)
+  ),
+  radial-gradient(
+    ellipse closest-side at center,
+    #000 45%,
+    transparent 100%
+  );
+mask-composite: intersect;
+}
+
 .zhiyi-ficha .zhiyi-capitulo > span {
   position: relative;
   z-index: 2;
