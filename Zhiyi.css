@@ -487,15 +487,41 @@ mask-image: linear-gradient(
 
 .zhiyi-ficha .zhiyi-collar {
   position: absolute;
-  top: -90px;
+  top: -70px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
-  display: flex;
-  justify-content: center;
   width: 200px;
   max-width: 100%;
   margin: 0;
+  padding: 0;
   line-height: 0;
   pointer-events: none;
+}
+
+.zhiyi-ficha .zhiyi-collar > img {
+  display: block;
+  position: static;
+  width: 100% !important;
+  max-width: 200px !important;
+  min-width: 0 !important;
+  height: auto !important;
+  margin: 0;
+  padding: 0;
+  filter: grayscale(1) brightness(0.6);
+  opacity: 0.65;
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    #000 15%,
+    #000 65%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    #000 15%,
+    #000 65%,
+    transparent 100%
+  );
 }
