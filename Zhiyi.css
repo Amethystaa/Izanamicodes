@@ -1,0 +1,435 @@
+@font-face {
+  font-family: "Zhiyi Genjiro";
+  src: url("https://cdn.jsdelivr.net/gh/Amethystaa/Izanamicodes@ed25a3e41cc4a0b11473eb738b2258cbb1842539/Genjiro.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Zhiyi Miyukatsu";
+  src: url("https://cdn.jsdelivr.net/gh/Amethystaa/Izanamicodes@885c2a90d9089bed3c10a6e9b3658efe8d3c7d82/Miyukatsu%20DEMO.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+.zhiyi-ficha .ficha-nombre a {
+  display: inline-block;
+  max-width: 100%;
+  font-family: "Zhiyi Genjiro", serif;
+  font-size: 56px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.35;
+  text-transform: none;
+  text-decoration: none;
+  color: var(--groups);
+  text-shadow: none;
+}
+
+@supports (background-clip: text) or (-webkit-background-clip: text) {
+  .zhiyi-ficha .ficha-nombre a {
+    background-image: linear-gradient(
+      90deg,
+      var(--groups) 0%,
+      var(--groups) 42%,
+      #000 58%,
+      #000 100%
+    );
+    background-size: 300% 100%;
+    background-position: 100% 50%;
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    animation: zhiyi-tinta 9s ease-in-out infinite;
+  }
+}
+
+@keyframes zhiyi-tinta {
+  0%, 12% {
+    background-position: 100% 50%;
+  }
+  55%, 78% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.zhiyi-ficha .ficha-avatar,
+.zhiyi-ficha .ficha-imagen {
+  position: relative;
+  isolation: isolate;
+}
+
+.zhiyi-ficha .ficha-avatar::after,
+.zhiyi-ficha .ficha-imagen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: var(--groups);
+  mix-blend-mode: multiply;
+  opacity: 0.65;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.zhiyi-ficha .ficha-diario {
+  z-index: 2;
+}
+
+.zhiyi-ficha .ficha-texto {
+  position: relative;
+  isolation: isolate;
+}
+
+.zhiyi-ficha .zhiyi-capitulo {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 400px;
+  min-height: 105px;
+  margin: 24px auto;
+  padding: 22px 16px;
+  overflow: hidden;
+  background: #090909;
+  border-top: 1px solid var(--groups);
+  border-bottom: 1px solid var(--groups);
+}
+
+.zhiyi-ficha .zhiyi-capitulo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background-image: var(--imagen-titulo, none);
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(1) contrast(1.15);
+  opacity: 0.55;
+}
+
+.zhiyi-ficha .zhiyi-capitulo::after {
+  content: "";
+  position: absolute;
+  inset: -25%;
+  z-index: -1;
+  background:
+    radial-gradient(
+      ellipse at 25% 65%,
+      var(--groups),
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse at 78% 40%,
+      var(--groups),
+      transparent 50%
+    );
+  filter: blur(16px);
+  opacity: 0.32;
+  pointer-events: none;
+  animation: zhiyi-vaho 8s ease-in-out infinite alternate;
+}
+
+.zhiyi-ficha .zhiyi-capitulo > span {
+  display: block;
+  max-width: 100%;
+  font-family: "Zhiyi Miyukatsu", serif;
+  font-size: 34px;
+  font-weight: 400;
+  line-height: 1.35;
+  text-align: center;
+  overflow-wrap: anywhere;
+  color: #eee;
+  text-shadow: 0 2px 5px #000;
+}
+
+@keyframes zhiyi-vaho {
+  from {
+    opacity: 0.25;
+    transform: translateX(-5%) scale(1);
+  }
+  to {
+    opacity: 0.55;
+    transform: translateX(5%) scale(1.08);
+  }
+}
+
+.zhiyi-ficha .zhiyi-separador {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  width: 100%;
+  max-width: 360px;
+  margin: 28px auto;
+}
+
+.zhiyi-ficha .zhiyi-separador::before,
+.zhiyi-ficha .zhiyi-separador::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+}
+
+.zhiyi-ficha .zhiyi-separador::before {
+  background: linear-gradient(
+    to right,
+    transparent,
+    #000,
+    var(--groups)
+  );
+}
+
+.zhiyi-ficha .zhiyi-separador::after {
+  background: linear-gradient(
+    to left,
+    transparent,
+    #000,
+    var(--groups)
+  );
+}
+
+.zhiyi-ficha .zhiyi-separador .kass-capitulo-icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 36px;
+  width: 36px;
+  height: 36px;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: 0;
+  box-shadow: none;
+  color: var(--groups);
+}
+
+.zhiyi-ficha .zhiyi-separador .kass-capitulo-icon i {
+  font-size: 29px;
+  line-height: 1;
+  color: var(--groups);
+  text-shadow: none;
+}
+
+.zhiyi-ficha .zhiyi-curiosidad {
+  display: flex;
+  align-items: stretch;
+  gap: 15px;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 400px;
+  margin: 18px auto;
+}
+
+.zhiyi-ficha .zhiyi-curiosidad-marca {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 0 0 44px;
+  padding-top: 8px;
+}
+
+.zhiyi-ficha .zhiyi-curiosidad-marca::after {
+  content: "";
+  display: block;
+  flex: 1;
+  width: 1px;
+  min-height: 24px;
+  margin-top: 9px;
+  background: linear-gradient(
+    to bottom,
+    var(--groups),
+    #000
+  );
+}
+
+.zhiyi-ficha .zhiyi-rombo {
+  display: grid;
+  place-items: center;
+  box-sizing: border-box;
+  flex: 0 0 30px;
+  width: 30px;
+  height: 30px;
+  border: 1px solid transparent;
+  background:
+    linear-gradient(#101010, #101010) padding-box,
+    linear-gradient(135deg, var(--groups), #000) border-box;
+  transform: rotate(45deg);
+  box-shadow: none;
+}
+
+.zhiyi-ficha .zhiyi-rombo i {
+  display: block;
+  transform: rotate(-45deg);
+  font-size: 23px;
+  line-height: 1;
+  color: var(--groups);
+  text-shadow: none;
+}
+
+@supports (background-clip: text) or (-webkit-background-clip: text) {
+  .zhiyi-ficha .zhiyi-rombo i::before,
+  .zhiyi-ficha .zhiyi-separador i::before {
+    display: inline-block;
+    background: linear-gradient(
+      155deg,
+      var(--groups) 15%,
+      var(--groups) 35%,
+      #000 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.zhiyi-ficha .zhiyi-curiosidad-texto {
+  flex: 1;
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 14px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-left: 1px solid var(--groups);
+  background: linear-gradient(
+    120deg,
+    rgba(0, 0, 0, 0.28),
+    rgba(0, 0, 0, 0.07)
+  );
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+  box-shadow: none;
+}
+
+.zhiyi-ficha .zhiyi-petalos {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  overflow: hidden;
+  border-radius: inherit;
+  pointer-events: none;
+  user-select: none;
+}
+
+.zhiyi-ficha .zhiyi-petalos > span {
+  position: absolute;
+  top: -20px;
+  left: var(--x);
+  display: block;
+  width: 7px;
+  height: 11px;
+  border-radius: 85% 15% 75% 25%;
+  background: linear-gradient(
+    135deg,
+    #e9c7d0,
+    var(--groups)
+  );
+  opacity: 0;
+  pointer-events: none;
+  animation: zhiyi-sakura var(--duracion) linear infinite;
+  animation-delay: var(--demora);
+}
+
+.zhiyi-ficha .zhiyi-petalos > span:nth-child(1) {
+  --x: 8%;
+  --duracion: 17s;
+  --demora: -9s;
+}
+
+.zhiyi-ficha .zhiyi-petalos > span:nth-child(2) {
+  --x: 23%;
+  --duracion: 21s;
+  --demora: -3s;
+}
+
+.zhiyi-ficha .zhiyi-petalos > span:nth-child(3) {
+  --x: 39%;
+  --duracion: 19s;
+  --demora: -14s;
+}
+
+.zhiyi-ficha .zhiyi-petalos > span:nth-child(4) {
+  --x: 55%;
+  --duracion: 24s;
+  --demora: -7s;
+}
+
+.zhiyi-ficha .zhiyi-petalos > span:nth-child(5) {
+  --x: 71%;
+  --duracion: 18s;
+  --demora: -12s;
+}
+
+.zhiyi-ficha .zhiyi-petalos > span:nth-child(6) {
+  --x: 88%;
+  --duracion: 23s;
+  --demora: -18s;
+}
+
+.zhiyi-ficha .zhiyi-petalos > span:nth-child(7) {
+  --x: 32%;
+  --duracion: 26s;
+  --demora: -21s;
+  width: 5px;
+  height: 8px;
+}
+
+.zhiyi-ficha .zhiyi-petalos > span:nth-child(8) {
+  --x: 64%;
+  --duracion: 22s;
+  --demora: -5s;
+  width: 6px;
+  height: 9px;
+}
+
+@keyframes zhiyi-sakura {
+  0% {
+    top: -20px;
+    opacity: 0;
+    transform: translateX(0) rotate(0deg);
+  }
+  10% {
+    opacity: 0.35;
+  }
+  35% {
+    transform: translateX(16px) rotate(100deg);
+  }
+  65% {
+    transform: translateX(-12px) rotate(210deg);
+  }
+  90% {
+    opacity: 0.3;
+  }
+  100% {
+    top: 105%;
+    opacity: 0;
+    transform: translateX(18px) rotate(320deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .zhiyi-ficha .ficha-nombre a {
+    animation: none;
+    background-position: 0% 50%;
+  }
+
+  .zhiyi-ficha .zhiyi-capitulo::after {
+    animation: none;
+  }
+
+  .zhiyi-ficha .zhiyi-petalos {
+    display: none;
+  }
+}
