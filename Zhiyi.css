@@ -91,7 +91,7 @@
   margin: 20px auto;
   padding: 0;
   border: 0;
-  background: none;
+  background: transparent;
   box-shadow: none;
 }
 
@@ -105,6 +105,20 @@
   background-size: contain;
   background-repeat: no-repeat;
   pointer-events: none;
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    #000 calc(50% - 25px),
+    transparent calc(50% - 25px),
+    transparent calc(50% + 25px),
+    #000 calc(50% + 25px)
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    #000 calc(50% - 25px),
+    transparent calc(50% - 25px),
+    transparent calc(50% + 25px),
+    #000 calc(50% + 25px)
+  );
 }
 
 .zhiyi-ficha .zhiyi-capitulo::before {
@@ -126,47 +140,61 @@
 .zhiyi-ficha .zhiyi-capitulo > span {
   position: relative;
   z-index: 2;
-  isolation: isolate;
-  display: block;
-  box-sizing: border-box;
-  width: 100%;
+  display: inline-block;
   max-width: 100%;
-  padding: 8px 12px;
+  padding: 0 8px;
+  box-sizing: border-box;
   font-family: "Zhiyi Fujisan", serif;
   font-size: 34px;
   font-weight: 400;
   font-style: normal;
   line-height: 1.35;
   text-align: center;
-  overflow-wrap: anywhere;
+  color: var(--groups);
   text-shadow: none;
+  background-color: transparent;
 }
 
-.zhiyi-ficha .zhiyi-capitulo > span::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: linear-gradient(
-    to right,
-    transparent 0%,
-    rgba(12, 12, 12, 0.82) 20%,
-    #0c0c0c 38%,
-    #0c0c0c 62%,
-    rgba(12, 12, 12, 0.82) 80%,
-    transparent 100%
-  );
-  pointer-events: none;
+@supports (background-clip: text) or (-webkit-background-clip: text) {
+  .zhiyi-ficha .zhiyi-capitulo > span {
+    background-image: linear-gradient(
+      90deg,
+      var(--groups) 0%,
+      var(--groups) 42%,
+      #252525 58%,
+      #252525 100%
+    );
+    background-size: 300% 100%;
+    background-position: 100% 50%;
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    animation: zhiyi-tinta 9s ease-in-out infinite;
+  }
 }
 
 @keyframes zhiyi-vaho {
   from {
     opacity: 0.18;
-    transform: translate(-2px, 2px) scale(0.98);
+    background-position: calc(50% - 3px) center;
   }
   to {
     opacity: 0.38;
-    transform: translate(2px, -2px) scale(1.03);
+    background-position: calc(50% + 3px) center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .zhiyi-ficha .zhiyi-capitulo > span {
+    animation: none;
+    background-position: 0% 50%;
+  }
+
+  .zhiyi-ficha .zhiyi-capitulo::after {
+    animation: none;
+    opacity: 0.25;
   }
 }
 
