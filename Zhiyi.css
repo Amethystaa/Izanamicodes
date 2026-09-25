@@ -480,3 +480,34 @@ mask-image: linear-gradient(
     display: none;
   }
 }
+
+.zhiyi-ficha .zhiyi-collar {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+  line-height: 0;
+}
+
+.zhiyi-ficha .zhiyi-collar img {
+  display: block;
+  width: 200px;
+  max-width: 100%;
+  height: auto;
+  filter: grayscale(1) brightness(0.6);
+  opacity: 0.65;
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    #000 15%,
+    #000 65%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    #000 15%,
+    #000 65%,
+    transparent 100%
+  );
+}
