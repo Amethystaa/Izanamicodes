@@ -105,20 +105,20 @@
   background-size: contain;
   background-repeat: no-repeat;
   pointer-events: none;
-  -webkit-mask-image: linear-gradient(
-    to bottom,
-    #000 calc(50% - 25px),
-    transparent calc(50% - 25px),
-    transparent calc(50% + 25px),
-    #000 calc(50% + 25px)
-  );
-  mask-image: linear-gradient(
-    to bottom,
-    #000 calc(50% - 25px),
-    transparent calc(50% - 25px),
-    transparent calc(50% + 25px),
-    #000 calc(50% + 25px)
-  );
+ -webkit-mask-image: linear-gradient(
+  to bottom,
+  #000 calc(50% - 35px),
+  transparent calc(50% - 20px),
+  transparent calc(50% + 20px),
+  #000 calc(50% + 35px)
+);
+mask-image: linear-gradient(
+  to bottom,
+  #000 calc(50% - 35px),
+  transparent calc(50% - 20px),
+  transparent calc(50% + 20px),
+  #000 calc(50% + 35px)
+);
 }
 
 .zhiyi-ficha .zhiyi-capitulo::before {
