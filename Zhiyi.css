@@ -368,93 +368,133 @@ mask-image: linear-gradient(
   inset: 0;
   z-index: 3;
   overflow: hidden;
+  border-radius: inherit;
   pointer-events: none;
   user-select: none;
   -webkit-mask-image: linear-gradient(
     to bottom,
     transparent,
-    #000 8%,
-    #000 88%,
+    #000 6%,
+    #000 92%,
     transparent
   );
   mask-image: linear-gradient(
     to bottom,
     transparent,
-    #000 8%,
-    #000 88%,
+    #000 6%,
+    #000 92%,
     transparent
   );
 }
 
 .zhiyi-ficha .zhiyi-petalos > span {
   position: absolute;
-  top: -15px;
+  top: -20px;
   left: var(--x);
   display: block;
-  width: 6px;
-  height: 9px;
+  width: 9px;
+  height: 13px;
+  background: linear-gradient(
+    145deg,
+    #fff0f4 5%,
+    #f3c6d3 55%,
+    #d995ac 100%
+  );
   border-radius: 65% 65% 65% 65% / 45% 45% 80% 80%;
-  background: linear-gradient(145deg, #f5dce4, #dba6b8);
   clip-path: polygon(
-    50% 15%, 65% 0%, 85% 7%, 100% 28%,
-    96% 53%, 78% 78%, 50% 100%, 22% 78%,
-    4% 53%, 0% 28%, 15% 7%, 35% 0%
+    50% 15%,
+    65% 0%,
+    85% 7%,
+    100% 28%,
+    96% 53%,
+    78% 78%,
+    50% 100%,
+    22% 78%,
+    4% 53%,
+    0% 28%,
+    15% 7%,
+    35% 0%
   );
   opacity: 0;
+  pointer-events: none;
   animation: zhiyi-sakura var(--duracion) linear infinite;
   animation-delay: var(--demora);
 }
 
 .zhiyi-ficha .zhiyi-petalos > span:nth-child(1) {
-  --x: 15%;
-  --duracion: 42s;
-  --demora: -8s;
+  --x: 8%;
+  --duracion: 17s;
+  --demora: -9s;
 }
 
 .zhiyi-ficha .zhiyi-petalos > span:nth-child(2) {
-  --x: 38%;
-  --duracion: 50s;
-  --demora: -34s;
+  --x: 23%;
+  --duracion: 21s;
+  --demora: -3s;
 }
 
 .zhiyi-ficha .zhiyi-petalos > span:nth-child(3) {
-  --x: 62%;
-  --duracion: 46s;
-  --demora: -18s;
+  --x: 39%;
+  --duracion: 19s;
+  --demora: -14s;
 }
 
 .zhiyi-ficha .zhiyi-petalos > span:nth-child(4) {
-  --x: 82%;
-  --duracion: 54s;
-  --demora: -43s;
+  --x: 55%;
+  --duracion: 24s;
+  --demora: -7s;
 }
 
-.zhiyi-ficha .zhiyi-petalos > span:nth-child(n + 5) {
-  display: none;
+.zhiyi-ficha .zhiyi-petalos > span:nth-child(5) {
+  --x: 71%;
+  --duracion: 18s;
+  --demora: -12s;
+}
+
+.zhiyi-ficha .zhiyi-petalos > span:nth-child(6) {
+  --x: 88%;
+  --duracion: 23s;
+  --demora: -18s;
+}
+
+.zhiyi-ficha .zhiyi-petalos > span:nth-child(7) {
+  --x: 32%;
+  --duracion: 26s;
+  --demora: -21s;
+  width: 5px;
+  height: 8px;
+}
+
+.zhiyi-ficha .zhiyi-petalos > span:nth-child(8) {
+  --x: 64%;
+  --duracion: 22s;
+  --demora: -5s;
+  width: 6px;
+  height: 9px;
 }
 
 @keyframes zhiyi-sakura {
   0% {
-    top: -15px;
+    top: -20px;
     opacity: 0;
-    transform: translateX(0) rotate(-20deg);
+    transform: translateX(0) rotate(0deg);
   }
-  15% {
-    opacity: 0.32;
+  10% {
+    opacity: 0.55;
   }
-  40% {
-    transform: translateX(10px) rotate(35deg);
+  35% {
+    transform: translateX(16px) rotate(100deg);
   }
-  70% {
-    transform: translateX(-6px) rotate(75deg);
+  65% {
+    transform: translateX(-12px) rotate(210deg);
   }
-  85% {
-    opacity: 0.32;
+  90% {
+    opacity: 0.45;
   }
   100% {
-    top: 100%;
+    top: 105%;
     opacity: 0;
-    transform: translateX(5px) rotate(115deg);
+    transform: translateX(18px) rotate(320deg);
   }
 }
 
