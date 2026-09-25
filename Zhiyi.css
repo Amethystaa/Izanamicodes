@@ -87,9 +87,9 @@
   box-sizing: border-box;
   width: 100%;
   max-width: 400px;
-  height: 210px;
+  height: 190px;
   margin: 20px auto;
-  padding: 0 8px;
+  padding: 0;
   border: 0;
   background: none;
   box-shadow: none;
@@ -99,7 +99,7 @@
 .zhiyi-ficha .zhiyi-capitulo::after {
   content: "";
   position: absolute;
-  inset: 8px 0;
+  inset: 10px 0;
   background-image: var(--imagen-titulo, none);
   background-position: center;
   background-size: contain;
@@ -109,7 +109,7 @@
 
 .zhiyi-ficha .zhiyi-capitulo::before {
   z-index: 1;
-  filter: grayscale(1) brightness(0.65) contrast(1.2);
+  filter: grayscale(1) brightness(0.7) contrast(1.15);
   opacity: 0.65;
 }
 
@@ -117,19 +117,21 @@
   z-index: 0;
   filter:
     brightness(0)
-    drop-shadow(0 0 7px var(--groups))
-    drop-shadow(0 0 15px var(--groups))
-    blur(7px);
-  transform-origin: center;
-  animation: zhiyi-vaho 7s ease-in-out infinite alternate;
+    drop-shadow(0 0 8px var(--groups))
+    drop-shadow(0 0 16px var(--groups))
+    blur(8px);
+  animation: zhiyi-vaho 8s ease-in-out infinite alternate;
 }
 
 .zhiyi-ficha .zhiyi-capitulo > span {
   position: relative;
   z-index: 2;
-  display: inline-block;
+  isolation: isolate;
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
   max-width: 100%;
-  padding: 8px 0;
+  padding: 8px 12px;
   font-family: "Zhiyi Fujisan", serif;
   font-size: 34px;
   font-weight: 400;
@@ -137,18 +139,34 @@
   line-height: 1.35;
   text-align: center;
   overflow-wrap: anywhere;
-  color: var(--groups);
-  filter: drop-shadow(0 2px 2px #111);
+  text-shadow: none;
+}
+
+.zhiyi-ficha .zhiyi-capitulo > span::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(12, 12, 12, 0.82) 20%,
+    #0c0c0c 38%,
+    #0c0c0c 62%,
+    rgba(12, 12, 12, 0.82) 80%,
+    transparent 100%
+  );
+  pointer-events: none;
 }
 
 @keyframes zhiyi-vaho {
   from {
-    opacity: 0.2;
-    transform: translate(-3px, 2px) scale(0.98);
+    opacity: 0.18;
+    transform: translate(-2px, 2px) scale(0.98);
   }
   to {
-    opacity: 0.5;
-    transform: translate(3px, -2px) scale(1.04);
+    opacity: 0.38;
+    transform: translate(2px, -2px) scale(1.03);
   }
 }
 
