@@ -486,15 +486,15 @@ mask-image: linear-gradient(
 }
 
 .zhiyi-ficha .zhiyi-collar {
-  position: absolute;
-  top: -70px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10;
-  width: 200px;
+  position: static;
+  display: flex;
+  justify-content: center;
+  width: 180px;
   max-width: 100%;
-  margin: 0;
+  height: auto;
+  margin: 0 auto 25px;
   padding: 0;
+  transform: none;
   line-height: 0;
   pointer-events: none;
 }
