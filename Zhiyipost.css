@@ -1,0 +1,358 @@
+@font-face {
+  font-family: "Zhiyi Blackforrest";
+  src: url("https://cdn.jsdelivr.net/gh/Amethystaa/Izanamicodes@137f18f4712dc37cc5e1c517e045e712caa9d435/Blackforrest%20Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+.zhiyi-post {
+  position: relative;
+  isolation: isolate;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 560px;
+  margin: 35px auto;
+  padding: 30px 35px;
+  background: transparent;
+}
+
+.zhiyi-post .zhiyi-post-cabecera {
+  position: relative;
+  padding: 5px 0 28px;
+  text-align: center;
+}
+
+.zhiyi-post .zhiyi-post-icono {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto 22px;
+  color: var(--groups);
+}
+
+.zhiyi-post .zhiyi-post-icono i {
+  display: block;
+  font-size: 58px;
+  line-height: 1.2;
+  color: var(--groups);
+  text-shadow: none;
+  filter:
+    drop-shadow(0 3px 3px rgba(0, 0, 0, 0.8))
+    drop-shadow(0 0 5px var(--groups));
+  animation: zhiyi-post-emblema 7s ease-in-out infinite alternate;
+}
+
+@keyframes zhiyi-post-emblema {
+  from {
+    filter:
+      drop-shadow(0 3px 3px rgba(0, 0, 0, 0.8))
+      drop-shadow(0 0 3px var(--groups));
+  }
+  to {
+    filter:
+      drop-shadow(0 3px 3px rgba(0, 0, 0, 0.8))
+      drop-shadow(0 0 9px var(--groups));
+  }
+}
+
+.zhiyi-post .zhiyi-post-titulo {
+  display: block;
+  margin: 0;
+  padding: 5px 0 10px;
+  font-family: "Zhiyi Blackforrest", Georgia, serif;
+  font-size: 48px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.3;
+  text-transform: none;
+  overflow-wrap: anywhere;
+  color: var(--groups);
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.7));
+}
+
+@supports (background-clip: text) or (-webkit-background-clip: text) {
+  .zhiyi-post .zhiyi-post-titulo {
+    background-image: linear-gradient(
+      110deg,
+      var(--groups) 0%,
+      #555 25%,
+      var(--groups) 50%,
+      #555 75%,
+      var(--groups) 100%
+    );
+    background-size: 220% 100%;
+    background-position: 0% 50%;
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    animation: zhiyi-post-olas 12s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes zhiyi-post-olas {
+  from {
+    background-position: 0% 50%;
+  }
+  to {
+    background-position: 100% 50%;
+  }
+}
+
+.zhiyi-post .zhiyi-post-frase {
+  max-width: 400px;
+  margin: 8px auto 0;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.8;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--groups);
+}
+
+.zhiyi-post .zhiyi-post-cuerpo {
+  position: relative;
+  isolation: isolate;
+  margin-top: 10px;
+}
+
+.zhiyi-post .zhiyi-post-texto {
+  position: relative;
+  z-index: 1;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.9;
+  text-align: justify;
+  overflow-wrap: break-word;
+}
+
+.zhiyi-post .zhiyi-post-separador {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  width: 100%;
+  max-width: 350px;
+  margin: 24px auto 0;
+  color: var(--groups);
+}
+
+.zhiyi-post .zhiyi-post-separador::before,
+.zhiyi-post .zhiyi-post-separador::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+}
+
+.zhiyi-post .zhiyi-post-separador::before {
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--groups)
+  );
+}
+
+.zhiyi-post .zhiyi-post-separador::after {
+  background: linear-gradient(
+    to left,
+    transparent,
+    var(--groups)
+  );
+}
+
+.zhiyi-post .zhiyi-post-separador i {
+  display: block;
+  flex: 0 0 auto;
+  font-size: 22px;
+  line-height: 1;
+  color: var(--groups);
+  text-shadow: none;
+}
+
+.zhiyi-post .zhiyi-post-datos {
+  margin: 24px auto 0;
+  font-family: inherit;
+  font-size: 10px;
+  line-height: 1.7;
+  letter-spacing: 0.8px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.zhiyi-post .zhiyi-post-datos-fila {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 12px;
+}
+
+.zhiyi-post .zhiyi-post-barra {
+  color: var(--groups);
+}
+
+.zhiyi-post .zhiyi-post-conquien {
+  margin-top: 6px;
+  color: var(--groups);
+}
+
+.zhiyi-post .zhiyi-post-petalos {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    #000 6%,
+    #000 92%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    #000 6%,
+    #000 92%,
+    transparent
+  );
+}
+
+.zhiyi-post .zhiyi-post-petalos > span {
+  position: absolute;
+  top: -20px;
+  left: var(--x);
+  display: block;
+  width: 9px;
+  height: 13px;
+  background: linear-gradient(
+    145deg,
+    #fff0f4 5%,
+    #f3c6d3 55%,
+    #d995ac 100%
+  );
+  border-radius: 65% 65% 65% 65% / 45% 45% 80% 80%;
+  clip-path: polygon(
+    50% 15%,
+    65% 0%,
+    85% 7%,
+    100% 28%,
+    96% 53%,
+    78% 78%,
+    50% 100%,
+    22% 78%,
+    4% 53%,
+    0% 28%,
+    15% 7%,
+    35% 0%
+  );
+  opacity: 0;
+  animation: zhiyi-post-sakura var(--duracion) linear infinite;
+  animation-delay: var(--demora);
+}
+
+.zhiyi-post .zhiyi-post-petalos > span:nth-child(1) {
+  --x: 8%;
+  --duracion: 17s;
+  --demora: -9s;
+}
+
+.zhiyi-post .zhiyi-post-petalos > span:nth-child(2) {
+  --x: 23%;
+  --duracion: 21s;
+  --demora: -3s;
+}
+
+.zhiyi-post .zhiyi-post-petalos > span:nth-child(3) {
+  --x: 39%;
+  --duracion: 19s;
+  --demora: -14s;
+}
+
+.zhiyi-post .zhiyi-post-petalos > span:nth-child(4) {
+  --x: 55%;
+  --duracion: 24s;
+  --demora: -7s;
+}
+
+.zhiyi-post .zhiyi-post-petalos > span:nth-child(5) {
+  --x: 71%;
+  --duracion: 18s;
+  --demora: -12s;
+}
+
+.zhiyi-post .zhiyi-post-petalos > span:nth-child(6) {
+  --x: 88%;
+  --duracion: 23s;
+  --demora: -18s;
+}
+
+.zhiyi-post .zhiyi-post-petalos > span:nth-child(7) {
+  --x: 32%;
+  --duracion: 26s;
+  --demora: -21s;
+  width: 5px;
+  height: 8px;
+}
+
+.zhiyi-post .zhiyi-post-petalos > span:nth-child(8) {
+  --x: 64%;
+  --duracion: 22s;
+  --demora: -5s;
+  width: 6px;
+  height: 9px;
+}
+
+@keyframes zhiyi-post-sakura {
+  0% {
+    top: -20px;
+    opacity: 0;
+    transform: translateX(0) rotate(0deg);
+  }
+  10% {
+    opacity: 0.55;
+  }
+  35% {
+    transform: translateX(16px) rotate(100deg);
+  }
+  65% {
+    transform: translateX(-12px) rotate(210deg);
+  }
+  90% {
+    opacity: 0.45;
+  }
+  100% {
+    top: 105%;
+    opacity: 0;
+    transform: translateX(18px) rotate(320deg);
+  }
+}
+
+@media (max-width: 600px) {
+  .zhiyi-post {
+    padding: 25px 18px;
+  }
+
+  .zhiyi-post .zhiyi-post-titulo {
+    font-size: 38px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .zhiyi-post .zhiyi-post-titulo {
+    animation: none;
+    background-position: 0% 50%;
+  }
+
+  .zhiyi-post .zhiyi-post-icono i {
+    animation: none;
+  }
+
+  .zhiyi-post .zhiyi-post-petalos {
+    display: none;
+  }
+}
