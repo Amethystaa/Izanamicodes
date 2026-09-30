@@ -24,16 +24,81 @@
 }
 
 .zhiyi-post .zhiyi-post-fecha {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  place-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 360px;
+  min-height: 130px;
+  margin: 0 auto 24px;
+  padding: 35px 12px;
+}
+
+.zhiyi-post .zhiyi-post-fecha::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-color: var(--groups);
+  background-image: var(--png-fecha, none);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+  -webkit-mask-image:
+    linear-gradient(
+      to bottom,
+      transparent,
+      #000 20%,
+      #000 calc(50% - 36px),
+      transparent calc(50% - 18px),
+      transparent calc(50% + 18px),
+      #000 calc(50% + 36px),
+      #000 80%,
+      transparent
+    ),
+    linear-gradient(
+      to right,
+      transparent,
+      #000 20%,
+      #000 80%,
+      transparent
+    );
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(
+      to bottom,
+      transparent,
+      #000 20%,
+      #000 calc(50% - 36px),
+      transparent calc(50% - 18px),
+      transparent calc(50% + 18px),
+      #000 calc(50% + 36px),
+      #000 80%,
+      transparent
+    ),
+    linear-gradient(
+      to right,
+      transparent,
+      #000 20%,
+      #000 80%,
+      transparent
+    );
+  mask-composite: intersect;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.zhiyi-post .zhiyi-post-fecha-contenido {
+  position: relative;
+  z-index: 1;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 14px;
-  box-sizing: border-box;
-  width: fit-content;
   max-width: 100%;
-  margin: 0 0 26px;
-  padding: 0;
-  border: 0;
   text-align: left;
 }
 
@@ -108,59 +173,8 @@
   }
 }
 
-.zhiyi-post .zhiyi-post-portada {
-  position: relative;
-  isolation: isolate;
-  display: grid;
-  place-items: center;
-  box-sizing: border-box;
-  width: 100%;
-  min-height: 190px;
-  padding: 55px 0;
-}
-
-.zhiyi-post .zhiyi-post-portada::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background-image: var(--png-titulo, none);
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-  filter:
-    grayscale(1)
-    brightness(0.65)
-    drop-shadow(0 0 8px var(--groups));
-  opacity: 0.65;
-  -webkit-mask-image: linear-gradient(
-    to bottom,
-    transparent 0%,
-    #000 15%,
-    #000 calc(50% - 48px),
-    transparent calc(50% - 22px),
-    transparent calc(50% + 22px),
-    #000 calc(50% + 48px),
-    #000 85%,
-    transparent 100%
-  );
-  mask-image: linear-gradient(
-    to bottom,
-    transparent 0%,
-    #000 15%,
-    #000 calc(50% - 48px),
-    transparent calc(50% - 22px),
-    transparent calc(50% + 22px),
-    #000 calc(50% + 48px),
-    #000 85%,
-    transparent 100%
-  );
-  pointer-events: none;
-}
-
 .zhiyi-post .zhiyi-post-titulo {
   position: relative;
-  z-index: 1;
   display: block;
   width: 100%;
   margin: 0;
@@ -182,10 +196,8 @@
   box-sizing: border-box;
   width: 100%;
   max-width: 410px;
-  margin: -38px auto 0;
-  padding: 20px 30px;
-  border: 0;
-  background: transparent;
+  margin: 0 auto;
+  padding: 7px 30px 12px;
   font-family: inherit;
   font-size: 10px;
   font-weight: 400;
@@ -200,43 +212,31 @@
 .zhiyi-post .zhiyi-post-frase::before {
   content: "";
   position: absolute;
-  inset: 0;
-  z-index: -2;
+  inset: -10px 0;
+  z-index: 0;
+  background-color: var(--groups);
   background-image: var(--imagen-frase, none);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  filter: grayscale(1) brightness(0.4);
-  opacity: 0.65;
+  background-blend-mode: multiply;
+  opacity: 0.25;
   -webkit-mask-image: radial-gradient(
     ellipse at center,
-    #000 20%,
-    transparent 72%
+    #000 10%,
+    transparent 70%
   );
   mask-image: radial-gradient(
     ellipse at center,
-    #000 20%,
-    transparent 72%
-  );
-  pointer-events: none;
-}
-
-.zhiyi-post .zhiyi-post-frase::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: radial-gradient(
-    ellipse at center,
-    var(--groups),
+    #000 10%,
     transparent 70%
   );
-  opacity: 0.13;
   pointer-events: none;
 }
 
 .zhiyi-post .zhiyi-post-frase > span {
   position: relative;
+  z-index: 1;
   display: block;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.85);
 }
