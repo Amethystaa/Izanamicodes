@@ -19,7 +19,7 @@
 
 .zhiyi-post .zhiyi-post-cabecera {
   position: relative;
-  padding: 5px 0 28px;
+  padding: 5px 0 0;
   text-align: center;
 }
 
@@ -60,20 +60,82 @@
 .zhiyi-post .zhiyi-post-titulo {
   display: block;
   margin: 0;
-  padding: 5px 0 10px;
+  padding: 5px 0 0;
   font-family: "Zhiyi Blackforrest", Georgia, serif;
-  font-size: 48px;
+  font-size: 65px;
   font-weight: 400;
   font-style: normal;
-  line-height: 1.3;
+  line-height: 1.15;
   text-transform: none;
   overflow-wrap: anywhere;
   color: var(--groups);
   filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.7));
 }
 
+.zhiyi-post .zhiyi-post-frase {
+  max-width: 400px;
+  margin: 2px auto 0;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.8;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--groups);
+}
+
+.zhiyi-post .zhiyi-post-division {
+  width: 100%;
+  max-width: 400px;
+  height: 1px;
+  margin: 25px auto;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--groups),
+    transparent
+  );
+}
+
+.zhiyi-post .zhiyi-post-cuerpo {
+  position: relative;
+  isolation: isolate;
+  margin-top: 10px;
+}
+
+.zhiyi-post .zhiyi-post-texto {
+  position: relative;
+  z-index: 1;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.9;
+  text-align: justify;
+  overflow-wrap: break-word;
+}
+
+.zhiyi-post .zhiyi-post-capitular {
+  float: left;
+  display: block;
+  margin: 4px 9px 0 0;
+  padding: 0 2px;
+  font-family: "Zhiyi Blackforrest", Georgia, serif;
+  font-size: 65px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 0.95;
+  color: var(--groups);
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.7));
+}
+
+.zhiyi-post .zhiyi-post-texto::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
 @supports (background-clip: text) or (-webkit-background-clip: text) {
-  .zhiyi-post .zhiyi-post-titulo {
+  .zhiyi-post .zhiyi-post-titulo,
+  .zhiyi-post .zhiyi-post-capitular {
     background-image: linear-gradient(
       110deg,
       var(--groups) 0%,
@@ -100,34 +162,6 @@
   to {
     background-position: 100% 50%;
   }
-}
-
-.zhiyi-post .zhiyi-post-frase {
-  max-width: 400px;
-  margin: 8px auto 0;
-  font-family: inherit;
-  font-size: 11px;
-  font-weight: 400;
-  line-height: 1.8;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: var(--groups);
-}
-
-.zhiyi-post .zhiyi-post-cuerpo {
-  position: relative;
-  isolation: isolate;
-  margin-top: 10px;
-}
-
-.zhiyi-post .zhiyi-post-texto {
-  position: relative;
-  z-index: 1;
-  font-family: inherit;
-  font-size: 14px;
-  line-height: 1.9;
-  text-align: justify;
-  overflow-wrap: break-word;
 }
 
 .zhiyi-post .zhiyi-post-separador {
@@ -338,12 +372,13 @@
   }
 
   .zhiyi-post .zhiyi-post-titulo {
-    font-size: 38px;
+    font-size: 48px;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .zhiyi-post .zhiyi-post-titulo {
+  .zhiyi-post .zhiyi-post-titulo,
+  .zhiyi-post .zhiyi-post-capitular {
     animation: none;
     background-position: 0% 50%;
   }
