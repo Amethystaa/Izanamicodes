@@ -397,7 +397,7 @@
   inset: -9px;
   border-radius: 50%;
   background: var(--kass-accent);
-  opacity: .10;
+  opacity: .1;
   filter: blur(13px);
   pointer-events: none;
 }
@@ -489,74 +489,50 @@
     0 2px 4px rgba(0, 0, 0, .85),
     0 0 7px var(--kass-accent);
   animation: kassPostPluma 7s ease-in-out infinite;
-  transform:
-    translate(var(--base-x), var(--base-y))
-    rotate(var(--base-rot))
-    scaleX(var(--flip, 1));
 }
 
-/* izquierda externa — invertida */
 .kass-post-titulo-plumas .pt1 {
-  --base-x: 0px;
-  --base-y: 34px;
-  --base-rot: -18deg;
-  --flip: -1;
   left: 6px;
-  top: 24px;
-  font-size: 30px;
+  top: 58px;
+  font-size: 31px;
   opacity: .24;
+  transform: scaleX(-1) rotate(18deg);
   animation-delay: -1s;
 }
 
-/* izquierda interna — invertida */
 .kass-post-titulo-plumas .pt2 {
-  --base-x: 0px;
-  --base-y: 0px;
-  --base-rot: -6deg;
-  --flip: -1;
   left: 48px;
-  top: 58px;
-  font-size: 24px;
-  opacity: .17;
+  top: 30px;
+  font-size: 26px;
+  opacity: .18;
+  transform: scaleX(-1) rotate(6deg);
   animation-delay: -2.6s;
 }
 
-/* derecha alta */
 .kass-post-titulo-plumas .pt3 {
-  --base-x: 0px;
-  --base-y: 0px;
-  --base-rot: 16deg;
-  --flip: 1;
   right: 8px;
-  top: 18px;
-  font-size: 32px;
+  top: 54px;
+  font-size: 33px;
   opacity: .22;
+  rotate: 16deg;
   animation-delay: -3.8s;
 }
 
-/* derecha media */
 .kass-post-titulo-plumas .pt4 {
-  --base-x: 0px;
-  --base-y: 0px;
-  --base-rot: 8deg;
-  --flip: 1;
-  right: 56px;
-  top: 58px;
-  font-size: 24px;
-  opacity: .16;
+  right: 52px;
+  top: 25px;
+  font-size: 27px;
+  opacity: .18;
+  rotate: 8deg;
   animation-delay: -5s;
 }
 
-/* derecha superior pequeña */
 .kass-post-titulo-plumas .pt5 {
-  --base-x: 0px;
-  --base-y: 0px;
-  --base-rot: 28deg;
-  --flip: 1;
-  right: 94px;
-  top: -2px;
-  font-size: 19px;
+  right: 98px;
+  top: 3px;
+  font-size: 21px;
   opacity: .14;
+  rotate: 28deg;
   animation-delay: -6.2s;
 }
 
@@ -686,8 +662,9 @@
   color: #aaa8aa;
 }
 
-.kass-post-cuerpo p {
-  margin: 0 0 18px;
+.kass-post-texto {
+  display: block;
+  width: 100%;
 }
 
 .kass-post-cuerpo b,
@@ -705,7 +682,8 @@
 
 .kass-post-capital {
   float: left;
-  margin: 5px 14px 1px 0;
+  display: block;
+  margin: 5px 14px 2px 0;
   font-family: "KassHarpy", serif;
   font-size: 67px;
   line-height: .7;
@@ -722,6 +700,7 @@
   position: relative;
   width: 100%;
   margin: 34px auto 30px;
+  clear: both;
 }
 
 .kass-post-seccion-divisor {
@@ -849,17 +828,11 @@
 
 @keyframes kassPostPluma {
   0%, 100% {
-    transform:
-      translate(var(--base-x), var(--base-y))
-      rotate(var(--base-rot))
-      scaleX(var(--flip, 1));
+    translate: 0 -2px;
   }
 
   50% {
-    transform:
-      translate(calc(var(--base-x) + 5px), calc(var(--base-y) + 6px))
-      rotate(calc(var(--base-rot) + 12deg))
-      scaleX(var(--flip, 1));
+    translate: 5px 6px;
   }
 }
 
@@ -892,6 +865,10 @@
 
   .kass-post-seccion-divisor {
     max-width: 90%;
+  }
+
+  .kass-post-capital {
+    font-size: 58px;
   }
 }
 
