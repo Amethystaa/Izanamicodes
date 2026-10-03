@@ -1235,10 +1235,9 @@
   }
 }
 .kass-post{
-  --kass-accent:var(--groups,#7d3030);
+  --kass-accent:var(--groups);
   --kass-dark:#070707;
   --kass-dark2:#0d0d0d;
-  --kass-text:#aaa8aa;
   --kass-muted:#747174;
 
   position:relative;
@@ -1281,7 +1280,6 @@
   box-sizing:border-box;
 }
 
-/* FONDO */
 
 .kass-post::before{
   content:"";
@@ -1527,7 +1525,7 @@
     var(--kass-accent);
 }
 
-/* TÍTULO */
+
 
 .kass-post-titulo{
   position:relative;
@@ -1562,7 +1560,6 @@
       );
 }
 
-/* DIVISOR */
 
 .kass-post-divisor{
   width:210px;
@@ -1620,7 +1617,6 @@
   opacity:.8;
 }
 
-/* FRASE ESTILO CURIOSIDAD */
 
 .kass-post-frase{
   width:100%;
@@ -1822,7 +1818,7 @@
     var(--kass-accent);
 }
 
-/* CUERPO */
+
 
 .kass-post-cuerpo{
   position:relative;
@@ -1861,7 +1857,7 @@
   color:#c2bec2;
 }
 
-/* CAPITAL */
+
 
 .kass-post-capital{
   float:left;
@@ -1892,9 +1888,6 @@
       );
 }
 
-/* SEPARADOR INTERNO */
-
-/* SEPARADOR INTERNO */
 
 .kass-post-seccion{
   position:relative;
@@ -2016,7 +2009,7 @@
     );
 }
 
-/* PIE */
+
 
 .kass-post-pie{
   position:relative;
@@ -2069,7 +2062,6 @@
     );
 }
 
-/* RESPONSIVE */
 
 @media(max-width:600px){
 
