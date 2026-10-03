@@ -501,7 +501,7 @@
 }
 
 .kass-post-titulo-plumas .pt2 {
-  left: 48px;
+  left: -8px;
   top: 30px;
   font-size: 26px;
   opacity: .18;
@@ -519,7 +519,7 @@
 }
 
 .kass-post-titulo-plumas .pt4 {
-  right: 52px;
+  right: -12px;
   top: 25px;
   font-size: 27px;
   opacity: .18;
