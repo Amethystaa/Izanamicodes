@@ -472,10 +472,10 @@
 .kass-post-titulo-plumas {
   position: absolute;
   z-index: 1;
-  width: 360px;
-  height: 105px;
+  width: 430px;
+  height: 125px;
   left: 50%;
-  top: -25px;
+  top: -28px;
   transform: translateX(-50%);
   overflow: visible;
   pointer-events: none;
@@ -489,30 +489,75 @@
     0 2px 4px rgba(0, 0, 0, .85),
     0 0 7px var(--kass-accent);
   animation: kassPostPluma 7s ease-in-out infinite;
+  transform:
+    translate(var(--base-x), var(--base-y))
+    rotate(var(--base-rot))
+    scaleX(var(--flip, 1));
 }
 
+/* izquierda externa — invertida */
 .kass-post-titulo-plumas .pt1 {
-  left: 2px;
-  top: 34px;
-  font-size: 24px;
+  --base-x: 0px;
+  --base-y: 34px;
+  --base-rot: -18deg;
+  --flip: -1;
+  left: 6px;
+  top: 24px;
+  font-size: 30px;
   opacity: .24;
   animation-delay: -1s;
 }
 
+/* izquierda interna — invertida */
 .kass-post-titulo-plumas .pt2 {
-  right: 4px;
-  top: 20px;
-  font-size: 28px;
-  opacity: .21;
-  animation-delay: -3.5s;
+  --base-x: 0px;
+  --base-y: 0px;
+  --base-rot: -6deg;
+  --flip: -1;
+  left: 48px;
+  top: 58px;
+  font-size: 24px;
+  opacity: .17;
+  animation-delay: -2.6s;
 }
 
+/* derecha alta */
 .kass-post-titulo-plumas .pt3 {
-  right: 54px;
+  --base-x: 0px;
+  --base-y: 0px;
+  --base-rot: 16deg;
+  --flip: 1;
+  right: 8px;
+  top: 18px;
+  font-size: 32px;
+  opacity: .22;
+  animation-delay: -3.8s;
+}
+
+/* derecha media */
+.kass-post-titulo-plumas .pt4 {
+  --base-x: 0px;
+  --base-y: 0px;
+  --base-rot: 8deg;
+  --flip: 1;
+  right: 56px;
+  top: 58px;
+  font-size: 24px;
+  opacity: .16;
+  animation-delay: -5s;
+}
+
+/* derecha superior pequeña */
+.kass-post-titulo-plumas .pt5 {
+  --base-x: 0px;
+  --base-y: 0px;
+  --base-rot: 28deg;
+  --flip: 1;
+  right: 94px;
   top: -2px;
-  font-size: 17px;
+  font-size: 19px;
   opacity: .14;
-  animation-delay: -5.5s;
+  animation-delay: -6.2s;
 }
 
 
@@ -779,8 +824,7 @@
 /* ANIMACIONES */
 
 @keyframes kassPluma {
-  0%,
-  100% {
+  0%, 100% {
     transform: translateY(-2px) rotate(-15deg);
     opacity: .14;
   }
@@ -792,8 +836,7 @@
 }
 
 @keyframes kassCapPluma {
-  0%,
-  100% {
+  0%, 100% {
     transform: translateY(-3px) rotate(-20deg);
     opacity: .12;
   }
@@ -805,13 +848,18 @@
 }
 
 @keyframes kassPostPluma {
-  0%,
-  100% {
-    transform: translate(0, -2px) rotate(-12deg);
+  0%, 100% {
+    transform:
+      translate(var(--base-x), var(--base-y))
+      rotate(var(--base-rot))
+      scaleX(var(--flip, 1));
   }
 
   50% {
-    transform: translate(5px, 6px) rotate(12deg);
+    transform:
+      translate(calc(var(--base-x) + 5px), calc(var(--base-y) + 6px))
+      rotate(calc(var(--base-rot) + 12deg))
+      scaleX(var(--flip, 1));
   }
 }
 
@@ -829,7 +877,8 @@
   }
 
   .kass-post-titulo-plumas {
-    width: 300px;
+    width: 320px;
+    height: 110px;
   }
 
   .kass-post-frase {
