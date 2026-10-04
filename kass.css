@@ -655,11 +655,8 @@
 .kass-post-cuerpo {
   position: relative;
   z-index: 2;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 15px;
   line-height: 1.85;
   text-align: justify;
-  color: #aaa8aa;
 }
 
 .kass-post-texto {
