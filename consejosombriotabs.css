@@ -1,0 +1,2318 @@
+
+@font-face { font-family:"Consejo Texto";src:url("https://fonts.gstatic.com/s/gideonroman/v13/e3tmeuGrVOys8sxzZgWlmXogew.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap }
+
+@font-face { font-family:"Consejo Acentos";src:url("https://fonts.gstatic.com/s/grenzegotisch/v20/Fh4hPjjqNDz1osh_jX9YfjudpBJBNV5y5wf_k1i5Lz9UcA.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap }
+
+@font-face { font-family:"Consejo Metal";src:url("https://cdn.jsdelivr.net/gh/Amethystaa/Izanamicodes@19dbce21835818269ebb353b66584793309a7a00/metal-macabre.regular.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap;unicode-range:U+0020-007E }
+
+.cs-dominio[data-dominio="alianza"] {
+  --var: var(--alianza,#897a5d);
+}
+
+.cs-dominio[data-dominio="sol"] {
+  --var: var(--imperio,#85613a);
+}
+
+.cs-dominio[data-dominio="norte"] {
+  --var: var(--northel,#4c6d7b);
+}
+
+.cs-dominio[data-dominio="bruma"] {
+  --var: var(--bruma,#4c7264);
+}
+
+.cs-dominio[data-dominio="bosque"] {
+  --var: var(--vardarien,#4e663e);
+}
+
+.cs-dominio[data-dominio="daelaeron"] {
+  --var: var(--daelarien,#97976b);
+}
+
+.cs-dominio[data-dominio="shinzen"] {
+  --var: var(--shinzen,#5d4144);
+}
+
+.cs-dominio[data-dominio="sombras"] {
+  --var: var(--sombras,#792e2e);
+}
+
+.cs-dominio[data-dominio="noctum"] {
+  --var: var(--noctum,#675a7c);
+}
+
+.cs-dominio[data-dominio="pendiente"] {
+  --var: #591b28;
+}
+
+.cs-set {
+  --cs-color: #591b28;
+  --cs-relieve: 1px 1px 0 var(--cs-color),2px 2px 0 color-mix(in srgb,var(--cs-color) 75%,#080808),3px 3px 0 color-mix(in srgb,var(--cs-color) 45%,#080808),5px 5px 9px color-mix(in srgb,var(--cs-color) 20%,transparent);
+  --cs-rojo: var(--cs-color);
+  --cs-rojo-claro: var(--cs-color);
+  --cs-tinte: color-mix(in srgb,var(--cs-color) 55%,#c5b4b7);
+  --cs-suave: color-mix(in srgb,var(--cs-color) 40%,#bfb8bc);
+  --cs-hueso: #d0c7ca;
+  --cs-fondo: transparent;
+  --cs-linea: color-mix(in srgb,var(--cs-color) 50%,transparent);
+  --cs-acento: var(--var,var(--cs-color));
+  width: 800px;
+  max-width: 100%;
+  margin: 30px auto;
+  font: 400 13px/1.85 "Consejo Texto",Georgia,serif;
+  overflow-wrap: break-word;
+  isolation: isolate;
+}
+
+.cs-set *,.cs-set *::before,.cs-set *::after {
+  box-sizing: border-box;
+}
+
+.cs-set .cs-titulo-1,.cs-set .cs-titulo-2,.cs-set .cs-titulo-3,.cs-set .cs-parrafo,.cs-set figure,.cs-set blockquote {
+  margin: 0;
+  padding: 0;
+}
+
+.cs-set a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.cs-set a:hover {
+  text-decoration: underline;
+}
+
+.cs-set a:focus-visible,.cs-set summary:focus-visible {
+  outline: 2px solid var(--cs-rojo-claro);
+  outline-offset: 4px;
+}
+
+.cs-set img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.cs-set b,.cs-set strong {
+  color: var(--cs-hueso);
+  font-weight: 700;
+}
+
+.cs-set .cs-parrafo+.cs-parrafo {
+  margin-top: 17px;
+}
+
+.cs-set .cs-acento {
+  font-family: "Consejo Acentos",Georgia,serif;
+  font-size: inherit;
+  font-weight: 400;
+  line-height: inherit;
+}
+
+.cs-gotico {
+  font: 400 40px/1.15 "Consejo Metal","Consejo Acentos",Georgia,serif;
+  color: var(--cs-rojo-claro);
+  text-align: center;
+  text-transform: none;
+  overflow-wrap: anywhere;
+}
+
+.cs-eyebrow {
+  font: 400 9px/1.6 "Consejo Texto",Georgia,serif;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--cs-tinte);
+}
+
+.cs-modulo {
+  position: relative;
+  background: transparent;
+  border: 0;
+  padding: 35px 27px;
+  margin: 0 0 20px;
+  box-shadow: none;
+}
+
+.cs-modulo::before,.cs-modulo::after {
+  content: none;
+}
+
+.cs-modulo::before {
+  content: none;
+}
+
+.cs-modulo::after {
+  bottom: 5px;
+  right: 5px;
+  border-bottom: 1px solid;
+  border-right: 1px solid;
+}
+
+.cs-cabecera {
+  text-align: center;
+}
+
+.cs-cabecera .cs-bajada {
+  max-width: 340px;
+  margin: auto;
+  font-size: 12px;
+  color: #a59da5;
+}
+
+.cs-ornamento {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  color: var(--cs-rojo-claro);
+  margin: 19px auto;
+  max-width: 250px;
+}
+
+.cs-ornamento::before,.cs-ornamento::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(90deg,transparent,var(--cs-rojo-claro));
+}
+
+.cs-ornamento::after {
+  transform: scaleX(-1);
+}
+
+.cs-emblema {
+  width: 65px;
+  height: 65px;
+  color: var(--cs-rojo-claro);
+}
+
+.cs-portada {
+  padding: 42px 37px 31px;
+  text-align: center;
+  overflow: hidden;
+  isolation: isolate;
+  background: transparent;
+}
+
+.cs-portada .cs-emblema {
+  margin: 0 auto 16px;
+  width: 78px;
+  height: 78px;
+}
+
+.cs-portada .cs-gotico {
+  font-size: clamp(39px,9vw,65px);
+  line-height: 1.18;
+  margin: 15px 0 10px;
+  padding: 18px 0 15px;
+  letter-spacing: -1px;
+}
+
+.cs-portada .cs-gotico>span {
+  display: block;
+}
+
+.cs-metal {
+  color: var(--cs-rojo-claro);
+}
+
+@supports(background-clip:text) {
+  .cs-metal {
+    background: linear-gradient(180deg,color-mix(in srgb,var(--cs-color) 85%,#c5b4b7) 0%,var(--cs-color) 28%,color-mix(in srgb,var(--cs-color) 65%,#080808) 50%,color-mix(in srgb,var(--cs-color) 85%,#c5b4b7) 74%,var(--cs-color) 100%);
+    background-size: 100% 220%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    animation: cs-penumbra 10s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes cs-penumbra { from{background-position:50% 20%}to{background-position:50% 80%} }
+
+.cs-lema {
+  max-width: 315px;
+  margin: 0 auto;
+  font-size: 9px;
+  letter-spacing: 2px;
+  line-height: 1.7;
+  text-transform: uppercase;
+  color: var(--cs-tinte);
+}
+
+.cs-prosa {
+  text-align: justify;
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.cs-capitular>.cs-parrafo:first-child::first-letter {
+  float: left;
+  font: 400 57px/.9 "Consejo Metal","Consejo Acentos",Georgia,serif;
+  color: var(--cs-rojo-claro);
+  padding: 7px 9px 1px 0;
+  text-shadow: 2px 2px 0 #000;
+}
+
+.cs-indice {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px 14px;
+  margin-top: 26px;
+  padding-top: 17px;
+  border-top: 1px solid var(--cs-linea);
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.cs-indice a {
+  color: var(--cs-tinte);
+}
+
+.cs-reglas {
+  margin-top: 25px;
+  border-top: 1px solid var(--cs-linea);
+}
+
+.cs-regla {
+  border-bottom: 1px solid var(--cs-linea);
+}
+
+.cs-regla summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  color: var(--cs-hueso);
+  font-size: 14px;
+}
+
+.cs-regla summary::-webkit-details-marker {
+  display: none;
+}
+
+.cs-regla summary::after {
+  content: "+";
+  margin-left: auto;
+  font-size: 17px;
+  color: var(--cs-rojo-claro);
+}
+
+.cs-regla[open] summary::after {
+  content: "−";
+}
+
+.cs-regla summary>span {
+  letter-spacing: 1px;
+  min-width: 20px;
+}
+
+.cs-regla>div {
+  text-align: justify;
+}
+
+.cs-dominios {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+}
+
+.cs-territorio {
+  border: 0;
+  border-top: 1px solid color-mix(in srgb,var(--var) 65%,transparent);
+  background: transparent;
+  min-width: 0;
+}
+
+.cs-territorio .cs-signo {
+  display: block;
+  font-size: 22px;
+  color: var(--var);
+  line-height: 1;
+  margin-bottom: 13px;
+}
+
+.cs-territorio .cs-titulo-3 {
+  font: 400 17px/1.3 "Consejo Acentos",Georgia,serif;
+  color: var(--var);
+  color: color-mix(in srgb,var(--var) 65%,#e4d6bd);
+  min-height: 44px;
+}
+
+.cs-territorio .cs-cupo {
+  font-size: 9px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #aaa1aa;
+  margin: 8px 0;
+}
+
+.cs-territorio ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+.cs-territorio a {
+  color: #c4bdc5;
+}
+
+.cs-territorio .cs-vacio {
+  color: #9a919a;
+  font-style: italic;
+}
+
+.cs-nota-oscura {
+  background: transparent;
+  padding: 14px 16px;
+  margin-top: 22px;
+  font-size: 12px;
+  color: #b6adb6;
+}
+
+.cs-nota-oscura strong {
+  color: var(--cs-tinte);
+}
+
+.cs-estado {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 0 auto 22px;
+  color: var(--cs-rojo-claro);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.cs-estado::before,.cs-estado::after {
+  content: "";
+  height: 1px;
+  width: 36px;
+  background: var(--cs-linea);
+}
+
+.cs-galeria {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  align-items: start;
+  counter-reset: asiento;
+}
+
+.cs-ficha {
+  min-width: 0;
+  counter-increment: asiento;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+.cs-ficha summary {
+  list-style: none;
+  cursor: pointer;
+  position: relative;
+  text-align: center;
+}
+
+.cs-ficha summary::-webkit-details-marker {
+  display: none;
+}
+
+.cs-retrato {
+  position: relative;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  margin: 5px 5px 0;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cs-retrato::before {
+  content: none;
+}
+
+.cs-retrato .cs-emblema {
+  width: 50%;
+  height: 50%;
+}
+
+.cs-foto {
+  position: absolute;
+  inset: 0;
+  background-image: var(--cs-foto);
+  background-size: cover;
+  background-position: center 25%;
+  transition: opacity .4s,filter .4s;
+  filter: saturate(.55) brightness(.8);
+}
+
+.cs-persona {
+  opacity: 0;
+  filter: grayscale(1) brightness(.7);
+}
+
+@media(hover:hover) {
+  .cs-ficha summary:hover .cs-persona {
+    opacity: 1;
+  }
+
+  .cs-ficha summary:hover .cs-mascara {
+    opacity: 0;
+  }
+}
+
+.cs-ficha[open] .cs-persona {
+  opacity: 1;
+}
+
+.cs-ficha[open] .cs-mascara {
+  opacity: 0;
+}
+
+.cs-numero {
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  z-index: 3;
+  font-size: 9px;
+  letter-spacing: 1px;
+  color: var(--cs-tinte);
+  background: transparent;
+  padding: 2px 5px;
+}
+
+.cs-numero::after {
+  content: counter(asiento,decimal-leading-zero);
+}
+
+.cs-nombre {
+  display: block;
+  font: 400 18px/1.2 "Consejo Acentos",Georgia,serif;
+  color: var(--cs-tinte);
+  padding: 14px 5px 6px;
+  overflow-wrap: anywhere;
+}
+
+.cs-region {
+  display: block;
+  font-size: 8px;
+  line-height: 1.5;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #b7b0b8;
+  padding: 0 5px 11px;
+  border-bottom: 3px solid var(--var);
+}
+
+.cs-region::before {
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  background: var(--var);
+  margin-right: 5px;
+  vertical-align: 1px;
+}
+
+.cs-abrir {
+  display: block;
+  font-size: 8px;
+  color: var(--cs-suave);
+  padding: 6px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.cs-expediente {
+  padding: 13px 12px 15px;
+  border-top: 1px solid var(--cs-linea);
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.cs-expediente .cs-titular {
+  display: block;
+  margin: 9px 0 11px;
+  font-size: 10px;
+  color: var(--cs-tinte);
+}
+
+.cs-tags {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 11px;
+}
+
+.cs-tags span {
+  font-size: 8px;
+  border: 0;
+}
+
+.cs-expediente .cs-parrafo {
+  text-align: left;
+}
+
+.cs-vacante {
+  border: 0;
+}
+
+.cs-vacante .cs-retrato {
+  background: transparent;
+}
+
+.cs-vacante .cs-emblema {
+  opacity: .35;
+}
+
+.cs-vacante .cs-nombre {
+  color: var(--cs-tinte);
+}
+
+.cs-vacante .cs-region {
+  --var: var(--noctum,#675a7c);
+}
+
+.cs-aliados .cs-galeria {
+  grid-template-columns: repeat(3,minmax(0,1fr));
+}
+
+.cs-aliados .cs-ficha {
+  border-color: var(--cs-linea);
+  box-shadow: none;
+}
+
+.cs-aliados .cs-retrato {
+  aspect-ratio: 4/5;
+}
+
+.cs-aliados .cs-retrato::before {
+  border: none;
+}
+
+.cs-aliados .cs-nombre {
+  color: var(--cs-tinte);
+  font-size: 17px;
+}
+
+.cs-funciones {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px 0 24px;
+}
+
+.cs-funciones span {
+  font-size: 10px;
+  border: 0;
+  color: var(--cs-tinte);
+}
+
+.cs-acolitos {
+  --cs-rojo-claro: var(--cs-color);
+}
+
+.cs-aprendices {
+  display: grid;
+  margin-top: 23px;
+}
+
+.cs-aprendiz {
+  background: transparent;
+  border: 0;
+  text-align: center;
+  padding: 7px 7px 12px;
+}
+
+.cs-aprendiz .cs-retrato {
+  margin: 0;
+  aspect-ratio: 1/1;
+  filter: grayscale(1);
+}
+
+.cs-aprendiz .cs-nombre {
+  color: #bcb5c1;
+}
+
+.cs-aprendiz small {
+  display: block;
+  font-size: 9px;
+  color: #aaa1af;
+  letter-spacing: 1px;
+}
+
+.cs-avisos {
+  padding-top: 40px;
+  background: transparent;
+}
+
+.cs-avisos .cs-lista-avisos {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  counter-reset: aviso;
+}
+
+.cs-lista-avisos li {
+  position: relative;
+  padding: 0 0 19px 39px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--cs-linea);
+  counter-increment: aviso;
+  text-align: justify;
+}
+
+.cs-lista-avisos li::before {
+  content: counter(aviso,upper-roman);
+  position: absolute;
+  top: 2px;
+  left: 0;
+  font-family: "Consejo Acentos",Georgia,serif;
+}
+
+.cs-lista-avisos li:last-child {
+  margin: 0;
+  border: 0;
+  padding-bottom: 0;
+}
+
+.cs-contacto {
+  text-align: center;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--cs-linea);
+  color: var(--cs-tinte);
+  font-size: 11px;
+}
+
+.cs-mensaje {
+  padding: 24px 27px;
+  border-left: 3px solid var(--cs-acento);
+  background: transparent;
+  text-align: left;
+}
+
+.cs-mensaje .cs-gotico {
+  text-align: left;
+  font-size: 29px;
+  margin: 8px 0 16px;
+}
+
+.cs-mensaje .cs-firma {
+  display: block;
+  margin-top: 20px;
+  font-size: 10px;
+  color: var(--cs-tinte);
+  letter-spacing: 1px;
+}
+
+.cs-libro {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+.cs-cubierta {
+  position: relative;
+  background: transparent;
+  border: 0;
+  outline: none;
+  outline-offset: -7px;
+  text-align: center;
+  color: var(--cs-rojo-claro);
+}
+
+.cs-cubierta .cs-emblema {
+  margin: 20px auto 25px;
+  width: 100px;
+  height: 100px;
+}
+
+.cs-cubierta .cs-gotico {
+  font-size: clamp(40px,8vw,57px);
+  margin: 18px 0 12px;
+  padding: 14px 0 16px;
+}
+
+.cs-cubierta .cs-subtitulo {
+  font: 400 17px/1.4 "Consejo Acentos",Georgia,serif;
+  color: var(--cs-tinte);
+}
+
+.cs-cubierta .cs-eyebrow {
+  color: var(--cs-tinte);
+}
+
+.cs-libro .cs-indice {
+  font-size: 9px;
+  border-color: var(--cs-linea);
+}
+
+.cs-pagina {
+  position: relative;
+  --cs-rojo-claro: var(--cs-color);
+  --cs-hueso: #c5c1c9;
+  color: var(--cs-tinta);
+  margin: 0 0 12px;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  font: 400 12px/1.85 "Consejo Texto",Georgia,serif;
+}
+
+.cs-pagina::before {
+  content: none;
+}
+
+.cs-pagina .cs-eyebrow {
+  color: var(--cs-tinte);
+  letter-spacing: 2px;
+  font-size: 8px;
+}
+
+.cs-pagina .cs-titulo-2 {
+  color: var(--cs-burdeos);
+  font: 400 30px/1.2 "Consejo Acentos",Georgia,serif;
+  margin: 9px 0 22px;
+  text-align: left;
+}
+
+.cs-pagina .cs-titulo-3 {
+  color: var(--cs-burdeos);
+  font: 400 19px/1.3 "Consejo Acentos",Georgia,serif;
+  margin: 18px 0 10px;
+}
+
+.cs-pagina .cs-prosa {
+  font-size: 12px;
+  line-height: 1.85;
+}
+
+.cs-pagina .cs-capitular>.cs-parrafo:first-child::first-letter {
+  color: var(--cs-burdeos);
+  text-shadow: none;
+  font-size: 48px;
+}
+
+.cs-doble {
+  column-count: 2;
+  column-gap: 25px;
+  column-rule: 0;
+  text-align: justify;
+  orphans: 3;
+  widows: 3;
+}
+
+.cs-doble .cs-parrafo {
+  orphans: 3;
+  widows: 3;
+}
+
+.cs-archivo {
+  position: relative;
+  border-top: 0;
+  border-bottom: 0;
+  border-left: 1px solid var(--cs-linea);
+  background: transparent;
+  font-size: 11px;
+  line-height: 1.8;
+  text-align: justify;
+  break-inside: avoid;
+}
+
+.cs-archivo .cs-titulo-3 {
+  font-size: 18px;
+  margin: 0 0 12px;
+}
+
+.cs-archivo .cs-fuente {
+  display: block;
+  margin-top: 12px;
+  font-size: 9px;
+  color: #b6a4b2;
+  font-style: italic;
+}
+
+.cs-con-apostilla {
+  display: grid;
+  grid-template-columns: minmax(0,1fr) 125px;
+  gap: 22px;
+  align-items: start;
+}
+
+.cs-apostilla {
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  font-size: 10px;
+  line-height: 1.8;
+  text-align: left;
+  transform: none;
+  break-inside: avoid;
+}
+
+.cs-apostilla .cs-titulo-3 {
+  font-size: 16px;
+  margin: 0 0 8px;
+}
+
+.cs-apostilla>.game-icon {
+  display: block;
+  color: var(--cs-tinte);
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.cs-lamina {
+  position: relative;
+  min-height: 160px;
+  background: transparent;
+  overflow: hidden;
+  color: #c0a1b2;
+}
+
+.cs-lamina-vacia {
+  min-height: 190px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.cs-lamina .cs-simbolo {
+  font-size: 30px;
+  line-height: 1;
+  margin-bottom: 15px;
+  color: var(--cs-tinte);
+}
+
+.cs-lamina-vacia>span:not(.cs-simbolo) {
+  font: 400 20px/1.4 "Consejo Acentos",Georgia,serif;
+}
+
+.cs-lamina small {
+  display: block;
+  font-size: 10px;
+  margin-top: 8px;
+  color: #b09baa;
+}
+
+.cs-lamina img {
+  width: 100%;
+  max-height: 360px;
+  object-fit: cover;
+  filter: sepia(.28) saturate(.6);
+  mask-image: linear-gradient(#000 65%,transparent);
+  -webkit-mask-image: linear-gradient(#000 65%,transparent);
+}
+
+.cs-lamina figcaption {
+  padding: 10px 15px;
+  text-align: center;
+  color: #b6a4b2;
+  font-size: 10px;
+  font-style: italic;
+}
+
+.cs-folio {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 29px;
+  padding-top: 12px;
+  font-size: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--cs-tinte);
+}
+
+.cs-tipos-mascaras {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.cs-tipo {
+  border: 0;
+  background: transparent;
+  text-align: center;
+}
+
+.cs-tipo .cs-emblema {
+  width: 40px;
+  height: 40px;
+  margin: auto;
+  color: var(--cs-tinte);
+}
+
+.cs-tipo .cs-titulo-3 {
+  font-size: 18px;
+  margin: 12px 0 8px;
+}
+
+.cs-tipo .cs-parrafo {
+  font-size: 10px;
+  line-height: 1.8;
+  text-align: left;
+}
+
+.cs-tipo-blanco .cs-emblema {
+  color: #bdb6c8;
+}
+
+.cs-tipo-dorado .cs-emblema {
+  color: var(--cs-tinte);
+}
+
+.cs-pagina ol,.cs-pagina ul {
+  padding-left: 19px;
+  margin: 14px 0;
+}
+
+.cs-pagina li+li {
+  margin-top: 9px;
+}
+
+.cs-cierre {
+  text-align: center;
+  padding: 23px 10px 17px;
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--cs-tinte);
+  text-transform: uppercase;
+}
+
+@media(max-width:480px) {
+  .cs-modulo {
+    padding: 28px 20px;
+  }
+
+  .cs-portada {
+    padding: 35px 25px;
+  }
+
+  .cs-dominios {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+
+  .cs-con-apostilla {
+    grid-template-columns: 1fr;
+  }
+
+  .cs-apostilla {
+    transform: none;
+  }
+
+  .cs-libro {
+    padding: 7px;
+  }
+
+  .cs-doble {
+    column-count: 1;
+  }
+
+  .cs-tipos-mascaras {
+    grid-template-columns: 1fr;
+  }
+
+  .cs-tipo {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: 0 15px;
+    text-align: left;
+  }
+
+  .cs-tipo .cs-emblema {
+    grid-row: span 2;
+    margin-top: 14px;
+  }
+
+  .cs-tipo .cs-titulo-3 {
+    margin: 6px 0;
+  }
+
+  .cs-aprendices {
+    grid-template-columns: repeat(3,minmax(0,1fr));
+  }
+
+  .cs-aprendiz .cs-nombre {
+    font-size: 15px;
+  }
+}
+
+@media(max-width:340px) {
+  .cs-modulo {
+    padding: 25px 14px;
+  }
+
+  .cs-aprendiz .cs-retrato {
+    max-height: 180px;
+  }
+
+  .cs-dominios {
+    gap: 8px;
+  }
+
+  .cs-territorio {
+    padding: 12px 8px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  .cs-metal {
+    animation: none;
+    background-position: 50% 50%;
+  }
+
+  .cs-foto {
+    transition: none;
+  }
+}
+
+.cs-set .game-icon {
+  font-style: normal;
+  line-height: 1;
+}
+
+.cs-set .cs-emblema {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  font-size: 65px;
+  font-style: normal;
+  text-shadow: 0 0 12px color-mix(in srgb,var(--cs-color) 20%,transparent);
+}
+
+.cs-portada .cs-emblema {
+  font-size: 65px;
+  filter: none;
+}
+
+.cs-cubierta .cs-emblema {
+  font-size: 78px;
+}
+
+.cs-retrato .cs-emblema {
+  font-size: 48px;
+  opacity: .22;
+}
+
+.cs-tipo .cs-emblema {
+  font-size: 35px;
+}
+
+.cs-ornamento .game-icon {
+  font-size: 18px;
+}
+
+.cs-set .cs-signo {
+  font-size: 23px;
+}
+
+.cs-set .cs-simbolo {
+  display: block;
+  font-size: 30px;
+  line-height: 1;
+  margin-bottom: 15px;
+  color: var(--cs-tinte);
+}
+
+.cs-cubierta,.cs-pagina,.cs-libro {
+  background: transparent;
+  box-shadow: none;
+}
+
+.cs-pagina .cs-con-apostilla {
+  gap: 22px;
+}
+
+.cs-libro .cs-pagina {
+  --cs-rojo-claro: var(--cs-color);
+  --cs-hueso: #d0b5c0;
+}
+
+.cs-pagina b,.cs-pagina strong {
+  color: #d0b5c0;
+}
+
+.cs-pagina .cs-archivo,.cs-pagina .cs-apostilla,.cs-pagina .cs-lamina,.cs-pagina .cs-tipo {
+  background: transparent;
+  box-shadow: none;
+}
+
+.cs-libro .cs-lamina img {
+  filter: grayscale(1) brightness(.65);
+}
+
+.cs-modulo {
+  padding-top: 38px;
+  padding-bottom: 44px;
+  margin-bottom: 22px;
+}
+
+.cs-galeria {
+  gap: 26px 15px;
+}
+
+.cs-ficha summary {
+  aspect-ratio: 3/5;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.cs-ficha summary::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(180deg,transparent 25%,rgba(0,0,0,.12) 43%,rgba(0,0,0,.58) 65%,rgba(0,0,0,.92) 83%,rgba(0,0,0,.62) 93%,transparent 100%);
+}
+
+.cs-ficha .cs-retrato,.cs-aliados .cs-ficha .cs-retrato {
+  position: absolute;
+  inset: 0;
+  aspect-ratio: auto;
+  margin: 0;
+  z-index: 0;
+}
+
+.cs-ficha .cs-foto {
+  filter: saturate(.42) brightness(.94);
+  mask-image: linear-gradient(#000 65%,rgba(0,0,0,.8) 78%,transparent 100%);
+  -webkit-mask-image: linear-gradient(#000 65%,rgba(0,0,0,.8) 78%,transparent 100%);
+  transition: opacity .65s ease,filter .65s ease;
+}
+
+.cs-ficha .cs-persona {
+  filter: grayscale(.9) brightness(.8);
+}
+
+.cs-rotulo {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  z-index: 2;
+  text-align: left;
+  text-shadow: 0 2px 7px #000;
+}
+
+.cs-ficha .cs-nombre {
+  color: var(--cs-tinte);
+}
+
+.cs-ficha .cs-region {
+  border: 0;
+  padding: 0 0 7px;
+  font-size: 8px;
+  letter-spacing: .7px;
+  line-height: 1.6;
+  color: #c3bcc5;
+}
+
+.cs-ficha .cs-region::before {
+  width: 4px;
+  height: 4px;
+  margin-right: 6px;
+  border-radius: 50%;
+}
+
+.cs-ficha .cs-abrir {
+  padding: 0;
+  font-size: 8px;
+  letter-spacing: 1px;
+  color: var(--cs-suave);
+  line-height: 1.7;
+}
+
+.cs-ficha .cs-numero {
+  z-index: 2;
+  color: #c6b7c1;
+  text-shadow: 0 2px 5px #000;
+}
+
+.cs-ficha .cs-expediente {
+  border: 0;
+  padding: 7px 10px 19px;
+  line-height: 1.9;
+}
+
+.cs-tags {
+  gap: 2px 9px;
+}
+
+.cs-tags span {
+  padding: 0;
+  line-height: 1.8;
+  color: var(--cs-tinte);
+}
+
+.cs-tags span+span::before {
+  content: "·";
+  margin-right: 7px;
+  color: var(--cs-tinte);
+}
+
+.cs-aliados .cs-ficha summary {
+  aspect-ratio: 3/4.5;
+}
+
+.cs-aliados .cs-ficha .cs-nombre {
+  font-size: 19px;
+  color: var(--cs-tinte);
+}
+
+.cs-vacante .cs-retrato .cs-emblema {
+  margin-bottom: 62px;
+  font-size: 42px;
+}
+
+.cs-nota-oscura {
+  border-left: 1px solid var(--cs-linea);
+  padding-left: 16px;
+}
+
+.cs-funciones span {
+  padding: 2px 0;
+}
+
+.cs-funciones {
+  gap: 5px 14px;
+}
+
+.cs-pagina {
+  padding: 40px 28px 45px;
+  margin-bottom: 20px;
+}
+
+.cs-pagina .cs-titulo-2 {
+  margin-bottom: 28px;
+}
+
+.cs-apostilla {
+  padding: 10px 0 10px 13px;
+  border-left: 1px solid var(--cs-linea);
+}
+
+.cs-archivo {
+  padding: 10px 0 10px 16px;
+  margin: 30px 0;
+}
+
+.cs-lamina {
+  border: 0;
+  margin: 25px 0;
+  mask-image: linear-gradient(transparent,#000 8%,#000 85%,transparent);
+  -webkit-mask-image: linear-gradient(transparent,#000 8%,#000 85%,transparent);
+}
+
+.cs-tipo {
+  padding: 14px 10px;
+}
+
+.cs-folio {
+  border-top: 0;
+  position: relative;
+}
+
+.cs-folio::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 1px;
+  background: linear-gradient(90deg,transparent,var(--cs-linea),transparent);
+}
+
+@media(max-width:480px) {
+  .cs-galeria {
+    gap: 24px 12px;
+  }
+
+  .cs-pagina {
+    padding: 34px 22px 40px;
+  }
+
+  .cs-rotulo {
+    left: 9px;
+    right: 9px;
+    bottom: 12px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  .cs-ficha .cs-foto {
+    transition: none;
+  }
+}
+
+.cs-galeria,.cs-aliados .cs-galeria {
+  grid-template-columns: repeat(5,minmax(0,1fr));
+  gap: 24px 14px;
+}
+
+.cs-aprendices {
+  grid-template-columns: repeat(5,minmax(0,1fr));
+  gap: 14px;
+}
+
+.cs-portada>.cs-prosa {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.cs-dominios {
+  gap: 28px 24px;
+}
+
+.cs-territorio {
+  display: flex;
+  flex-direction: column;
+  padding: 18px 0 0;
+  overflow: hidden;
+}
+
+.cs-territorio .cs-titulo-3 {
+  font-family: "Consejo Metal","Consejo Acentos",Georgia,serif;
+  font-size: 23px;
+  line-height: 1.35;
+}
+
+.cs-territorio ul {
+  min-height: 75px;
+  padding-bottom: 17px;
+}
+
+.cs-set .cs-paisaje {
+  height: 115px;
+  position: relative;
+  overflow: hidden;
+  margin-top: auto;
+  mask-image: linear-gradient(transparent,#000 12%,#000 73%,transparent);
+  -webkit-mask-image: linear-gradient(transparent,#000 12%,#000 73%,transparent);
+}
+
+.cs-set .cs-paisaje img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1) contrast(1.22) brightness(.4);
+}
+
+.cs-territorio:nth-child(3n+1) .cs-paisaje img {
+  object-position: 25% 45%;
+}
+
+.cs-territorio:nth-child(3n+2) .cs-paisaje img {
+  object-position: 70% 65%;
+}
+
+.cs-ficha .cs-nombre {
+  font-size: 19px;
+}
+
+.cs-ficha .cs-numero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  padding: 0;
+  left: 9px;
+  top: 9px;
+  border: 1px solid color-mix(in srgb,var(--cs-color) 75%,#b7a2a5);
+  background: rgba(0,0,0,.5);
+  font-size: 9px;
+}
+
+.cs-ficha[open] .cs-expediente {
+  padding: 15px 11px 18px;
+  margin-top: 0;
+  border: 1px solid var(--cs-linea);
+  border-top: 1px solid color-mix(in srgb,var(--cs-color) 75%,#a48b90);
+  text-align: left;
+}
+
+.cs-ficha[open] .cs-abrir {
+  color: var(--cs-tinte);
+}
+
+.cs-reglas {
+  max-width: 640px;
+  margin: 28px auto 0;
+  border: 0;
+}
+
+.cs-regla {
+  border: 1px solid var(--cs-linea);
+  margin: 9px 0;
+  text-align: left;
+}
+
+.cs-regla summary {
+  padding: 12px 15px;
+  gap: 14px;
+  align-items: center;
+}
+
+.cs-regla summary>span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 27px;
+  height: 27px;
+  border: 1px solid var(--cs-linea);
+  color: var(--cs-tinte);
+  font-size: 10px;
+}
+
+.cs-regla>div {
+  padding: 3px 17px 18px;
+  font-size: 12px;
+}
+
+.cs-lista-avisos li {
+  padding-left: 45px;
+}
+
+.cs-lista-avisos li::before {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 29px;
+  height: 29px;
+  border: 1px solid var(--cs-linea);
+  font-size: 15px;
+  line-height: 1;
+  color: var(--cs-tinte);
+}
+
+.cs-libro {
+  --cs-papel: #0d0d10;
+  --cs-tinta: #cbc7cd;
+  --cs-burdeos: var(--cs-tinte);
+  padding: 0;
+}
+
+.cs-cubierta,.cs-libro .cs-pagina {
+  background-color: var(--cs-papel);
+  background-image: linear-gradient(90deg,rgba(0,0,0,.75),transparent 5%,rgba(255,255,255,.018) 45%,transparent 78%,rgba(0,0,0,.65)),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.055'/%3E%3C/svg%3E");
+  box-shadow: inset 1px 0 0 #d1b4bf12,inset -5px 0 13px #0007,0 10px 25px #0002;
+}
+
+.cs-cubierta {
+  min-height: 410px;
+  padding: 45px 30px;
+  margin-bottom: 16px;
+}
+
+.cs-libro .cs-indice {
+  padding: 16px 0;
+  margin: 0 26px 25px;
+}
+
+.cs-libro .cs-pagina {
+  padding: 46px 95px 38px 43px;
+  margin-bottom: 20px;
+  border: 0;
+  color: var(--cs-tinta);
+}
+
+.cs-libro .cs-pagina .cs-titulo-2 {
+  font: 400 33px/1.3 "Consejo Metal","Consejo Acentos",Georgia,serif;
+  color: var(--cs-tinte);
+}
+
+.cs-libro .cs-pagina .cs-titulo-3 {
+  color: var(--cs-suave);
+}
+
+.cs-libro .cs-capitular>.cs-parrafo:first-child::first-letter {
+  font-family: "Consejo Metal","Consejo Acentos",Georgia,serif;
+  color: var(--cs-tinte);
+  font-size: 52px;
+}
+
+.cs-margen-libro {
+  position: absolute;
+  right: 20px;
+  top: 48px;
+  bottom: 38px;
+  width: 45px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  border-left: 1px solid #cec3cb12;
+  pointer-events: none;
+  color: #b3acb73b;
+}
+
+.cs-margen-libro .game-icon {
+  font-size: 31px;
+}
+
+.cs-margen-libro .game-icon:first-child {
+  transform: rotate(-35deg);
+}
+
+.cs-margen-libro .game-icon:last-child {
+  transform: rotate(145deg);
+}
+
+.cs-libro .cs-con-apostilla {
+  grid-template-columns: minmax(0,1fr) 135px;
+  gap: 27px;
+}
+
+.cs-libro .cs-archivo {
+  border-color: #b3a3ad30;
+}
+
+.cs-libro .cs-folio {
+  color: #a098a3;
+}
+
+@media(max-width:720px) {
+  .cs-galeria,.cs-aliados .cs-galeria {
+    grid-template-columns: repeat(3,minmax(0,1fr));
+  }
+
+  .cs-aprendices {
+    grid-template-columns: repeat(3,minmax(0,1fr));
+  }
+
+  .cs-libro .cs-pagina {
+    padding: 36px 70px 32px 28px;
+  }
+
+  .cs-margen-libro {
+    right: 12px;
+    width: 36px;
+  }
+
+  .cs-libro .cs-con-apostilla {
+    grid-template-columns: minmax(0,1fr) 115px;
+    gap: 20px;
+  }
+}
+
+@media(max-width:480px) {
+  .cs-galeria,.cs-aliados .cs-galeria {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+
+  .cs-dominios {
+    gap: 24px 18px;
+  }
+
+  .cs-territorio .cs-titulo-3 {
+    font-size: 21px;
+  }
+
+  .cs-set .cs-paisaje {
+    height: 105px;
+  }
+
+  .cs-ficha .cs-nombre {
+    font-size: 20px;
+  }
+
+  .cs-libro .cs-pagina {
+    padding: 32px 22px 28px;
+  }
+
+  .cs-margen-libro {
+    display: none;
+  }
+
+  .cs-libro .cs-con-apostilla {
+    grid-template-columns: 1fr;
+  }
+
+  .cs-libro .cs-pagina .cs-titulo-2 {
+    font-size: 28px;
+  }
+
+  .cs-regla summary {
+    padding: 11px;
+    gap: 10px;
+  }
+
+  .cs-lista-avisos li {
+    padding-left: 40px;
+  }
+}
+
+@media(max-width:340px) {
+  .cs-aprendices {
+    grid-template-columns: 1fr;
+  }
+}
+
+.cs-set {
+  color: inherit;
+}
+
+.cs-set .cs-parrafo,.cs-set a,.cs-set li,.cs-set small,.cs-set b,.cs-set strong,.cs-set em,.cs-set .cs-prosa,.cs-set .cs-bajada,.cs-set .cs-eyebrow,.cs-set .cs-cupo,.cs-set .cs-vacio,.cs-set .cs-region,.cs-set .cs-abrir,.cs-set .cs-titular,.cs-set .cs-tags span,.cs-set .cs-nota-oscura,.cs-set .cs-estado,.cs-set .cs-funciones span,.cs-set .cs-contacto,.cs-set .cs-firma,.cs-set .cs-fuente,.cs-set .cs-folio,.cs-set .cs-subtitulo,.cs-set .cs-numero,.cs-set .cs-lista-avisos li::before,.cs-set .cs-regla summary,.cs-set .cs-regla summary>span {
+  color: inherit;
+}
+
+.cs-set .cs-libro,.cs-set .cs-libro .cs-pagina,.cs-set .cs-archivo,.cs-set .cs-apostilla,.cs-set .cs-lamina {
+  color: inherit;
+}
+
+.cs-region:empty,.cs-cupo:empty,.cs-apostilla:empty {
+  display: none;
+}
+
+.cs-set .cs-con-apostilla:has(.cs-apostilla:empty) {
+  grid-template-columns: 1fr;
+}
+
+.cs-set .cs-gotico,.cs-set .cs-nombre,.cs-set .cs-pagina .cs-titulo-2,.cs-set .cs-pagina .cs-titulo-3,.cs-set .cs-territorio .cs-titulo-3 {
+  --cs-titulo-color: var(--cs-color);
+  color: var(--cs-titulo-color);
+  text-shadow: 0 2px 7px rgba(0,0,0,.65);
+  padding-top: 4px;
+  padding-bottom: 6px;
+}
+
+.cs-set .cs-territorio .cs-titulo-3 {
+  --cs-titulo-color: var(--var);
+}
+
+.cs-set .cs-nombre,.cs-set .cs-pagina .cs-titulo-2,.cs-set .cs-pagina .cs-titulo-3 {
+  --cs-titulo-color: var(--cs-tinte);
+}
+
+@supports(background-clip:text) {
+  .cs-set .cs-gotico,.cs-set .cs-nombre,.cs-set .cs-pagina .cs-titulo-2,.cs-set .cs-pagina .cs-titulo-3,.cs-set .cs-territorio .cs-titulo-3 {
+    background-image: linear-gradient(180deg,color-mix(in srgb,var(--cs-titulo-color) 83%,#bdb6bd) 0%,var(--cs-titulo-color) 42%,#303035 100%);
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    text-shadow: none;
+    filter: drop-shadow(0 2px 5px #0008);
+    animation: none;
+  }
+}
+
+.cs-set .cs-capitular>.cs-parrafo:first-child::first-letter {
+  color: var(--cs-tinte);
+  text-shadow: 1px 2px 0 #29292e,3px 4px 7px #0007;
+}
+
+.cs-set .cs-emblema,.cs-set .cs-signo,.cs-set .cs-ornamento .game-icon {
+  filter: drop-shadow(0 2px 4px #0008);
+}
+
+.cs-set .cs-pagina .cs-titulo-2 {
+  text-align: center;
+}
+
+.cs-cabecera .cs-gotico {
+  margin: 0 auto 14px;
+}
+
+.cs-cabecera {
+  margin-bottom: 30px;
+}
+
+.cs-portada .cs-gotico {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cs-portada>.cs-prosa,.cs-modulo>.cs-prosa {
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cs-set .cs-dominios {
+  gap: 22px;
+}
+
+.cs-set .cs-territorio {
+  position: relative;
+  isolation: isolate;
+  min-height: 305px;
+  padding: 26px 18px 24px;
+  border: 0;
+  text-align: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.cs-set .cs-territorio::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(180deg,rgba(0,0,0,.24) 0%,rgba(0,0,0,.72) 22%,rgba(0,0,0,.88) 54%,rgba(0,0,0,.76) 82%,rgba(0,0,0,.28) 100%);
+}
+
+.cs-set .cs-territorio .cs-paisaje {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  margin: 0;
+  mask-image: linear-gradient(transparent,#000 6%,#000 88%,transparent);
+  -webkit-mask-image: linear-gradient(transparent,#000 6%,#000 88%,transparent);
+}
+
+.cs-set .cs-territorio .cs-paisaje img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1) contrast(1.18) brightness(.62);
+}
+
+.cs-set .cs-territorio .cs-signo {
+  margin: 0 auto 14px;
+  font-size: 27px;
+}
+
+.cs-set .cs-territorio .cs-titulo-3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto 7px;
+  font-size: 22px;
+}
+
+.cs-set .cs-territorio .cs-cupo {
+  width: 100%;
+  min-height: 17px;
+  margin: 10px auto 11px;
+}
+
+.cs-set .cs-territorio ul {
+  width: 100%;
+  min-height: 72px;
+  padding: 0;
+  line-height: 1.9;
+  margin: auto 0 0;
+  text-align: center;
+}
+
+.cs-set .cs-territorio ul:empty {
+  min-height: 100px;
+}
+
+.cs-set .cs-territorio li {
+  list-style: none;
+}
+
+.cs-set .cs-territorio a {
+  text-shadow: 0 2px 4px #000;
+}
+
+.cs-ficha .cs-rotulo {
+  left: 9px;
+  right: 9px;
+  bottom: 11px;
+}
+
+.cs-ficha .cs-nombre {
+  padding: 3px 0 8px;
+  line-height: 1.35;
+}
+
+.cs-set .cs-ficha .cs-expediente .cs-titular {
+  margin-top: 0;
+}
+
+.cs-set .cs-mensaje:empty {
+  display: none;
+}
+
+@media(max-width:480px) {
+  .cs-set .cs-dominios {
+    gap: 17px 13px;
+  }
+
+  .cs-set .cs-territorio {
+    min-height: 285px;
+    padding: 23px 9px 20px;
+  }
+
+  .cs-set .cs-pagina .cs-titulo-2 {
+    font-size: 27px;
+  }
+
+  .cs-set .cs-ficha .cs-nombre {
+    font-size: 19px;
+  }
+}
+
+.cs-set .cs-encabezado-original {
+  position: relative;
+  isolation: isolate;
+  padding: 48px 25px 35px;
+  text-align: center;
+  overflow: visible;
+}
+
+.cs-set .cs-portada>.cs-encabezado-original {
+  margin: -38px -37px 28px;
+}
+
+.cs-set .cs-fondo-cabecera {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  mask-image: linear-gradient(#000 0%,#000 35%,rgba(0,0,0,.65) 65%,transparent);
+  -webkit-mask-image: linear-gradient(#000 0%,#000 35%,rgba(0,0,0,.65) 65%,transparent);
+}
+
+.cs-set .cs-fondo-cabecera img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: grayscale(1) brightness(.4);
+}
+
+.cs-set .cs-icon-original {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 130px;
+  margin: 0 auto 28px;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+.cs-set .cs-icon-original .cs-emblema {
+  display: block;
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  transform: none;
+  filter: none;
+  color: var(--cs-color);
+  font-size: 65px;
+  line-height: 1;
+  text-shadow: 0 0 12px color-mix(in srgb,var(--cs-color) 55%,transparent),0 0 30px color-mix(in srgb,var(--cs-color) 30%,transparent);
+}
+
+.cs-set .cs-gotico {
+  line-height: 1.45;
+  padding: 20px 28px 25px;
+  overflow: visible;
+}
+
+.cs-set .cs-encabezado-original .cs-gotico {
+  margin: 0 auto;
+}
+
+.cs-set .cs-portada .cs-gotico>span {
+  padding: 9px 12px 12px;
+  line-height: 1.25;
+}
+
+.cs-set .cs-cabecera .cs-gotico {
+  font-size: clamp(29px,5.5vw,40px);
+}
+
+.cs-set .cs-territorio .cs-titulo-3 {
+  padding: 15px 4px 18px;
+  min-height: 95px;
+  line-height: 1.45;
+}
+
+.cs-set .cs-cierre-dominio {
+  font-size: 11px;
+  line-height: 1.8;
+  text-align: center;
+}
+
+.cs-set .cs-capitular>.cs-parrafo:first-child::first-letter,.cs-set .cs-libro .cs-capitular>.cs-parrafo:first-child::first-letter {
+  float: left;
+  padding: 8px 16px 8px 6px;
+  color: #090909;
+  font: 400 66px/.9 "Consejo Metal","Consejo Acentos",Georgia,serif;
+  text-shadow: var(--cs-relieve);
+}
+
+.cs-set .cs-ficha[open] .cs-expediente {
+  background: #101013;
+  padding: 17px 12px 20px;
+  box-shadow: inset 0 8px 15px #0003;
+}
+
+.cs-set .cs-libro {
+  background-color: #0d0d10;
+  background-image: linear-gradient(90deg,rgba(0,0,0,.55),transparent 5%,rgba(255,255,255,.018) 45%,transparent 92%,rgba(0,0,0,.5)),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.055'/%3E%3C/svg%3E");
+  box-shadow: inset 1px 0 0 #d1b4bf12,inset -5px 0 13px #0007,0 10px 25px #0002;
+  padding: 0 0 30px;
+}
+
+.cs-set .cs-libro .cs-cubierta,.cs-set .cs-libro .cs-pagina {
+  background: transparent;
+  box-shadow: none;
+  margin: 0;
+  border: 0;
+  overflow: visible;
+}
+
+.cs-set .cs-libro .cs-cubierta {
+  min-height: 420px;
+  padding: 48px 35px 32px;
+}
+
+.cs-set .cs-libro .cs-pagina {
+  padding: 32px 48px 35px;
+}
+
+.cs-set .cs-libro .cs-pagina::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.cs-set .cs-libro .cs-pagina .cs-titulo-2 {
+  padding: 20px 26px 25px;
+  line-height: 1.5;
+  margin: 0 auto 18px;
+}
+
+.cs-set .cs-libro .cs-pagina .cs-titulo-3 {
+  line-height: 1.5;
+  padding: 12px 9px 16px;
+}
+
+.cs-set .cs-margen-libro {
+  display: none;
+}
+
+.cs-set .cs-libro .cs-indice {
+  margin: 0 48px 10px;
+  padding: 18px 0 22px;
+}
+
+.cs-set .cs-pagina .cs-eyebrow {
+  text-align: center;
+  line-height: 1.5;
+}
+
+.cs-set .cs-archivo {
+  clear: both;
+  margin: 27px 0;
+  padding: 13px 0 14px 17px;
+}
+
+.cs-set .cs-libro .cs-lamina {
+  position: relative;
+  min-height: 0;
+  margin: 25px 0 30px;
+  overflow: hidden;
+  background: transparent;
+  mask-image: linear-gradient(transparent,#000 10%,#000 86%,transparent);
+  -webkit-mask-image: linear-gradient(transparent,#000 10%,#000 86%,transparent);
+}
+
+.cs-set .cs-libro .cs-lamina img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-height: none;
+  object-fit: cover;
+  filter: grayscale(1) contrast(1.1) brightness(.55);
+  mask-image: none;
+  -webkit-mask-image: none;
+}
+
+.cs-set .cs-libro .cs-imagen-arriba,.cs-set .cs-libro .cs-imagen-abajo {
+  height: 235px;
+  width: 100%;
+  clear: both;
+}
+
+.cs-set .cs-libro .cs-imagen-izquierda,.cs-set .cs-libro .cs-imagen-derecha {
+  height: 290px;
+  width: 40%;
+  margin-top: 4px;
+  margin-bottom: 18px;
+}
+
+.cs-set .cs-libro .cs-imagen-izquierda {
+  float: left;
+  margin-right: 26px;
+}
+
+.cs-set .cs-libro .cs-imagen-derecha {
+  float: right;
+  margin-left: 26px;
+}
+
+.cs-set .cs-libro .cs-apostilla {
+  width: 100%;
+  margin: 20px 0;
+  padding: 12px 0 12px 16px;
+}
+
+.cs-set .cs-libro .cs-titulo-2:empty {
+  display: none;
+}
+
+@media(max-width:720px) {
+  .cs-set .cs-libro .cs-pagina {
+    padding: 28px 32px 30px;
+  }
+
+  .cs-set .cs-libro .cs-indice {
+    margin-left: 32px;
+    margin-right: 32px;
+  }
+
+  .cs-set .cs-libro .cs-imagen-izquierda,.cs-set .cs-libro .cs-imagen-derecha {
+    width: 42%;
+    height: 250px;
+  }
+}
+
+@media(max-width:480px) {
+  .cs-set .cs-portada>.cs-encabezado-original {
+    margin: -28px -25px 23px;
+  }
+
+  .cs-set .cs-encabezado-original {
+    padding: 35px 20px 25px;
+  }
+
+  .cs-set .cs-icon-original {
+    height: 110px;
+    margin-bottom: 18px;
+  }
+
+  .cs-set .cs-encabezado-original .cs-gotico {
+    padding: 12px 16px 22px;
+  }
+
+  .cs-set .cs-portada .cs-gotico>span {
+    padding: 8px 7px 10px;
+  }
+
+  .cs-set .cs-gotico {
+    padding-left: 17px;
+    padding-right: 17px;
+  }
+
+  .cs-set .cs-territorio .cs-titulo-3 {
+    min-height: 90px;
+    font-size: 19px;
+    padding: 12px 2px 16px;
+  }
+
+  .cs-set .cs-libro .cs-pagina {
+    padding: 24px 22px 29px;
+  }
+
+  .cs-set .cs-libro .cs-pagina .cs-titulo-2 {
+    padding: 16px 12px 21px;
+    font-size: 27px;
+  }
+
+  .cs-set .cs-libro .cs-cubierta {
+    padding: 35px 20px 26px;
+    min-height: 350px;
+  }
+
+  .cs-set .cs-libro .cs-indice {
+    margin: 0 22px 8px;
+  }
+
+  .cs-set .cs-libro .cs-imagen-izquierda,.cs-set .cs-libro .cs-imagen-derecha {
+    float: none;
+    width: 100%;
+    height: 225px;
+    margin: 12px 0 24px;
+  }
+
+  .cs-set .cs-libro .cs-imagen-arriba,.cs-set .cs-libro .cs-imagen-abajo {
+    height: 205px;
+  }
+
+  .cs-set .cs-capitular>.cs-parrafo:first-child::first-letter,.cs-set .cs-libro .cs-capitular>.cs-parrafo:first-child::first-letter {
+    font-size: 59px;
+  }
+}
+
+.cs-set .cs-libro .cs-pagina .cs-titulo-2,.cs-set .cs-libro .cs-pagina .cs-titulo-3 {
+  --cs-titulo-color: var(--cs-color);
+}
+
+.cs-set .cs-libro .cs-archivo::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.cs-set .cs-capitular>.cs-parrafo:first-child {
+  display: flow-root;
+}
+
+.cs-set .cs-cabecera {
+  position: relative;
+  isolation: isolate;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 45px 22px 36px;
+  margin: 0 0 30px;
+  overflow: visible;
+}
+
+.cs-set .cs-cabecera .cs-fondo-cabecera {
+  mask-image: linear-gradient(transparent,#000 22%,#000 50%,transparent);
+  -webkit-mask-image: linear-gradient(transparent,#000 22%,#000 50%,transparent);
+}
+
+.cs-set .cs-cabecera .cs-fondo-cabecera img {
+  object-position: center 44%;
+  filter: grayscale(1) brightness(.28);
+}
+
+.cs-set .cs-cabecera .cs-gotico {
+  margin: 0 auto 16px;
+  padding: 16px 24px 22px;
+  line-height: 1.45;
+  width: 100%;
+}
+
+.cs-set .cs-cabecera .cs-ornamento {
+  margin: 0 auto;
+}
+
+.cs-set .cs-avisos,.cs-set .cs-mensaje {
+  background: #09090b;
+  border: 0;
+  border-left: 2px solid var(--cs-color);
+  padding: 28px 32px 34px;
+  box-shadow: 0 8px 24px #0002;
+}
+
+.cs-set .cs-avisos .cs-cabecera {
+  margin-bottom: 24px;
+}
+
+.cs-set .cs-avisos .cs-lista-avisos {
+  max-width: 660px;
+  margin: 0 auto;
+}
+
+.cs-set .cs-mensaje .cs-gotico {
+  text-align: left;
+}
+
+.cs-set .cs-aprendices {
+  align-items: start;
+}
+
+.cs-set .cs-aprendiz {
+  padding: 0;
+  text-align: left;
+}
+
+.cs-set .cs-aprendiz .cs-retrato {
+  filter: none;
+}
+
+.cs-set .cs-aprendiz .cs-expediente .cs-parrafo {
+  margin: 0;
+}
+
+@media(max-width:480px) {
+  .cs-set .cs-cabecera {
+    min-height: 205px;
+    padding: 28px 10px 25px;
+  }
+
+  .cs-set .cs-cabecera .cs-gotico {
+    padding: 17px 10px 23px;
+  }
+
+  .cs-set .cs-avisos,.cs-set .cs-mensaje {
+    padding: 23px 18px 28px;
+  }
+}
+
+.cs-set .cs-encabezado-original .cs-gotico {
+  font-size: clamp(26px,5.9vw,56px);
+  line-height: 1.4;
+  letter-spacing: -.5px;
+  white-space: nowrap;
+  padding: 18px 12px 26px;
+  background: none;
+  color: #090909;
+  -webkit-text-fill-color: #090909;
+  filter: none;
+  text-shadow: var(--cs-relieve);
+  animation: none;
+}
+
+.cs-set .cs-aprendiz .cs-region::before {
+  display: none;
+}
+
+@media(max-width:720px) {
+  .cs-set .cs-aprendices {
+    grid-template-columns: repeat(3,minmax(0,1fr));
+  }
+}
+
+@media(max-width:480px) {
+  .cs-set .cs-aprendices {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+
+  .cs-set .cs-cabecera .cs-gotico,.cs-set .cs-libro .cs-pagina .cs-titulo-2 {
+    font-size: 22px;
+  }
+
+  .cs-set .cs-encabezado-original .cs-gotico {
+    font-size: clamp(23px,7vw,34px);
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+}
+
+@media(max-width:340px) {
+  .cs-set .cs-portada>.cs-encabezado-original {
+    margin: -25px -14px 23px;
+  }
+}
+
+.cs-set .cs-modulo > .cs-intro-dominios { margin-bottom: 24px; }
+.cs-set .cs-vacante .cs-region-libre { --var: #591b28; }
+
+.cs-set .cs-foto { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 25%; }
