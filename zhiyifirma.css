@@ -6,13 +6,6 @@
   font-display: swap;
 }
 @font-face {
-  font-family: 'Zhi Icons';
-  src: url('https://cdn.jsdelivr.net/gh/seiyria/gameicons-font@master/dist/game-icons.woff') format('woff');
-  font-weight: 400;
-  font-style: normal;
-  font-display: block;
-}
-@font-face {
   font-family: 'Zhiyi Blackforrest';
   src: url('https://cdn.jsdelivr.net/gh/Amethystaa/Izanamicodes@e2de8c6319d6e68daca048ee9d3bc39ef41cf646/Pamors%20Regular.ttf') format('truetype');
   font-weight: 400;
@@ -113,24 +106,12 @@
   filter: drop-shadow(0 3px 3px rgba(0,0,0,.8)) drop-shadow(0 0 5px var(--groups));
   animation: zhi-emblema 7s ease-in-out infinite alternate;
 }
-.zhi-firma > icon > i::before {
-  display: block;
-  font-family: 'Zhi Icons' !important;
-  font-weight: 400 !important;
-  font-style: normal;
-  font-size: inherit;
-  line-height: 1;
-  color: inherit;
-  -webkit-text-fill-color: currentColor;
-}
-.zhi-firma .game-icon-eyeball::before { content: '\f573'; }
-.zhi-firma .game-icon-praying-mantis::before { content: '\fb0a'; }
 .zhi-firma > icon > i:last-of-type { opacity: 0; transition-delay: 0s; }
 .zhi-firma:hover > icon > i:first-of-type { opacity: 0; transition-delay: 0s; }
 .zhi-firma:hover > icon > i:last-of-type { opacity: 1; transition-delay: .85s; }
 .zhi-firma > b {
   position: absolute;
-  bottom: 44px;
+  bottom: 38px;
   left: 20px;
   right: 20px;
   z-index: 3;
@@ -175,7 +156,7 @@
 }
 .zhi-firma > p {
   position: absolute;
-  top: calc(100% - 41px);
+  top: calc(100% - 35px);
   bottom: auto;
   left: 24px;
   right: 24px;
