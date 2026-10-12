@@ -1,106 +1,180 @@
-.zhi-firma .zhi-gif,
-.zhi-firma:is(:hover, :focus-within) .zhi-gif {
-  position: relative;
-  isolation: isolate;
-  background-image: none;
-  filter: none;
+@import url('https://cdn.jsdelivr.net/gh/seiyria/gameicons-font@master/dist/game-icons.css');
+
+@font-face {
+  font-family: 'Zhiyi Blackforrest';
+  src: url('https://cdn.jsdelivr.net/gh/Amethystaa/Izanamicodes@e2de8c6319d6e68daca048ee9d3bc39ef41cf646/Pamors%20Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
-.zhi-firma .zhi-gif::before,
-.zhi-firma .zhi-gif::after {
+.zhi-firma {
+  position: relative;
+  isolation: isolate;
+  box-sizing: border-box;
+  width: 400px;
+  height: 200px;
+  margin: 15px auto;
+  overflow: hidden;
+  border: 1px solid var(--groups);
+  background: #101010;
+  color: #eee;
+  text-align: center;
+}
+.zhi-firma *, .zhi-firma *::before, .zhi-firma *::after { box-sizing: border-box; }
+.zhi-firma > div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  isolation: isolate;
+}
+.zhi-firma > div:nth-of-type(2) { left: 50%; }
+.zhi-firma > div > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: none;
+  transition: filter .7s ease;
+}
+.zhi-firma > div::after {
   content: '';
   position: absolute;
   inset: 0;
-  pointer-events: none;
-}
-
-.zhi-firma .zhi-gif::before {
-  z-index: 0;
-  background-image: var(--zhi-gif);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: var(--zhi-posicion, center);
-  transition: filter .7s ease;
-}
-
-.zhi-firma .zhi-gif::after {
-  z-index: 1;
   background: var(--color, var(--groups));
   mix-blend-mode: multiply;
+  opacity: 0;
+  pointer-events: none;
   transition: opacity .7s ease;
 }
-
-.zhi-firma .zhi-gif-1::before {
-  filter: none;
+.zhi-firma > div:nth-of-type(2) > img { filter: grayscale(1) brightness(.55); }
+.zhi-firma > div:nth-of-type(2)::after { opacity: .75; }
+.zhi-firma:hover > div:first-of-type > img { filter: grayscale(1) brightness(.55); }
+.zhi-firma:hover > div:first-of-type::after { opacity: .75; }
+.zhi-firma:hover > div:nth-of-type(2) > img { filter: none; }
+.zhi-firma:hover > div:nth-of-type(2)::after { opacity: 0; }
+.zhi-firma::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(16,16,16,.14), transparent 36%, rgba(16,16,16,.35) 61%, rgba(16,16,16,.94));
+  pointer-events: none;
 }
-
-.zhi-firma .zhi-gif-1::after {
-  opacity: 0;
-}
-
-.zhi-firma .zhi-gif-2::before {
-  filter: grayscale(1) brightness(.55);
-}
-
-.zhi-firma .zhi-gif-2::after {
-  opacity: .75;
-}
-
-.zhi-firma:is(:hover, :focus-within) .zhi-gif-1::before {
-  filter: grayscale(1) brightness(.55);
-}
-
-.zhi-firma:is(:hover, :focus-within) .zhi-gif-1::after {
-  opacity: .75;
-}
-
-.zhi-firma:is(:hover, :focus-within) .zhi-gif-2::before {
-  filter: none;
-}
-
-.zhi-firma:is(:hover, :focus-within) .zhi-gif-2::after {
-  opacity: 0;
-}
-
-.zhi-firma icon.zhi-icono {
+.zhi-firma > icon {
+  position: absolute;
+  top: 16px;
+  left: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  top: 16px;
-  left: calc(50% - 24px);
-  width: 48px;
+  width: 100%;
   height: 48px;
-  padding: 0;
   margin: 0;
+  padding: 0;
+  z-index: 3;
   border: 0;
+  border-radius: 0;
   background: transparent;
   color: var(--groups);
-  filter: none;
-  animation: none;
 }
-
-.zhi-firma icon.zhi-icono i {
+.zhi-firma > icon > i {
   display: block;
-  margin: 0;
-  padding: 0;
-  color: var(--groups);
   font-size: 42px;
   font-style: normal;
   line-height: 1;
+  color: var(--groups);
   text-shadow: none;
-  filter:
-    drop-shadow(0 3px 3px rgba(0,0,0,.8))
-    drop-shadow(0 0 5px var(--groups));
+  filter: drop-shadow(0 3px 3px rgba(0,0,0,.8)) drop-shadow(0 0 5px var(--groups));
   animation: zhi-emblema 7s ease-in-out infinite alternate;
 }
-
+.zhi-firma > b {
+  position: absolute;
+  bottom: 44px;
+  left: 20px;
+  right: 20px;
+  z-index: 3;
+  display: block;
+  margin: 0;
+  font: 40px/1.05 'Zhiyi Blackforrest', Georgia, serif;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--groups);
+  filter: drop-shadow(0 2px 3px rgba(0,0,0,.7));
+  transition: opacity .55s ease, transform .55s ease;
+}
+.zhi-firma > b:last-of-type { font-size: 32px; opacity: 0; transform: translateY(6px); }
+.zhi-firma:hover > b:first-of-type { opacity: 0; transform: translateY(-6px); }
+.zhi-firma:hover > b:last-of-type { opacity: 1; transform: translateY(0); }
+@supports (background-clip: text) or (-webkit-background-clip: text) {
+  .zhi-firma > b {
+    background: linear-gradient(110deg, var(--groups) 0%, #555 25%, var(--groups) 50%, #555 75%, var(--groups) 100%) 0% 50% / 220% 100% no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    animation: zhi-olas 12s ease-in-out infinite alternate;
+  }
+}
+.zhi-firma > p {
+  position: absolute;
+  bottom: 14px;
+  left: 24px;
+  right: 24px;
+  height: 28px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  font: 9px/13px Arial, Helvetica, sans-serif;
+  letter-spacing: .3px;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+  color: #eee;
+  color: color-mix(in srgb, var(--groups) 40%, #eee 60%);
+  text-shadow: 0 1px 4px #101010;
+  transition: opacity .55s ease, transform .55s ease;
+}
+.zhi-firma > p:first-of-type { letter-spacing: 2px; }
+.zhi-firma > p:last-of-type { opacity: 0; transform: translateY(6px); }
+.zhi-firma:hover > p:first-of-type { opacity: 0; transform: translateY(-6px); }
+.zhi-firma:hover > p:last-of-type { opacity: 1; transform: translateY(0); }
+.zhi-firma::after {
+  content: '';
+  position: absolute;
+  top: -15px;
+  left: 40px;
+  width: 7px;
+  height: 11px;
+  z-index: 2;
+  border-radius: 85% 15% 75% 25%;
+  background: #f3c6d3;
+  box-shadow: 70px -50px #f3c6d3, 145px -100px #d995ac, 225px -30px #fff0f4, 305px -140px #f3c6d3;
+  opacity: 0;
+  pointer-events: none;
+  animation: zhi-caida 9s linear infinite;
+  animation-delay: -4s;
+}
+@keyframes zhi-olas {
+  from { background-position: 0% 50%; }
+  to { background-position: 100% 50%; }
+}
+@keyframes zhi-emblema {
+  from { filter: drop-shadow(0 3px 3px rgba(0,0,0,.8)) drop-shadow(0 0 3px var(--groups)); }
+  to { filter: drop-shadow(0 3px 3px rgba(0,0,0,.8)) drop-shadow(0 0 9px var(--groups)); }
+}
+@keyframes zhi-caida {
+  0% { opacity: 0; transform: translate(0,0) rotate(-12deg); }
+  15% { opacity: .6; }
+  75% { opacity: .45; }
+  100% { opacity: 0; transform: translate(-25px,360px) rotate(12deg); }
+}
 @media (prefers-reduced-motion: reduce) {
-  .zhi-firma icon.zhi-icono i {
-    animation: none;
-  }
-
-  .zhi-firma .zhi-gif::before,
-  .zhi-firma .zhi-gif::after {
-    transition: none;
-  }
+  .zhi-firma::after, .zhi-firma > b, .zhi-firma > icon > i { animation: none; }
+  .zhi-firma > div > img, .zhi-firma > div::after, .zhi-firma > b, .zhi-firma > p { transition: none; }
 }
