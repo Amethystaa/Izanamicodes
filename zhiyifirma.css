@@ -1,11 +1,16 @@
-@import url('https://cdn.jsdelivr.net/gh/seiyria/gameicons-font@master/dist/game-icons.css');
-
 @font-face {
-  font-family: 'Zhiyi Blackforrest';
-  src: url('https://cdn.jsdelivr.net/gh/Amethystaa/Izanamicodes@e2de8c6319d6e68daca048ee9d3bc39ef41cf646/Pamors%20Regular.ttf') format('truetype');
+  font-family: 'Cinzel';
+  src: url('https://fonts.gstatic.com/s/cinzel/v26/8vIU7ww63mVu7gtR-kwKxNvkNOjw-tbnTYo.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
+}
+@font-face {
+  font-family: 'Zhi Icons';
+  src: url('https://cdn.jsdelivr.net/gh/seiyria/gameicons-font@master/dist/game-icons.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
 }
 
 .zhi-firma {
@@ -38,7 +43,7 @@
   object-fit: cover;
   object-position: center;
   filter: none;
-  transition: filter .7s ease;
+  transition: filter 2.2s ease-in-out;
 }
 .zhi-firma > div::after {
   content: '';
@@ -48,7 +53,7 @@
   mix-blend-mode: multiply;
   opacity: 0;
   pointer-events: none;
-  transition: opacity .7s ease;
+  transition: opacity 2.2s ease-in-out;
 }
 .zhi-firma > div:nth-of-type(2) > img { filter: grayscale(1) brightness(.55); }
 .zhi-firma > div:nth-of-type(2)::after { opacity: .75; }
@@ -82,15 +87,38 @@
   color: var(--groups);
 }
 .zhi-firma > icon > i {
+  position: absolute;
+  top: 3px;
+  left: calc(50% - 21px);
   display: block;
+  width: 42px;
+  height: 42px;
   font-size: 42px;
   font-style: normal;
   line-height: 1;
   color: var(--groups);
   text-shadow: none;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 1.6s ease-in-out;
   filter: drop-shadow(0 3px 3px rgba(0,0,0,.8)) drop-shadow(0 0 5px var(--groups));
   animation: zhi-emblema 7s ease-in-out infinite alternate;
 }
+.zhi-firma > icon > i::before {
+  display: block;
+  font-family: 'Zhi Icons' !important;
+  font-weight: 400 !important;
+  font-style: normal;
+  font-size: inherit;
+  line-height: 1;
+  color: inherit;
+  -webkit-text-fill-color: currentColor;
+}
+.zhi-firma .game-icon-eyeball::before { content: '\f573'; }
+.zhi-firma .game-icon-praying-mantis::before { content: '\fb0a'; }
+.zhi-firma > icon > i:last-of-type { opacity: 0; }
+.zhi-firma:hover > icon > i:first-of-type { opacity: 0; }
+.zhi-firma:hover > icon > i:last-of-type { opacity: 1; }
 .zhi-firma > b {
   position: absolute;
   bottom: 44px;
@@ -99,15 +127,15 @@
   z-index: 3;
   display: block;
   margin: 0;
-  font: 40px/1.05 'Zhiyi Blackforrest', Georgia, serif;
+  font: 32px/1.05 'Cinzel', Georgia, serif;
   letter-spacing: 0;
   text-transform: none;
   color: var(--groups);
   filter: drop-shadow(0 2px 3px rgba(0,0,0,.7));
-  transition: opacity .55s ease, transform .55s ease;
+  transition: opacity 1.6s ease-in-out, transform 1.6s ease-in-out;
 }
-.zhi-firma > b:last-of-type { font-size: 32px; opacity: 0; transform: translateY(6px); }
-.zhi-firma:hover > b:first-of-type { opacity: 0; transform: translateY(-6px); }
+.zhi-firma > b:last-of-type { font-size: 26px; opacity: 0; transform: translateY(3px); }
+.zhi-firma:hover > b:first-of-type { opacity: 0; transform: translateY(-3px); }
 .zhi-firma:hover > b:last-of-type { opacity: 1; transform: translateY(0); }
 @supports (background-clip: text) or (-webkit-background-clip: text) {
   .zhi-firma > b {
@@ -131,18 +159,18 @@
   justify-content: center;
   margin: 0;
   padding: 0;
-  font: 9px/13px Arial, Helvetica, sans-serif;
+  font: 9px/13px 'Cinzel', Georgia, serif;
   letter-spacing: .3px;
   text-transform: uppercase;
   overflow-wrap: anywhere;
   color: #eee;
   color: color-mix(in srgb, var(--groups) 40%, #eee 60%);
   text-shadow: 0 1px 4px #101010;
-  transition: opacity .55s ease, transform .55s ease;
+  transition: opacity 1.6s ease-in-out, transform 1.6s ease-in-out;
 }
 .zhi-firma > p:first-of-type { letter-spacing: 2px; }
-.zhi-firma > p:last-of-type { opacity: 0; transform: translateY(6px); }
-.zhi-firma:hover > p:first-of-type { opacity: 0; transform: translateY(-6px); }
+.zhi-firma > p:last-of-type { opacity: 0; transform: translateY(3px); }
+.zhi-firma:hover > p:first-of-type { opacity: 0; transform: translateY(-3px); }
 .zhi-firma:hover > p:last-of-type { opacity: 1; transform: translateY(0); }
 .zhi-firma::after {
   content: '';
@@ -176,5 +204,5 @@
 }
 @media (prefers-reduced-motion: reduce) {
   .zhi-firma::after, .zhi-firma > b, .zhi-firma > icon > i { animation: none; }
-  .zhi-firma > div > img, .zhi-firma > div::after, .zhi-firma > b, .zhi-firma > p { transition: none; }
+  .zhi-firma > div > img, .zhi-firma > div::after, .zhi-firma > b, .zhi-firma > p, .zhi-firma > icon > i { transition: none; }
 }
