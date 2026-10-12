@@ -120,8 +120,8 @@
   font: 28px/1 'Zhiyi Blackforrest', Georgia, serif;
   letter-spacing: 0;
   text-transform: none;
-  color: var(--groups);
-  filter: drop-shadow(0 2px 3px rgba(0,0,0,.7)) blur(0);
+  color: #e0d6d3;
+  filter: drop-shadow(0 1px 1px #000) drop-shadow(0 0 4px #000) blur(0);
   transition: opacity .8s ease-in-out, filter 1.3s ease-in-out, transform 1.3s ease-in-out;
   transition-delay: .85s;
 }
@@ -129,24 +129,24 @@
   font-size: 24px;
   opacity: 0;
   transform: translateY(3px);
-  filter: drop-shadow(0 2px 3px rgba(0,0,0,.7)) blur(5px);
+  filter: drop-shadow(0 1px 1px #000) drop-shadow(0 0 4px #000) blur(5px);
   transition-delay: 0s;
 }
 .zhi-firma:hover > b:first-of-type {
   opacity: 0;
   transform: translateY(-3px);
-  filter: drop-shadow(0 2px 3px rgba(0,0,0,.7)) blur(5px);
+  filter: drop-shadow(0 1px 1px #000) drop-shadow(0 0 4px #000) blur(5px);
   transition-delay: 0s;
 }
 .zhi-firma:hover > b:last-of-type {
   opacity: 1;
   transform: translateY(0);
-  filter: drop-shadow(0 2px 3px rgba(0,0,0,.7)) blur(0);
+  filter: drop-shadow(0 1px 1px #000) drop-shadow(0 0 4px #000) blur(0);
   transition-delay: .85s;
 }
 @supports (background-clip: text) or (-webkit-background-clip: text) {
   .zhi-firma > b {
-    background: linear-gradient(110deg, var(--groups) 0%, #555 25%, var(--groups) 50%, #555 75%, var(--groups) 100%) 0% 50% / 220% 100% no-repeat;
+    background: linear-gradient(110deg, color-mix(in srgb, var(--groups) 65%, #fff) 0%, #e0d6d3 25%, color-mix(in srgb, var(--groups) 65%, #fff) 50%, #e0d6d3 75%, color-mix(in srgb, var(--groups) 65%, #fff) 100%) 0% 50% / 220% 100% no-repeat;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -166,7 +166,7 @@
   margin: 0;
   padding: 0;
   font: 8px/1.15 'Cinzel', Georgia, serif;
-  font-weight: 600;
+  font-weight: 400;
   letter-spacing: .3px;
   text-transform: uppercase;
   overflow-wrap: anywhere;
