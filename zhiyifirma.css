@@ -12,6 +12,13 @@
   font-style: normal;
   font-display: block;
 }
+@font-face {
+  font-family: 'Zhiyi Blackforrest';
+  src: url('https://cdn.jsdelivr.net/gh/Amethystaa/Izanamicodes@e2de8c6319d6e68daca048ee9d3bc39ef41cf646/Pamors%20Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 
 .zhi-firma {
   position: relative;
@@ -100,7 +107,8 @@
   text-shadow: none;
   opacity: 1;
   visibility: visible;
-  transition: opacity 1.6s ease-in-out;
+  transition: opacity .8s ease-in-out;
+  transition-delay: .85s;
   filter: drop-shadow(0 3px 3px rgba(0,0,0,.8)) drop-shadow(0 0 5px var(--groups));
   animation: zhi-emblema 7s ease-in-out infinite alternate;
 }
@@ -116,9 +124,9 @@
 }
 .zhi-firma .game-icon-eyeball::before { content: '\f573'; }
 .zhi-firma .game-icon-praying-mantis::before { content: '\fb0a'; }
-.zhi-firma > icon > i:last-of-type { opacity: 0; }
-.zhi-firma:hover > icon > i:first-of-type { opacity: 0; }
-.zhi-firma:hover > icon > i:last-of-type { opacity: 1; }
+.zhi-firma > icon > i:last-of-type { opacity: 0; transition-delay: 0s; }
+.zhi-firma:hover > icon > i:first-of-type { opacity: 0; transition-delay: 0s; }
+.zhi-firma:hover > icon > i:last-of-type { opacity: 1; transition-delay: .85s; }
 .zhi-firma > b {
   position: absolute;
   bottom: 44px;
@@ -127,16 +135,33 @@
   z-index: 3;
   display: block;
   margin: 0;
-  font: 32px/1.05 'Cinzel', Georgia, serif;
+  font: 40px/1.05 'Zhiyi Blackforrest', Georgia, serif;
   letter-spacing: 0;
   text-transform: none;
   color: var(--groups);
-  filter: drop-shadow(0 2px 3px rgba(0,0,0,.7));
-  transition: opacity 1.6s ease-in-out, transform 1.6s ease-in-out;
+  filter: drop-shadow(0 2px 3px rgba(0,0,0,.7)) blur(0);
+  transition: opacity .8s ease-in-out, filter 1.3s ease-in-out, transform 1.3s ease-in-out;
+  transition-delay: .85s;
 }
-.zhi-firma > b:last-of-type { font-size: 26px; opacity: 0; transform: translateY(3px); }
-.zhi-firma:hover > b:first-of-type { opacity: 0; transform: translateY(-3px); }
-.zhi-firma:hover > b:last-of-type { opacity: 1; transform: translateY(0); }
+.zhi-firma > b:last-of-type {
+  font-size: 32px;
+  opacity: 0;
+  transform: translateY(3px);
+  filter: drop-shadow(0 2px 3px rgba(0,0,0,.7)) blur(5px);
+  transition-delay: 0s;
+}
+.zhi-firma:hover > b:first-of-type {
+  opacity: 0;
+  transform: translateY(-3px);
+  filter: drop-shadow(0 2px 3px rgba(0,0,0,.7)) blur(5px);
+  transition-delay: 0s;
+}
+.zhi-firma:hover > b:last-of-type {
+  opacity: 1;
+  transform: translateY(0);
+  filter: drop-shadow(0 2px 3px rgba(0,0,0,.7)) blur(0);
+  transition-delay: .85s;
+}
 @supports (background-clip: text) or (-webkit-background-clip: text) {
   .zhi-firma > b {
     background: linear-gradient(110deg, var(--groups) 0%, #555 25%, var(--groups) 50%, #555 75%, var(--groups) 100%) 0% 50% / 220% 100% no-repeat;
@@ -164,14 +189,16 @@
   text-transform: uppercase;
   overflow-wrap: anywhere;
   color: #eee;
-  color: color-mix(in srgb, var(--groups) 40%, #eee 60%);
-  text-shadow: 0 1px 4px #101010;
-  transition: opacity 1.6s ease-in-out, transform 1.6s ease-in-out;
+  color: color-mix(in srgb, var(--groups) 55%, #fff 45%);
+  text-shadow: 0 1px 3px #101010, 0 0 8px color-mix(in srgb, var(--groups) 45%, transparent);
+  filter: blur(0);
+  transition: opacity .8s ease-in-out, filter 1.3s ease-in-out, transform 1.3s ease-in-out;
+  transition-delay: .85s;
 }
 .zhi-firma > p:first-of-type { letter-spacing: 2px; }
-.zhi-firma > p:last-of-type { opacity: 0; transform: translateY(3px); }
-.zhi-firma:hover > p:first-of-type { opacity: 0; transform: translateY(-3px); }
-.zhi-firma:hover > p:last-of-type { opacity: 1; transform: translateY(0); }
+.zhi-firma > p:last-of-type { opacity: 0; transform: translateY(3px); filter: blur(4px); transition-delay: 0s; }
+.zhi-firma:hover > p:first-of-type { opacity: 0; transform: translateY(-3px); filter: blur(4px); transition-delay: 0s; }
+.zhi-firma:hover > p:last-of-type { opacity: 1; transform: translateY(0); filter: blur(0); transition-delay: .85s; }
 .zhi-firma::after {
   content: '';
   position: absolute;
