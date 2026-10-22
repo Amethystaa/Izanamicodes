@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Pirata+One&display=swap');
+
+.sea-sign {
+  width: 450px;
+  max-width: 100%;
+  margin: 25px auto 0;
+}
+
+.sea-sign,
+.sea-sign * {
+  box-sizing: border-box;
+}
+
+.sea-sign-frame {
+  position: relative;
+  padding: 5px 4px 4px;
+  border: 1px solid var(--groups, var(--group));
+  border-top: 0;
+  background: transparent;
+}
+
+.sea-sign-frame::before,
+.sea-sign-frame::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 1px;
+  background: var(--groups, var(--group));
+  pointer-events: none;
+}
+
+.sea-sign-frame::before {
+  left: 0;
+  width: max(0px, calc(100% - 260px));
+}
+
+.sea-sign-frame::after {
+  right: 0;
+  width: 8px;
+}
+
+.sea-sign-title {
+  display: grid;
+  position: absolute;
+  z-index: 2;
+  top: -21px;
+  right: 14px;
+  padding: 0;
+  background: transparent;
+  color: #d8d5d0;
+  font: 400 clamp(22px, 7vw, 34px)/1.1 "Pirata One", serif;
+  text-shadow:
+    0 0 5px var(--groups, var(--group)),
+    0 0 12px var(--groups, var(--group));
+  white-space: nowrap;
+}
+
+.sea-sign-title-main,
+.sea-sign-title-hover {
+  grid-area: 1 / 1;
+  text-align: right;
+  transition: opacity 1.2s ease-in-out;
+}
+
+.sea-sign-title-hover {
+  opacity: 0;
+}
+
+.sea-sign:hover .sea-sign-title-main {
+  opacity: 0;
+}
+
+.sea-sign:hover .sea-sign-title-hover {
+  opacity: 1;
+}
+
+.sea-sign-images {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 3px;
+  height: 165px;
+  overflow: hidden;
+}
+
+.sea-sign-photo {
+  position: relative;
+  min-width: 0;
+  height: 100%;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.sea-sign-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: grayscale(0);
+  transition: filter 1.2s ease-in-out;
+}
+
+.sea-sign-tinted img,
+.sea-sign:hover .sea-sign-photo:not(.sea-sign-tinted) img {
+  filter: grayscale(1);
+}
+
+.sea-sign:hover .sea-sign-tinted img {
+  filter: grayscale(0);
+}
+
+.sea-sign-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--groups, var(--group));
+  opacity: 0;
+  mix-blend-mode: color;
+  filter: saturate(1.2);
+  pointer-events: none;
+  transition: opacity 1.2s ease-in-out;
+}
+
+.sea-sign-tinted::after,
+.sea-sign:hover .sea-sign-photo:not(.sea-sign-tinted)::after {
+  opacity: 1;
+}
+
+.sea-sign:hover .sea-sign-tinted::after {
+  opacity: 0;
+}
+
+.sea-sign-caption {
+  margin-top: 5px;
+  padding: 0;
+  color: #aaa6a1;
+  font: 400 9px/1.5 Georgia, "Times New Roman", serif;
+  letter-spacing: .6px;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
