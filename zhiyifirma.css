@@ -57,7 +57,7 @@
   object-fit: cover;
   object-position: var(--encuadre, center);
   filter: grayscale(0) brightness(.72) saturate(1.2) contrast(1.08);
-  transition: filter 4.5s cubic-bezier(.45, 0, .55, 1);
+  transition: filter 3.5s cubic-bezier(.45, 0, .55, 1);
 }
 .zhi-firma .zhi-panel::after {
   content: '';
@@ -67,7 +67,7 @@
   mix-blend-mode: multiply;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 4.5s cubic-bezier(.45, 0, .55, 1);
+  transition: opacity 3.5s cubic-bezier(.45, 0, .55, 1);
 }
 .zhi-firma .zhi-panel + .zhi-panel {
   box-shadow: -1px 0 0 var(--groups);
