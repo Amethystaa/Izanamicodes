@@ -1,192 +1,22 @@
-@font-face {
-  font-family: 'Cinzel';
-  src: url('https://fonts.gstatic.com/s/cinzel/v26/8vIU7ww63mVu7gtR-kwKxNvkNOjw-tbnTYo.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Zhiyi Blackforrest';
-  src: url('https://cdn.jsdelivr.net/gh/Amethystaa/Izanamicodes@e2de8c6319d6e68daca048ee9d3bc39ef41cf646/Pamors%20Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-.zhi-firma {
-  position: relative;
-  isolation: isolate;
-  box-sizing: border-box;
-  width: 400px;
-  height: 200px;
-  margin: 15px auto;
-  overflow: hidden;
-  border: 2px solid var(--groups);
-  background: #101010;
-  color: #eee;
-  text-align: center;
-}
-.zhi-firma *, .zhi-firma *::before, .zhi-firma *::after { box-sizing: border-box; }
-.zhi-firma > div {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50%;
-  height: 100%;
-  isolation: isolate;
-}
-.zhi-firma > div:nth-of-type(2) { left: 50%; }
-.zhi-firma > div > img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  filter: none;
-  transition: filter 2.2s ease-in-out;
-}
-.zhi-firma > div::after {
-  content: '';
-  position: absolute;
-  inset: 0;
+inset: 0;
   background: var(--color, var(--groups));
   mix-blend-mode: multiply;
   opacity: 0;
   pointer-events: none;
   transition: opacity 2.2s ease-in-out;
 }
-.zhi-firma > div:nth-of-type(2) > img { filter: grayscale(1) brightness(.55); }
-.zhi-firma > div:nth-of-type(2)::after { opacity: .75; }
-.zhi-firma:hover > div:first-of-type > img { filter: grayscale(1) brightness(.55); }
-.zhi-firma:hover > div:first-of-type::after { opacity: .75; }
-.zhi-firma:hover > div:nth-of-type(2) > img { filter: none; }
-.zhi-firma:hover > div:nth-of-type(2)::after { opacity: 0; }
-.zhi-firma::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: linear-gradient(180deg, rgba(16,16,16,.14), transparent 36%, rgba(16,16,16,.35) 61%, rgba(16,16,16,.94));
-  pointer-events: none;
+.zhi-firma .zhi-panel + .zhi-panel {
+  box-shadow: -1px 0 0 var(--groups);
 }
-.zhi-firma > icon {
-  position: absolute;
-  top: auto;
-  bottom: 80px;
-  left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 44px;
-  margin: 0;
-  padding: 0;
-  z-index: 3;
-  border: 0;
-  border-radius: 0;
-  background: transparent;
-  color: var(--groups);
+.zhi-firma .zhi-panel:nth-child(2) > img,
+.zhi-firma:hover .zhi-panel:first-child > img {
+  filter: grayscale(1) brightness(.48) contrast(1.08);
 }
-.zhi-firma > icon > i {
-  position: absolute;
-  top: 1px;
-  left: calc(50% - 21px);
-  display: block;
-  width: 42px;
-  height: 42px;
-  font-size: 42px;
-  font-style: normal;
-  line-height: 1;
-  color: var(--groups);
-  text-shadow: none;
-  opacity: 1;
-  visibility: visible;
-  transition: opacity .8s ease-in-out;
-  transition-delay: .85s;
-  filter: drop-shadow(0 3px 3px rgba(0,0,0,.8)) drop-shadow(0 0 5px var(--groups));
-  animation: zhi-emblema 7s ease-in-out infinite alternate;
-}
-.zhi-firma > icon > i:last-of-type { opacity: 0; transition-delay: 0s; }
-.zhi-firma:hover > icon > i:first-of-type { opacity: 0; transition-delay: 0s; }
-.zhi-firma:hover > icon > i:last-of-type { opacity: 1; transition-delay: .85s; }
-.zhi-firma > b {
-  position: absolute;
-  bottom: 38px;
-  left: 20px;
-  right: 20px;
-  z-index: 3;
-  display: block;
-  margin: 0;
-  font: 28px/1 'Zhiyi Blackforrest', Georgia, serif;
-  letter-spacing: 0;
-  text-transform: none;
-  color: #e0d6d3;
-  filter: drop-shadow(0 1px 1px #000) drop-shadow(0 0 4px #000) blur(0);
-  transition: opacity .8s ease-in-out, filter 1.3s ease-in-out, transform 1.3s ease-in-out;
-  transition-delay: .85s;
-}
-.zhi-firma > b:last-of-type {
-  font-size: 24px;
-  opacity: 0;
-  transform: translateY(3px);
-  filter: drop-shadow(0 1px 1px #000) drop-shadow(0 0 4px #000) blur(5px);
-  transition-delay: 0s;
-}
-.zhi-firma:hover > b:first-of-type {
-  opacity: 0;
-  transform: translateY(-3px);
-  filter: drop-shadow(0 1px 1px #000) drop-shadow(0 0 4px #000) blur(5px);
-  transition-delay: 0s;
-}
-.zhi-firma:hover > b:last-of-type {
-  opacity: 1;
-  transform: translateY(0);
-  filter: drop-shadow(0 1px 1px #000) drop-shadow(0 0 4px #000) blur(0);
-  transition-delay: .85s;
-}
-@supports (background-clip: text) or (-webkit-background-clip: text) {
-  .zhi-firma > b {
-    background: linear-gradient(110deg, color-mix(in srgb, var(--groups) 65%, #fff) 0%, #e0d6d3 25%, color-mix(in srgb, var(--groups) 65%, #fff) 50%, #e0d6d3 75%, color-mix(in srgb, var(--groups) 65%, #fff) 100%) 0% 50% / 220% 100% no-repeat;
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    -webkit-text-fill-color: transparent;
-    animation: zhi-olas 12s ease-in-out infinite alternate;
-  }
-}
-.zhi-firma > p {
-  position: absolute;
-  top: calc(100% - 35px);
-  bottom: auto;
-  left: 24px;
-  right: 24px;
-  height: auto;
-  z-index: 3;
-  display: block;
-  margin: 0;
-  padding: 0;
-  font: 8px/1.15 'Cinzel', Georgia, serif;
-  font-weight: 400;
-  letter-spacing: .3px;
-  text-transform: uppercase;
-  overflow-wrap: anywhere;
-  color: #f3f3f3;
-  -webkit-text-fill-color: currentColor;
-  text-shadow:
-    0 1px 2px #000,
-    1px 0 1px #000,
-    -1px 0 1px #000,
-    0 -1px 1px #000,
-    0 0 5px #000;
-  filter: blur(0);
-  transition: opacity .8s ease-in-out, filter 1.3s ease-in-out, transform 1.3s ease-in-out;
-  transition-delay: .85s;
-}
-.zhi-firma > p:first-of-type { letter-spacing: 1.2px; }
-.zhi-firma > p:last-of-type { opacity: 0; transform: translateY(3px); filter: blur(4px); transition-delay: 0s; }
-.zhi-firma:hover > p:first-of-type { opacity: 0; transform: translateY(-3px); filter: blur(4px); transition-delay: 0s; }
-.zhi-firma:hover > p:last-of-type { opacity: 1; transform: translateY(0); filter: blur(0); transition-delay: .85s; }
-.zhi-firma::after {
+.zhi-firma .zhi-panel:nth-child(2)::after,
+.zhi-firma:hover .zhi-panel:first-child::after { opacity: .78; }
+.zhi-firma:hover .zhi-panel:nth-child(2) > img { filter: brightness(.72) saturate(1.2) contrast(1.08); }
+.zhi-firma:hover .zhi-panel:nth-child(2)::after { opacity: 0; }
+.zhi-firma .zhi-ventana::before {
   content: '';
   position: absolute;
   top: -15px;
@@ -202,13 +32,75 @@
   animation: zhi-caida 9s linear infinite;
   animation-delay: -4s;
 }
-@keyframes zhi-olas {
-  from { background-position: 0% 50%; }
-  to { background-position: 100% 50%; }
+.zhi-firma .zhi-ventana::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(16,16,16,.27), transparent 36%, transparent 70%, rgba(16,16,16,.35));
+  pointer-events: none;
 }
-@keyframes zhi-emblema {
-  from { filter: drop-shadow(0 3px 3px rgba(0,0,0,.8)) drop-shadow(0 0 3px var(--groups)); }
-  to { filter: drop-shadow(0 3px 3px rgba(0,0,0,.8)) drop-shadow(0 0 9px var(--groups)); }
+
+.zhi-firma .zhi-titulos {
+  position: absolute;
+  top: 0;
+  left: 6px;
+  right: 6px;
+  transform: translateY(-50%);
+  z-index: 3;
+  display: block;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+.zhi-firma .zhi-titulos > b {
+  grid-area: 1 / 1;
+  display: block;
+  margin: 0;
+  padding: 0;
+  font: 48px/1.12 'Zhiyi Blackforrest', Georgia, serif;
+  font-size: clamp(20px, 12cqw, 48px);
+  letter-spacing: -.6px;
+  white-space: nowrap;
+  text-transform: none;
+  color: #e0d6d3;
+  text-shadow: none;
+  filter:
+    drop-shadow(0 1px 1px #000)
+    drop-shadow(0 0 4px var(--groups))
+    drop-shadow(0 0 10px var(--groups));
+}
+.zhi-firma .zhi-frases {
+  position: relative;
+  display: grid;
+  width: 100%;
+  margin: 9px auto 0;
+  padding: 0 4px;
+}
+.zhi-firma .zhi-frases > p {
+  grid-area: 1 / 1;
+  align-self: start;
+  display: block;
+  margin: 0;
+  padding: 0;
+  font: 400 8px/1.5 'Cinzel', Georgia, serif;
+  letter-spacing: .6px;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+  color: #ddd;
+  -webkit-text-fill-color: currentColor;
+  text-shadow: 0 1px 2px #000, 0 0 5px #000, 0 0 4px var(--groups);
+  filter: none;
+}
+
+@supports ((background-clip: text) or (-webkit-background-clip: text)) and (color: color-mix(in srgb, red, white)) {
+  .zhi-firma .zhi-titulos > b {
+    background: linear-gradient(110deg, color-mix(in srgb, var(--groups) 65%, #fff) 0%, #e0d6d3 25%, color-mix(in srgb, var(--groups) 65%, #fff) 50%, #e0d6d3 75%, color-mix(in srgb, var(--groups) 65%, #fff) 100%) 0% 50% / 100% 100% no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
 }
 @keyframes zhi-caida {
   0% { opacity: 0; transform: translate(0,0) rotate(-12deg); }
@@ -217,6 +109,7 @@
   100% { opacity: 0; transform: translate(-25px,360px) rotate(12deg); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .zhi-firma::after, .zhi-firma > b, .zhi-firma > icon > i { animation: none; }
-  .zhi-firma > div > img, .zhi-firma > div::after, .zhi-firma > b, .zhi-firma > p, .zhi-firma > icon > i { transition: none; }
+  .zhi-firma .zhi-ventana::before { animation: none; }
+  .zhi-firma .zhi-panel > img,
+  .zhi-firma .zhi-panel::after { transition: none; }
 }
