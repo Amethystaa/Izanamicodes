@@ -1,4 +1,68 @@
-inset: 0;
+@font-face {
+  font-family: 'Cinzel';
+  src: url('https://fonts.gstatic.com/s/cinzel/v26/8vIU7ww63mVu7gtR-kwKxNvkNOjw-tbnTYo.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Zhiyi Blackforrest';
+  src: url('https://cdn.jsdelivr.net/gh/Amethystaa/Izanamicodes@e2de8c6319d6e68daca048ee9d3bc39ef41cf646/Pamors%20Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+.zhi-firma {
+  position: relative;
+  isolation: isolate;
+  container-type: inline-size;
+  width: 400px;
+  max-width: 100%;
+  margin: 32px auto 15px;
+  padding: 0;
+  overflow: visible;
+  border: 0;
+  background: transparent;
+  color: #eee;
+  text-align: center;
+}
+.zhi-firma,
+.zhi-firma *,
+.zhi-firma *::before,
+.zhi-firma *::after { box-sizing: border-box; }
+
+.zhi-firma .zhi-ventana {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border: 2px solid var(--groups);
+  background: #101010;
+}
+.zhi-firma .zhi-panel {
+  position: relative;
+  isolation: isolate;
+  flex: 0 0 50%;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+}
+.zhi-firma .zhi-panel > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: var(--encuadre, center);
+  filter: brightness(.72) saturate(1.2) contrast(1.08);
+  transition: filter 2.2s ease-in-out;
+}
+.zhi-firma .zhi-panel::after {
+  content: '';
+  position: absolute;
+  inset: 0;
   background: var(--color, var(--groups));
   mix-blend-mode: multiply;
   opacity: 0;
