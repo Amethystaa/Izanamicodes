@@ -2333,10 +2333,13 @@
 
 .cs-set .cs-aviso .cs-aviso-titulo {
   margin: 0 0 4px;
-  padding: 0;
-  color: var(--cs-aviso-acento);
+  padding: 10px 6px 6px;
+  background: none;
+  color: var(--cs-titulo-color, #79313e);
+  -webkit-text-fill-color: currentColor;
   font-size: clamp(23px, 4vw, 30px);
-  line-height: 1.15;
+  line-height: 1.45;
+  overflow: visible;
 }
 
 .cs-set .cs-aviso-subtitulo {
