@@ -2372,3 +2372,32 @@
   line-height: 1.65;
   text-align: left;
 }
+
+.cs-set .cs-aviso .cs-aviso-lista {
+  max-height: min(10.5rem, 45vh);
+  margin: 0;
+  padding: 0 12px 0 1.35em;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #a85a6b #18171b;
+  list-style: disc outside;
+  font-size: 14px;
+  line-height: 1.65;
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+
+.cs-set .cs-aviso .cs-aviso-lista:focus-visible {
+  outline: 1px solid #a85a6b;
+  outline-offset: 3px;
+}
+
+.cs-set .cs-aviso-lista > li + li {
+  margin-top: 10px;
+}
+
+.cs-set .cs-aviso-lista > li::marker {
+  content: "◆  ";
+  color: #bc6a7b;
+  font-size: .75em;
+}
