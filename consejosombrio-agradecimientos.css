@@ -3,21 +3,21 @@
 @font-face{font-family:"Archivo Consejo Metal";src:url("https://cdn.jsdelivr.net/gh/Amethystaa/Izanamicodes@19dbce21835818269ebb353b66584793309a7a00/metal-macabre.regular.ttf") format("truetype");font-weight:400;font-display:swap;unicode-range:U+0020-007E}
 
 /* Pieza independiente: colocar después del cierre de la tablilla del Consejo. */
-.csg-secreto{--csg-acento:var(--groups,#9d6877);position:relative;isolation:isolate;display:block;width:640px;max-width:100%;min-height:285px;margin:28px auto;box-sizing:border-box;background:#000 url("https://cdn.jsdelivr.net/gh/Amethystaa/Izanamicodes@baaa05fbd00aec55f5a5edba724196158ec8106f/imagenes/consejo-agradecimientos-fondo.jpg") center/cover no-repeat;color:#d6cdc6;text-align:left;box-shadow:0 15px 35px #0009;overflow:visible}
+.csg-secreto{--csg-acento:var(--groups,#9d6877);position:relative;isolation:isolate;display:block;width:640px;max-width:100%;min-height:285px;margin:28px auto;box-sizing:border-box;background:#000 url("https://cdn.jsdelivr.net/gh/Amethystaa/Izanamicodes@baaa05fbd00aec55f5a5edba724196158ec8106f/imagenes/consejo-agradecimientos-fondo.jpg") center/cover no-repeat;color:inherit;text-align:left;box-shadow:0 15px 35px #0009;overflow:visible}
 .csg-secreto *,.csg-secreto *::before,.csg-secreto *::after{box-sizing:border-box}
 .csg-secreto::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#0000,#0005 40%,#000a)}
 .csg-secreto .csg-portada{position:absolute;inset:0;z-index:2;display:flex;align-items:center;justify-content:flex-end;padding:32px;list-style:none;cursor:pointer;-webkit-tap-highlight-color:transparent}
 .csg-secreto .csg-portada::-webkit-details-marker{display:none}
 .csg-secreto .csg-portada:focus-visible{outline:2px solid var(--csg-acento);outline-offset:5px}
 .csg-secreto .csg-portada-texto{display:block;width:58%;transition:opacity .5s ease,transform .7s ease}
-.csg-secreto .csg-titulo{display:block;color:var(--csg-acento);font:400 38px/1.2 "Consejo Almendra",Georgia,serif;text-shadow:0 2px 12px #000}
-.csg-secreto .csg-subtitulo{display:block;margin-top:9px;color:#d6cdc6;font:400 17px/1.5 "Consejo Almendra",Georgia,serif}
-.csg-secreto .csg-gesto,.csg-secreto .csg-cerrar{display:block;margin-top:22px;color:#aaa099;font:400 9px/1.5 "Archivo Consejo Texto",Georgia,serif;letter-spacing:1.2px;text-transform:uppercase}
+.csg-secreto .csg-titulo{display:block;color:inherit;font:400 38px/1.2 "Consejo Almendra",Georgia,serif;}
+.csg-secreto .csg-subtitulo{display:block;margin-top:9px;color:inherit;font:400 17px/1.5 "Consejo Almendra",Georgia,serif}
+.csg-secreto .csg-gesto,.csg-secreto .csg-cerrar{display:block;margin-top:22px;color:inherit;font:400 9px/1.5 "Archivo Consejo Texto",Georgia,serif;letter-spacing:1.2px;text-transform:uppercase}
 .csg-secreto .csg-cerrar{position:absolute;right:28px;bottom:18px;opacity:0;transition:opacity .5s}
 .csg-secreto::details-content{display:block;content-visibility:visible}
 .csg-secreto .csg-revelacion{position:relative;display:flex;align-items:center;justify-content:flex-end;min-height:285px;padding:28px 28px 45px;visibility:hidden;opacity:0;transform:translateY(14px);transition:opacity .65s ease,transform .65s ease,visibility .65s}
 .csg-secreto .csg-dedicatoria{position:relative;width:62%;padding:20px 22px;background:linear-gradient(110deg,#080606b8,#080606ed);box-shadow:0 9px 28px #0009;transform:rotate(-1.2deg);pointer-events:auto}
-.csg-secreto .csg-intro{display:block;margin-bottom:10px;color:var(--csg-acento);font:400 24px/1.2 "Consejo Almendra",Georgia,serif}
+.csg-secreto .csg-intro{display:block;margin-bottom:10px;color:inherit;font:400 24px/1.2 "Consejo Almendra",Georgia,serif}
 .csg-secreto .csg-gracias{font:400 18px/1.5 "Consejo Almendra",Georgia,serif}
 .csg-secreto[open] .csg-portada-texto{opacity:0;transform:translateY(-8px)}
 .csg-secreto[open] .csg-revelacion{visibility:visible;opacity:1;transform:translateY(0)}
@@ -26,10 +26,14 @@
 @media(max-width:560px){.csg-secreto{min-height:315px;background-position:35% center}.csg-secreto .csg-portada{padding:24px}.csg-secreto .csg-portada-texto{width:100%;text-align:right}.csg-secreto .csg-titulo{font-size:30px;overflow-wrap:anywhere}.csg-secreto .csg-revelacion{min-height:315px;padding:24px 22px 45px}.csg-secreto .csg-dedicatoria{width:100%;padding:18px 20px}.csg-secreto .csg-gracias{font-size:17px}}
 @media(prefers-reduced-motion:reduce){.csg-secreto *{transition:none!important}}
 
-/* El secreto mantiene el mismo recorrido de tinta, sin animar su imagen. */
-@supports (mask-image:linear-gradient(#000,transparent)) or (-webkit-mask-image:linear-gradient(#000,transparent)){
-.csg-secreto :is(.csg-titulo,.csg-subtitulo,.csg-gesto,.csg-cerrar,.csg-intro,.csg-gracias){-webkit-mask-image:linear-gradient(125deg,#000 28%,#000b 38%,#0002 46%,transparent 50%,#0002 54%,#000b 62%,#000 72%);mask-image:linear-gradient(125deg,#000 28%,#000b 38%,#0002 46%,transparent 50%,#0002 54%,#000b 62%,#000 72%);-webkit-mask-size:400% 400%;mask-size:400% 400%;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;animation:csg-correr-tinta 84s linear calc(-30s + var(--csg-orden,0)*3s) infinite both}
-}
-@keyframes csg-correr-tinta{from{-webkit-mask-position:100% 100%;mask-position:100% 100%}to{-webkit-mask-position:0% 0%;mask-position:0% 0%}}
+
+/* Color heredado y sombra móvil; no se ocultan ni se oscurecen los caracteres. */
+.csg-secreto :is(.csg-titulo,.csg-subtitulo,.csg-gesto,.csg-cerrar,.csg-intro,.csg-gracias){animation:csg-sombra-tinta 48s ease-in-out calc(-10s + var(--csg-orden,0)*1.2s) infinite both}
+@keyframes csg-sombra-tinta{
+0%,100%{text-shadow:-3px -2px 5px transparent}
+18%{text-shadow:-2px -1px 5px color-mix(in srgb,var(--csg-acento) 25%,transparent)}
+48%{text-shadow:0 1px 6px color-mix(in srgb,var(--csg-acento) 55%,transparent)}
+74%{text-shadow:2px 3px 5px color-mix(in srgb,var(--csg-acento) 25%,transparent)}
+90%{text-shadow:3px 4px 5px transparent}}
 .csg-secreto .csg-titulo{--csg-orden:0}.csg-secreto .csg-subtitulo{--csg-orden:1}.csg-secreto .csg-gesto{--csg-orden:2}.csg-secreto .csg-intro{--csg-orden:0}.csg-secreto .csg-gracias{--csg-orden:2}.csg-secreto .csg-cerrar{--csg-orden:4}
-@media(prefers-reduced-motion:reduce){.csg-secreto :is(.csg-titulo,.csg-subtitulo,.csg-gesto,.csg-cerrar,.csg-intro,.csg-gracias){animation:none!important;-webkit-mask-image:none;mask-image:none}}
+@media(prefers-reduced-motion:reduce){.csg-secreto :is(.csg-titulo,.csg-subtitulo,.csg-gesto,.csg-cerrar,.csg-intro,.csg-gracias){animation:none!important;text-shadow:0 0 4px color-mix(in srgb,var(--csg-acento) 20%,transparent)}}
