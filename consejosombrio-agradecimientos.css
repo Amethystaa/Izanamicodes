@@ -1,0 +1,27 @@
+@font-face{font-family:"Consejo Almendra";src:url("https://cdn.jsdelivr.net/gh/Amethystaa/Izanamicodes@baaa05fbd00aec55f5a5edba724196158ec8106f/fonts/Almendra-Regular.ttf") format("truetype");font-style:normal;font-weight:400;font-display:swap}
+@font-face{font-family:"Archivo Consejo Texto";src:url("https://fonts.gstatic.com/s/gideonroman/v13/e3tmeuGrVOys8sxzZgWlmXogew.ttf") format("truetype");font-weight:400;font-display:swap}
+@font-face{font-family:"Archivo Consejo Metal";src:url("https://cdn.jsdelivr.net/gh/Amethystaa/Izanamicodes@19dbce21835818269ebb353b66584793309a7a00/metal-macabre.regular.ttf") format("truetype");font-weight:400;font-display:swap;unicode-range:U+0020-007E}
+
+/* Pieza independiente: colocar después del cierre de la tablilla del Consejo. */
+.csg-secreto{--csg-acento:var(--groups,#9d6877);position:relative;isolation:isolate;display:block;width:640px;max-width:100%;min-height:285px;margin:28px auto;box-sizing:border-box;background:#000 url("https://cdn.jsdelivr.net/gh/Amethystaa/Izanamicodes@baaa05fbd00aec55f5a5edba724196158ec8106f/imagenes/consejo-agradecimientos-fondo.jpg") center/cover no-repeat;color:#d6cdc6;text-align:left;box-shadow:0 15px 35px #0009;overflow:visible}
+.csg-secreto *,.csg-secreto *::before,.csg-secreto *::after{box-sizing:border-box}
+.csg-secreto::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#0000,#0005 40%,#000a)}
+.csg-secreto .csg-portada{position:absolute;inset:0;z-index:2;display:flex;align-items:center;justify-content:flex-end;padding:32px;list-style:none;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.csg-secreto .csg-portada::-webkit-details-marker{display:none}
+.csg-secreto .csg-portada:focus-visible{outline:2px solid var(--csg-acento);outline-offset:5px}
+.csg-secreto .csg-portada-texto{display:block;width:58%;transition:opacity .5s ease,transform .7s ease}
+.csg-secreto .csg-titulo{display:block;color:var(--csg-acento);font:400 38px/1.2 "Consejo Almendra",Georgia,serif;text-shadow:0 2px 12px #000}
+.csg-secreto .csg-subtitulo{display:block;margin-top:9px;color:#d6cdc6;font:400 17px/1.5 "Consejo Almendra",Georgia,serif}
+.csg-secreto .csg-gesto,.csg-secreto .csg-cerrar{display:block;margin-top:22px;color:#aaa099;font:400 9px/1.5 "Archivo Consejo Texto",Georgia,serif;letter-spacing:1.2px;text-transform:uppercase}
+.csg-secreto .csg-cerrar{position:absolute;right:28px;bottom:18px;opacity:0;transition:opacity .5s}
+.csg-secreto::details-content{display:block;content-visibility:visible}
+.csg-secreto .csg-revelacion{position:relative;display:flex;align-items:center;justify-content:flex-end;min-height:285px;padding:28px 28px 45px;visibility:hidden;opacity:0;transform:translateY(14px);transition:opacity .65s ease,transform .65s ease,visibility .65s}
+.csg-secreto .csg-dedicatoria{position:relative;width:62%;padding:20px 22px;background:linear-gradient(110deg,#080606b8,#080606ed);box-shadow:0 9px 28px #0009;transform:rotate(-1.2deg);pointer-events:auto}
+.csg-secreto .csg-intro{display:block;margin-bottom:10px;color:var(--csg-acento);font:400 24px/1.2 "Consejo Almendra",Georgia,serif}
+.csg-secreto .csg-gracias{font:400 18px/1.5 "Consejo Almendra",Georgia,serif}
+.csg-secreto[open] .csg-portada-texto{opacity:0;transform:translateY(-8px)}
+.csg-secreto[open] .csg-revelacion{visibility:visible;opacity:1;transform:translateY(0)}
+.csg-secreto[open] .csg-cerrar{opacity:1}
+@media(hover:hover){.csg-secreto:hover .csg-portada-texto{opacity:0;transform:translateY(-8px)}.csg-secreto:hover .csg-revelacion{visibility:visible;opacity:1;transform:translateY(0)}}
+@media(max-width:560px){.csg-secreto{min-height:315px;background-position:35% center}.csg-secreto .csg-portada{padding:24px}.csg-secreto .csg-portada-texto{width:100%;text-align:right}.csg-secreto .csg-titulo{font-size:30px;overflow-wrap:anywhere}.csg-secreto .csg-revelacion{min-height:315px;padding:24px 22px 45px}.csg-secreto .csg-dedicatoria{width:100%;padding:18px 20px}.csg-secreto .csg-gracias{font-size:17px}}
+@media(prefers-reduced-motion:reduce){.csg-secreto *{transition:none!important}}
