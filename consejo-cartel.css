@@ -61,11 +61,46 @@
 .csc-cartel .csc-titulo{font-size:32px;line-height:1.35;color:var(--csc-acento);text-transform:none;letter-spacing:0}
 .csc-cartel .csc-alias{color:var(--csc-tinta)}
 .csc-cartel .csc-clip{position:absolute;z-index:5;top:-24px;left:23px;width:37px;height:89px;max-width:none;object-fit:contain;pointer-events:none;transform:rotate(-13deg);filter:drop-shadow(1px 2px 1px #0009)}
-.csc-cartel .csc-tinta{display:inline-block;animation:csc-tinta-maldita 19s ease-in-out var(--csc-demora,0s) infinite}
-.csc-cartel .csc-tinta-suave{animation:csc-tinta-rastro 23s ease-in-out var(--csc-demora,0s) infinite}
-.csc-cartel:is(:hover,:focus-within) .csc-tinta,.csc-cartel:is(:hover,:focus-within) .csc-tinta-suave{animation:none;opacity:1;filter:none}
-@keyframes csc-tinta-maldita{0%,48%,82%,100%{opacity:1;filter:blur(0);text-shadow:none}58%{opacity:.5;filter:blur(.25px);text-shadow:0 0 7px var(--csc-acento)}65%,69%{opacity:0;filter:blur(1.6px)}76%{opacity:.55;filter:blur(.35px)}}
-@keyframes csc-tinta-rastro{0%,55%,84%,100%{opacity:1;filter:blur(0)}65%,72%{opacity:.22;filter:blur(.6px)}}
 @media(max-width:560px){.csc-cartel .csc-titulo{font-size:29px}.csc-cartel .csc-principal{padding-top:25px}}
 @media(max-width:360px){.csc-cartel{padding:16px}.csc-cartel .csc-titulo{font-size:26px}}
-@media(prefers-reduced-motion:reduce){.csc-cartel .csc-tinta,.csc-cartel .csc-tinta-suave{animation:none;opacity:1;filter:none}}
+
+
+/* Tinta en movimiento: barrido diagonal, letra a letra y escalonado de arriba abajo. */
+.csc-cartel .csc-tinta{display:inline}
+@supports (mask-image:linear-gradient(#000,transparent)) or (-webkit-mask-image:linear-gradient(#000,transparent)){
+.csc-cartel :is(.csc-registro>span,.csc-antetitulo,.csc-titulo,.csc-subtitulo,.csc-numero,.csc-alias,.csc-identidad-oculta,.csc-dato>dt,.csc-dato>dd,.csc-epigrafe,.csc-texto,.csc-lista>li,.csc-fotografia>figcaption,.csc-pie>span){-webkit-mask-image:linear-gradient(125deg,#000 28%,#000b 38%,#0002 46%,transparent 50%,#0002 54%,#000b 62%,#000 72%);mask-image:linear-gradient(125deg,#000 28%,#000b 38%,#0002 46%,transparent 50%,#0002 54%,#000b 62%,#000 72%);-webkit-mask-size:400% 400%;mask-size:400% 400%;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:100% 100%;mask-position:100% 100%;animation:csc-correr-tinta 84s linear calc(-30s + var(--csc-orden,0)*1.4s) infinite both}
+}
+@keyframes csc-correr-tinta{from{-webkit-mask-position:100% 100%;mask-position:100% 100%}to{-webkit-mask-position:0% 0%;mask-position:0% 0%}}
+.csc-cartel .csc-registro>span:first-child{--csc-orden:0}
+.csc-cartel .csc-registro>span:last-child{--csc-orden:1}
+.csc-cartel .csc-antetitulo{--csc-orden:2}
+.csc-cartel .csc-titulo{--csc-orden:3}
+.csc-cartel .csc-subtitulo{--csc-orden:4}
+.csc-cartel .csc-numero{--csc-orden:5}
+.csc-cartel .csc-alias{--csc-orden:6}
+.csc-cartel .csc-identidad-oculta{--csc-orden:7}
+.csc-cartel .csc-dato:nth-child(1)>dt{--csc-orden:8}
+.csc-cartel .csc-dato:nth-child(1)>dd{--csc-orden:9}
+.csc-cartel .csc-dato:nth-child(2)>dt{--csc-orden:10}
+.csc-cartel .csc-dato:nth-child(2)>dd{--csc-orden:11}
+.csc-cartel .csc-dato:nth-child(3)>dt{--csc-orden:12}
+.csc-cartel .csc-dato:nth-child(3)>dd{--csc-orden:13}
+.csc-cartel .csc-dato:nth-child(4)>dt{--csc-orden:14}
+.csc-cartel .csc-dato:nth-child(4)>dd{--csc-orden:15}
+.csc-cartel .csc-bloque:nth-of-type(1)>.csc-epigrafe{--csc-orden:16}
+.csc-cartel .csc-bloque:nth-of-type(1)>.csc-texto{--csc-orden:17}
+.csc-cartel .csc-bloque:nth-of-type(2)>.csc-epigrafe{--csc-orden:18}
+.csc-cartel .csc-lista>li{--csc-orden:19}
+.csc-cartel .csc-lista>li:nth-child(even){--csc-orden:20}
+.csc-cartel .csc-bloque:nth-of-type(3)>.csc-epigrafe{--csc-orden:21}
+.csc-cartel .csc-bloque:nth-of-type(3)>.csc-texto{--csc-orden:22}
+.csc-cartel .csc-fotografia>figcaption{--csc-orden:22}
+.csc-cartel .csc-vinculos>div:first-child>.csc-epigrafe{--csc-orden:23}
+.csc-cartel .csc-vinculos>div:first-child>.csc-texto{--csc-orden:24}
+.csc-cartel .csc-vinculos>div:last-child>.csc-epigrafe{--csc-orden:25}
+.csc-cartel .csc-vinculos>div:last-child>.csc-texto{--csc-orden:26}
+.csc-cartel .csc-informe>.csc-epigrafe{--csc-orden:27}
+.csc-cartel .csc-informe>.csc-texto{--csc-orden:28}
+.csc-cartel .csc-informe>.csc-texto:last-child{--csc-orden:29}
+.csc-cartel .csc-pie>span{--csc-orden:30}
+@media(prefers-reduced-motion:reduce){.csc-cartel :is(.csc-registro>span,.csc-antetitulo,.csc-titulo,.csc-subtitulo,.csc-numero,.csc-alias,.csc-identidad-oculta,.csc-dato>dt,.csc-dato>dd,.csc-epigrafe,.csc-texto,.csc-lista>li,.csc-fotografia>figcaption,.csc-pie>span){animation:none!important;-webkit-mask-image:none;mask-image:none}}

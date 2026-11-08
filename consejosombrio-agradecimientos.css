@@ -25,3 +25,11 @@
 @media(hover:hover){.csg-secreto:hover .csg-portada-texto{opacity:0;transform:translateY(-8px)}.csg-secreto:hover .csg-revelacion{visibility:visible;opacity:1;transform:translateY(0)}}
 @media(max-width:560px){.csg-secreto{min-height:315px;background-position:35% center}.csg-secreto .csg-portada{padding:24px}.csg-secreto .csg-portada-texto{width:100%;text-align:right}.csg-secreto .csg-titulo{font-size:30px;overflow-wrap:anywhere}.csg-secreto .csg-revelacion{min-height:315px;padding:24px 22px 45px}.csg-secreto .csg-dedicatoria{width:100%;padding:18px 20px}.csg-secreto .csg-gracias{font-size:17px}}
 @media(prefers-reduced-motion:reduce){.csg-secreto *{transition:none!important}}
+
+/* El secreto mantiene el mismo recorrido de tinta, sin animar su imagen. */
+@supports (mask-image:linear-gradient(#000,transparent)) or (-webkit-mask-image:linear-gradient(#000,transparent)){
+.csg-secreto :is(.csg-titulo,.csg-subtitulo,.csg-gesto,.csg-cerrar,.csg-intro,.csg-gracias){-webkit-mask-image:linear-gradient(125deg,#000 28%,#000b 38%,#0002 46%,transparent 50%,#0002 54%,#000b 62%,#000 72%);mask-image:linear-gradient(125deg,#000 28%,#000b 38%,#0002 46%,transparent 50%,#0002 54%,#000b 62%,#000 72%);-webkit-mask-size:400% 400%;mask-size:400% 400%;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;animation:csg-correr-tinta 84s linear calc(-30s + var(--csg-orden,0)*3s) infinite both}
+}
+@keyframes csg-correr-tinta{from{-webkit-mask-position:100% 100%;mask-position:100% 100%}to{-webkit-mask-position:0% 0%;mask-position:0% 0%}}
+.csg-secreto .csg-titulo{--csg-orden:0}.csg-secreto .csg-subtitulo{--csg-orden:1}.csg-secreto .csg-gesto{--csg-orden:2}.csg-secreto .csg-intro{--csg-orden:0}.csg-secreto .csg-gracias{--csg-orden:2}.csg-secreto .csg-cerrar{--csg-orden:4}
+@media(prefers-reduced-motion:reduce){.csg-secreto :is(.csg-titulo,.csg-subtitulo,.csg-gesto,.csg-cerrar,.csg-intro,.csg-gracias){animation:none!important;-webkit-mask-image:none;mask-image:none}}
