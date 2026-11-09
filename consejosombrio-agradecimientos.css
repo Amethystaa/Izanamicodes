@@ -1,5 +1,7 @@
-@font-face{font-family:"Consejo Almendra";src:url("https://cdn.jsdelivr.net/gh/Amethystaa/Izanamicodes@baaa05fbd00aec55f5a5edba724196158ec8106f/fonts/Almendra-Regular.ttf") format("truetype");font-style:normal;font-weight:400;font-display:swap}
-@font-face{font-family:"Archivo Consejo Texto";src:url("https://fonts.gstatic.com/s/gideonroman/v13/e3tmeuGrVOys8sxzZgWlmXogew.ttf") format("truetype");font-weight:400;font-display:swap}
+@font-face{font-family:"Consejo Inquisition";src:url("https://cdn.jsdelivr.net/gh/Amethystaa/Izanamicodes@352e2bfd1f3b70c9387ff81db60c16d8b68bbbf3/fonts/TheInquisition.woff") format("woff");font-style:normal;font-weight:400;font-display:swap;unicode-range:U+0020-007E;}
+@font-face{font-family:"Consejo Newspaper";src:url("https://cdn.jsdelivr.net/gh/Amethystaa/Izanamicodes@352e2bfd1f3b70c9387ff81db60c16d8b68bbbf3/fonts/OldNewspaperTypes.woff") format("woff");font-style:normal;font-weight:400;font-display:swap;}
+
+
 @font-face{font-family:"Archivo Consejo Metal";src:url("https://cdn.jsdelivr.net/gh/Amethystaa/Izanamicodes@19dbce21835818269ebb353b66584793309a7a00/metal-macabre.regular.ttf") format("truetype");font-weight:400;font-display:swap;unicode-range:U+0020-007E}
 
 /* Pieza independiente: colocar después del cierre de la tablilla del Consejo. */
@@ -10,15 +12,15 @@
 .csg-secreto .csg-portada::-webkit-details-marker{display:none}
 .csg-secreto .csg-portada:focus-visible{outline:2px solid var(--csg-acento);outline-offset:5px}
 .csg-secreto .csg-portada-texto{display:block;width:58%;transition:opacity .5s ease,transform .7s ease}
-.csg-secreto .csg-titulo{display:block;color:inherit;font:400 38px/1.2 "Consejo Almendra",Georgia,serif;}
-.csg-secreto .csg-subtitulo{display:block;margin-top:9px;color:inherit;font:400 17px/1.5 "Consejo Almendra",Georgia,serif}
-.csg-secreto .csg-gesto,.csg-secreto .csg-cerrar{display:block;margin-top:22px;color:inherit;font:400 9px/1.5 "Archivo Consejo Texto",Georgia,serif;letter-spacing:1.2px;text-transform:uppercase}
+.csg-secreto .csg-titulo{display:block;color:inherit;font:400 38px/1.2 "Consejo Newspaper",Georgia,serif;}
+.csg-secreto .csg-subtitulo{display:block;margin-top:9px;color:inherit;font:400 17px/1.5 "Consejo Newspaper",Georgia,serif}
+.csg-secreto .csg-gesto,.csg-secreto .csg-cerrar{display:block;margin-top:22px;color:inherit;font:400 9px/1.5 "Consejo Newspaper",Georgia,serif;letter-spacing:1.2px;text-transform:uppercase}
 .csg-secreto .csg-cerrar{position:absolute;right:28px;bottom:18px;opacity:0;transition:opacity .5s}
 .csg-secreto::details-content{display:block;content-visibility:visible}
 .csg-secreto .csg-revelacion{position:relative;display:flex;align-items:center;justify-content:flex-end;min-height:285px;padding:28px 28px 45px;visibility:hidden;opacity:0;transform:translateY(14px);transition:opacity .65s ease,transform .65s ease,visibility .65s}
 .csg-secreto .csg-dedicatoria{position:relative;width:62%;padding:20px 22px;background:linear-gradient(110deg,#080606b8,#080606ed);box-shadow:0 9px 28px #0009;transform:rotate(-1.2deg);pointer-events:auto}
-.csg-secreto .csg-intro{display:block;margin-bottom:10px;color:inherit;font:400 24px/1.2 "Consejo Almendra",Georgia,serif}
-.csg-secreto .csg-gracias{font:400 18px/1.5 "Consejo Almendra",Georgia,serif}
+.csg-secreto .csg-intro{display:block;margin-bottom:10px;color:inherit;font:400 24px/1.2 "Consejo Newspaper",Georgia,serif}
+.csg-secreto .csg-gracias{font:400 18px/1.5 "Consejo Newspaper",Georgia,serif}
 .csg-secreto[open] .csg-portada-texto{opacity:0;transform:translateY(-8px)}
 .csg-secreto[open] .csg-revelacion{visibility:visible;opacity:1;transform:translateY(0)}
 .csg-secreto[open] .csg-cerrar{opacity:1}
@@ -37,3 +39,5 @@
 90%{text-shadow:3px 4px 5px transparent}}
 .csg-secreto .csg-titulo{--csg-orden:0}.csg-secreto .csg-subtitulo{--csg-orden:1}.csg-secreto .csg-gesto{--csg-orden:2}.csg-secreto .csg-intro{--csg-orden:0}.csg-secreto .csg-gracias{--csg-orden:2}.csg-secreto .csg-cerrar{--csg-orden:4}
 @media(prefers-reduced-motion:reduce){.csg-secreto :is(.csg-titulo,.csg-subtitulo,.csg-gesto,.csg-cerrar,.csg-intro,.csg-gracias){animation:none!important;text-shadow:0 0 4px color-mix(in srgb,var(--csg-acento) 20%,transparent)}}
+
+.csg-secreto .csg-titulo,.csg-secreto .csg-intro{font-family:"Consejo Inquisition","Consejo Newspaper",Georgia,serif}
