@@ -1,0 +1,15 @@
+FUENTES DEL DISEÑO
+
+The Inquisition — Woodcutter.
+Fuente de los subtítulos y alias. Gratis para uso personal, según la ficha del autor en DaFont; el autor ofrece licencia comercial por separado.
+https://www.dafont.com/es/the-inquisition.font
+https://www.woodcutter.es
+
+Old Newspaper Types — Manfred Klein.
+Fuente del cuerpo y los datos. La ficha de DaFont la identifica como 100% Gratis.
+https://www.dafont.com/es/oldnewspapertypes.font
+
+Los archivos TTF originales conservan intactos sus metadatos y créditos.
+El título principal mantiene Metal Macabre, ya utilizada por el Consejo.
+
+La versión web WOFF conserva el diseño y los créditos originales. The Inquisition tiene algunos glifos acentuados vacíos; el CSS utiliza Old Newspaper Types como respaldo para caracteres no ASCII.
