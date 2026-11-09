@@ -41,3 +41,5 @@
 @media(prefers-reduced-motion:reduce){.csg-secreto :is(.csg-titulo,.csg-subtitulo,.csg-gesto,.csg-cerrar,.csg-intro,.csg-gracias){animation:none!important;text-shadow:0 0 4px color-mix(in srgb,var(--csg-acento) 20%,transparent)}}
 
 .csg-secreto .csg-titulo,.csg-secreto .csg-intro{font-family:"Consejo Inquisition","Consejo Newspaper",Georgia,serif}
+
+.csg-secreto .csg-titulo,.csg-secreto .csg-intro{text-transform:uppercase}

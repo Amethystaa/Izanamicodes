@@ -118,3 +118,6 @@
 .csc-cartel .csc-retrato img{animation:none;transform:none;filter:saturate(.15) sepia(.1) brightness(.85)}
 .csc-cartel .csc-retrato::before{animation:none;transform:none;opacity:.25}
 .csc-cartel .csc-fotografia figcaption{font:700 10px/1.4 "Consejo Newspaper",Georgia,serif;color:#30271e;animation:none;text-shadow:none;letter-spacing:.7px}
+
+.csc-cartel .csc-epigrafe,.csc-cartel .csc-alias{text-transform:uppercase}
+.csc-cartel .csc-dato{grid-template-columns:78px minmax(0,1fr)}
