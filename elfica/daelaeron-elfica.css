@@ -2,35 +2,34 @@
 .av-avalon{--av-color:var(--groups,#97976b);--av-oro:#d5b776;--av-sombra:color-mix(in srgb,var(--groups,#97976b) 28%,#10110f)}
 .av-avalon .av-filtros{position:absolute;width:0;height:0;overflow:hidden;pointer-events:none}
 .av-avalon .av-color-filtro{flood-color:var(--groups,#97976b)}
-.av-avalon .ficha-nombre a{font-family:Underdove,serif!important;font-weight:400!important;font-feature-settings:"ss03" 0!important;color:var(--av-color)!important;background:linear-gradient(110deg,var(--av-color) 15%,color-mix(in srgb,var(--av-color) 70%,white) 40%,var(--av-color) 65%,var(--av-oro) 82%,var(--av-color));background-size:220% 100%;background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:av4-brillo 10s ease-in-out infinite alternate,av4-oro 9s ease-in-out infinite;text-decoration:none}
+.av-avalon .ficha-nombre a{font-family:Underdove,serif!important;font-weight:400!important;font-feature-settings:"ss03" 0!important;color:var(--av-color)!important;background:linear-gradient(110deg,var(--av-color) 15%,color-mix(in srgb,var(--av-color) 70%,white) 40%,var(--av-color) 65%,var(--av-oro) 82%,var(--av-color));background-size:220% 100%;background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:av4-brillo 10s ease-in-out infinite alternate;filter:url("#avalon-bruma");overflow:visible!important;text-decoration:none}
 .av-avalon .av-inicial{font-feature-settings:"ss03" 1}
+.av-avalon .ficha-nombre{overflow:visible!important}
 .av-avalon :is(.ficha-avatar,.ficha-imagen),.av-avalon :is(.ficha-avatar,.ficha-imagen)>img{border-color:transparent!important;outline-color:transparent!important;box-shadow:none!important}
 .av-avalon :is(.ficha-avatar,.ficha-imagen)>img{filter:url("#avalon-color-multiply")!important}
 .av-avalon .av-decoracion{width:min(100%,380px);margin:22px auto 30px;text-align:center}
-.av-avalon .av-frase{position:relative;padding:15px 8px;color:var(--av-color);letter-spacing:1.2px;text-transform:uppercase;line-height:1.7;text-wrap:balance;border:0;box-shadow:none;background:none}
+.av-avalon .av-frase{position:relative;margin:0;padding:9px 6px;color:var(--av-color);font-size:9px!important;font-weight:400!important;letter-spacing:1px;text-transform:uppercase;line-height:1.5;text-wrap:balance;text-shadow:none!important;-webkit-text-stroke:0!important;filter:none!important;animation:none!important;border:0!important;outline:0!important;box-shadow:none!important;background:none!important}
 .av-avalon .av-frase::before,.av-avalon .av-frase::after{content:"";position:absolute;left:0;right:0;height:1px;opacity:.6;background:linear-gradient(90deg,transparent 0%,color-mix(in srgb,var(--av-color) 45%,transparent) 22%,color-mix(in srgb,var(--av-color) 65%,var(--av-oro)) 50%,color-mix(in srgb,var(--av-color) 45%,transparent) 78%,transparent 100%);border:0;box-shadow:none;clip-path:none;pointer-events:none}
 .av-avalon .av-frase::before{top:0}.av-avalon .av-frase::after{bottom:0}
-.av-avalon .av-subtitulo{display:block;position:relative;margin:18px 0 24px;font-family:Underdove,serif;font-weight:400;font-feature-settings:"ss03" 0;font-size:34px;line-height:1.5}
-.av-avalon .av-subtitulo,.av-avalon .av-curiosidades-titulo,.av-avalon icon.av-icono>i{color:var(--groups,#97976b)!important;-webkit-text-fill-color:var(--groups,#97976b)!important;text-shadow:1px 2px 1px var(--av-sombra);background:none;animation:av4-oro 9s ease-in-out infinite}
+.av-avalon .av-subtitulo{display:block;position:relative;margin:0 0 2px;font-family:Underdove,serif;font-weight:400;font-feature-settings:"ss03" 0;font-size:34px;line-height:1.1}
+.av-avalon .av-subtitulo,.av-avalon .av-curiosidades-titulo,.av-avalon icon.av-icono>i{color:var(--groups,#97976b)!important;-webkit-text-fill-color:var(--groups,#97976b)!important;text-shadow:1px 2px 1px var(--av-sombra);background:none;animation:none;filter:url("#avalon-bruma")}
 .av-avalon .av-curiosidades-titulo>*{color:var(--groups,#97976b)!important;-webkit-text-fill-color:var(--groups,#97976b)!important}
 .av-avalon .av-figura{position:relative;isolation:isolate;width:min(100%,300px);aspect-ratio:1;margin:20px auto 26px}
 .av-avalon .av-figura>img{display:block;position:relative;z-index:1;width:100%;height:100%;object-fit:contain;border:0;outline:0;box-shadow:none;filter:url("#avalon-color-multiply")}
 .av-avalon .av-anillos{position:absolute;inset:0;z-index:0;pointer-events:none}
 .av-avalon .av-anillos>svg{display:block;width:100%;height:100%;overflow:visible}
-.av-avalon .av-anillo{fill:none;stroke:var(--av-oro);stroke-width:.85;stroke-linecap:round;opacity:.65;transform-origin:150px 150px;animation:av4-deriva 13s ease-in-out infinite alternate;filter:drop-shadow(0 0 2px #d5b77633)}
-.av-avalon .av-anillo:nth-child(2){stroke:color-mix(in srgb,var(--av-oro) 72%,var(--av-color));stroke-width:.65;opacity:.48;animation-duration:17s;animation-delay:-6s}
-.av-avalon .av-anillo:nth-child(3){stroke:#ead4a2;stroke-width:.55;opacity:.4;animation-duration:19s;animation-delay:-11s}
+.av-avalon .av-anillo{fill:none;stroke:url("#avalon-hilo");stroke-width:1;stroke-linecap:round;opacity:.8;transform-origin:150px 150px;animation:av4-deriva 11s ease-in-out infinite alternate;filter:drop-shadow(0 0 3px #d5b77655)}
+.av-avalon .av-anillo:nth-of-type(2){stroke-width:.7;opacity:.58;animation-duration:14s;animation-delay:-5s}
+.av-avalon .av-anillo:nth-of-type(3){stroke-width:.55;opacity:.45;animation-duration:17s;animation-delay:-9s}
 .av-avalon icon.av-icono{display:inline-flex;position:relative;align-items:center;justify-content:center;width:54px;height:54px;vertical-align:middle;color:var(--groups,#97976b)}
 .av-avalon icon.av-icono>i{display:block;position:relative;z-index:1;font-size:36px;line-height:1;font-style:normal}
 .av-avalon icon.av-icono>i::before{color:var(--groups,#97976b)!important;-webkit-text-fill-color:var(--groups,#97976b)!important;background:none!important;text-shadow:1px 2px 1px var(--av-sombra)}
-.av-avalon icon.av-icono::after{content:"";position:absolute;inset:3px;border:1px solid color-mix(in srgb,var(--av-color) 45%,transparent);border-radius:40% 60% 48% 52%;transform:rotate(30deg);pointer-events:none}
+.av-avalon icon.av-icono::before,.av-avalon icon.av-icono::after{content:none!important;border:0!important;box-shadow:none!important}
 .av-avalon .av-curiosidades{display:grid;gap:14px;margin:14px 0 24px}
 .av-avalon .av-curiosidad{display:grid;grid-template-columns:30px minmax(0,1fr);align-items:start;gap:13px;padding:16px;box-sizing:border-box;border:1px solid var(--av-color);border-image:linear-gradient(125deg,var(--av-color),color-mix(in srgb,var(--av-color) 75%,var(--av-oro)),var(--av-color)) 1;background:linear-gradient(115deg,color-mix(in srgb,var(--av-color) 13%,transparent),color-mix(in srgb,var(--av-color) 3%,transparent) 65%,color-mix(in srgb,var(--av-color) 10%,transparent))}
 .av-avalon .av-curiosidad icon.av-icono{width:30px;height:30px}
 .av-avalon .av-curiosidad icon.av-icono>i{font-size:22px}
-.av-avalon .av-curiosidad icon.av-icono::after{inset:1px}
 .av-avalon .av-curiosidad>div{min-width:0;overflow-wrap:anywhere}
 @keyframes av4-brillo{from{background-position:0% 50%}to{background-position:100% 50%}}
-@keyframes av4-oro{0%,100%{filter:drop-shadow(-3px 1px 3px #d5b77644) drop-shadow(2px -2px 8px #e3c58422)}28%{filter:drop-shadow(2px -3px 5px #d5b77677) drop-shadow(-3px 2px 12px #e3c58433)}61%{filter:drop-shadow(3px 2px 3px #d5b77655) drop-shadow(-1px -3px 9px #e3c58444)}82%{filter:drop-shadow(-2px 3px 6px #d5b77666) drop-shadow(3px 1px 11px #e3c58422)}}
-@keyframes av4-deriva{0%{transform:rotate(-3deg) skewX(-2deg)}50%{transform:rotate(2deg) skewY(2deg)}100%{transform:rotate(-1deg) skewX(2deg)}}
-@media(prefers-reduced-motion:reduce){.av-avalon *{animation:none!important}}
+@keyframes av4-deriva{0%{transform:translate(-3px,2px) rotate(-5deg) skewX(-4deg)}50%{transform:translate(4px,-4px) rotate(4deg) skewY(5deg)}100%{transform:translate(-2px,4px) rotate(-2deg) skewX(4deg)}}
+@media(prefers-reduced-motion:reduce){.av-avalon *{animation:none!important}.av-avalon .ficha-nombre a,.av-avalon .av-subtitulo,.av-avalon .av-curiosidades-titulo,.av-avalon icon.av-icono>i{filter:drop-shadow(0 0 4px #d5b77655)!important}}
