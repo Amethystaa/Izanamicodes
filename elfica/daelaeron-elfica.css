@@ -1,7 +1,7 @@
 @font-face{font-family:Underdove;src:url("./assets/Underdove-Regular.otf") format("opentype");font-weight:400;font-style:normal;font-display:swap}
 .hidethisprofile{--av-color:var(--groups,#97976b);--av-oro:#d5b776;--av-sombra:color-mix(in srgb,var(--groups,#97976b) 28%,#10110f)}
 .ficha-nombre{overflow:visible!important}
-.ficha-nombre a{font-family:Underdove,serif!important;font-weight:400!important;font-feature-settings:"ss03" 0!important;color:var(--av-color)!important;background:linear-gradient(110deg,var(--av-color) 15%,color-mix(in srgb,var(--av-color) 70%,white) 40%,var(--av-color) 65%,var(--av-oro) 82%,var(--av-color));background-size:220% 100%;background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-decoration:none;animation:av-brillo 12s ease-in-out infinite alternate,av-bruma 19s ease-in-out infinite}
+.ficha-nombre a{font-family:Underdove,serif!important;font-weight:400!important;font-feature-settings:"ss03" 0!important;color:var(--av-color)!important;-webkit-text-fill-color:var(--av-color)!important;background:none!important;box-shadow:none!important;text-shadow:1px 2px 1px var(--av-sombra);text-decoration:none;animation:av-bruma 19s ease-in-out infinite}
 .ficha-nombre::first-letter,.av-subtitulo::first-letter{font-feature-settings:"ss03" 1}
 .ficha-avatar,.ficha-imagen,.ficha-avatar>img,.ficha-imagen>img{border-color:transparent!important;outline-color:transparent!important;box-shadow:none!important}
 .ficha-avatar,.ficha-imagen{background-color:var(--groups,#97976b)!important;isolation:isolate}
