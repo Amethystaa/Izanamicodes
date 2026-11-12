@@ -1,11 +1,13 @@
-# Avalon Iralien
+# Avalon Iralien · plantilla original conservada
 
-La plantilla conserva los saltos y espacios estructurales de la ficha y lleva todo el CSS en una línea al final. No modifica las dimensiones ni los espacios de las clases originales del foro. Sustituye las URLs y los textos.
+Se mantienen las clases originales, el texto, los atributos y los espacios de la ficha. Se añade av-avalon para limitar la decoración. Las únicas reglas que apuntan a elementos originales afectan a la tipografía y color del nombre y al filtro, color de borde y sombra de las imágenes. No se impone ningún tamaño, margen, padding, display ni posición a las clases originales.
 
-El color dominante se toma de var(--groups), con #97976b como respaldo. El dorado queda como un reflejo secundario. El nombre y los títulos combinan la fuente normal con ss03 únicamente en sus iniciales marcadas mediante zh-inicial.
+El tamaño del nombre lo conserva el foro según la última indicación. Underdove solo se aplica al nombre y al subtítulo decorativo añadido. El texto, la frase y Curiosidades heredan la fuente del foro. Los títulos e iconos llevan el color del grupo, sombra oscura y aura dorada animada.
 
-El avatar y la imagen lateral llevan solo tinte del grupo. El PNG interior conserva su transparencia y tres anillos dentro de un conjunto de máximo 150px. Sustituye URL_PNG_TRANSPARENTE en sus dos apariciones por la misma URL.
+Las líneas nuevas son de un píxel con un solo degradado suave. Los tres anillos interiores son curvas Bézier que cambian de forma, en un lienzo nuevo de máximo 300px con trazos de unos 240–270px.
 
-Los iconos conservan la fuente game-icon del foro. Su degradado se aplica al elemento i y al glifo ::before, con aura del grupo y contorno ornamental. Se usan queen-crown y laurel-crown, de Lorc en Game-icons.net, CC BY 3.0.
+Las imágenes se colorean con un filtro SVG de escala de grises y multiply con var(--groups), conservando su alfa. El filtro solo cambia los píxeles de la imagen y no añade capas a su contenedor. Los bordes originales se vuelven transparentes conservando su grosor para no modificar las medidas.
 
-La vista previa reproduce una distribución aproximada del foro y utiliza la referencia opaca disponible. La comprobación exacta del resultado requiere verlo con el CSS y la fuente de iconos que tiene tu foro.
+Sustituye URL_PNG_TRANSPARENTE por el PNG que quieras. Las dos imágenes exteriores conservan las URLs de la plantilla original. Reemplázalas por tus enlaces. La fuente game-icon debe estar instalada en el foro. Iconos queen-crown y laurel-crown: Lorc, Game-icons.net, CC BY 3.0.
+
+La verificación exacta requiere el CSS real del foro; esta entrega no sustituye su diseño.
