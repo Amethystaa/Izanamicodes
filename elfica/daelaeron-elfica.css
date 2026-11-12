@@ -6,7 +6,7 @@
 .av-avalon .av-inicial{font-feature-settings:"ss03" 1}
 .av-avalon .ficha-nombre{overflow:visible!important}
 .av-avalon :is(.ficha-avatar,.ficha-imagen),.av-avalon :is(.ficha-avatar,.ficha-imagen)>img{border-color:transparent!important;outline-color:transparent!important;box-shadow:none!important}
-.av-avalon :is(.ficha-avatar,.ficha-imagen)>img{filter:url("#avalon-color-multiply")!important}
+.av-avalon :is(.ficha-avatar,.ficha-imagen){background-color:var(--groups,#97976b)!important;isolation:isolate}.av-avalon :is(.ficha-avatar,.ficha-imagen)>img{filter:grayscale(1)!important;mix-blend-mode:multiply!important}
 .av-avalon .av-decoracion{width:min(100%,380px);margin:22px auto 30px;text-align:center}
 .av-avalon .av-frase{position:relative;margin:0;padding:9px 6px;color:var(--av-color);font-size:9px!important;font-weight:400!important;letter-spacing:1px;text-transform:uppercase;line-height:1.5;text-wrap:balance;text-shadow:none!important;-webkit-text-stroke:0!important;filter:none!important;animation:none!important;border:0!important;outline:0!important;box-shadow:none!important;background:none!important}
 .av-avalon .av-frase::before,.av-avalon .av-frase::after{content:"";position:absolute;left:0;right:0;height:1px;opacity:.6;background:linear-gradient(90deg,transparent 0%,color-mix(in srgb,var(--av-color) 45%,transparent) 22%,color-mix(in srgb,var(--av-color) 65%,var(--av-oro)) 50%,color-mix(in srgb,var(--av-color) 45%,transparent) 78%,transparent 100%);border:0;box-shadow:none;clip-path:none;pointer-events:none}
