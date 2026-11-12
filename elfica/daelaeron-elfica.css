@@ -1,34 +1,45 @@
 @font-face{font-family:Underdove;src:url("./assets/Underdove-Regular.otf") format("opentype");font-style:normal;font-weight:400;font-display:swap}
-/* Añade zh-elfica a la clase exterior de tu ficha. El resto del foro conserva sus estilos. */
-.zh-elfica{--zh-verde:var(--groups,#97976b);--zh-oro:#d5b776;--zh-luz:#f2e0b2;--zh-tinta:color-mix(in srgb,var(--zh-verde) 55%,var(--zh-oro));--zh-sello:url("./assets/corona-elfica.svg")}
+/* Todo queda limitado al contenedor zh-elfica de esta ficha. */
+.zh-elfica{--zh-verde:var(--groups,#97976b);--zh-oro:#d5b776;--zh-luz:#f2e0b2;--zh-tinta:color-mix(in srgb,var(--zh-verde) 55%,var(--zh-oro))}
 .zh-elfica .ficha-nombre{height:auto!important;min-height:70px;overflow:visible!important;padding-block:12px!important;box-sizing:border-box}
-.zh-elfica .ficha-nombre a{display:block!important;position:relative;font:400 clamp(38px,5vw,64px)/1.35 Underdove,serif!important;letter-spacing:1px!important;text-decoration:none!important;text-transform:none!important;color:var(--zh-oro)!important;background:linear-gradient(110deg,var(--zh-verde),var(--zh-luz),var(--zh-oro),var(--zh-verde));background-size:230% 100%;background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:zh-brillo 9s ease-in-out infinite alternate;filter:drop-shadow(0 0 5px #d5b77655)}
-.zh-elfica .ficha-texto{position:relative;isolation:isolate;animation:zh-letras 7s ease-in-out infinite alternate}
-.zh-elfica .ficha-texto>br:has(+.zh-decoracion),.zh-elfica .zh-decoracion>br,.zh-elfica .zh-cabecera>br,.zh-elfica .zh-curiosidades>br{display:none}
+.zh-elfica .ficha-nombre a{display:block!important;position:relative;font:400 clamp(38px,5vw,64px)/1.45 Underdove,serif!important;letter-spacing:1px!important;text-decoration:none!important;text-transform:none!important;overflow-wrap:anywhere;text-wrap:balance;color:var(--zh-oro)!important;background:linear-gradient(110deg,var(--zh-verde),var(--zh-luz),var(--zh-oro),var(--zh-verde));background-size:230% 100%;background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:zh-brillo 9s ease-in-out infinite alternate,zh-aura 7s ease-in-out infinite alternate}
+.zh-elfica .ficha-texto{position:relative;isolation:isolate}
+.zh-elfica .ficha-texto>br:has(+.zh-decoracion),.zh-elfica .zh-decoracion>br,.zh-elfica .zh-cabecera>br,.zh-elfica .zh-curiosidades>br,.zh-elfica .zh-anillos>br{display:none}
 .zh-elfica .zh-decoracion{display:flex;flex-direction:column;align-items:center;gap:0;width:min(100%,440px);margin:26px auto 34px;box-sizing:border-box;position:relative;isolation:isolate;text-align:center}
 .zh-elfica .zh-cabecera{display:flex;flex-direction:column;align-items:stretch;gap:0;width:100%;position:relative;z-index:3}
-.zh-elfica .zh-frase{display:block;box-sizing:border-box;width:100%;margin:0;padding:13px 12px;border-top:1px solid var(--zh-tinta);border-bottom:1px solid var(--zh-tinta);color:var(--zh-luz);font:400 10px/1.8 Georgia,serif;letter-spacing:1.6px;text-transform:uppercase;text-wrap:balance}
-.zh-elfica .zh-subtitulo,.zh-elfica .zh-seccion{display:block;position:relative;box-sizing:border-box;max-width:100%;margin:0;padding:14px 8px 21px;font:400 clamp(28px,4vw,44px)/1.45 Underdove,serif;text-align:center;text-wrap:balance;overflow-wrap:anywhere;color:var(--zh-oro);background:linear-gradient(100deg,var(--zh-verde),var(--zh-luz),var(--zh-oro),var(--zh-verde));background-size:230% 100%;background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:zh-brillo 9s ease-in-out infinite alternate}
-.zh-elfica .zh-imagen{position:relative;isolation:isolate;width:min(100%,330px);aspect-ratio:1;margin:6px auto 10px}
-.zh-elfica .zh-imagen img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;filter:grayscale(1) contrast(1.04) brightness(1.06);mask-image:radial-gradient(ellipse 60% 58% at 50% 48%,#000 45%,#000b 62%,transparent 88%);-webkit-mask-image:radial-gradient(ellipse 60% 58% at 50% 48%,#000 45%,#000b 62%,transparent 88%)}
+.zh-elfica .zh-frase{display:block;position:relative;box-sizing:border-box;width:100%;margin:0;padding:15px 12px;border:0;color:var(--zh-luz);font:400 10px/1.8 Georgia,serif;letter-spacing:1.6px;text-transform:uppercase;text-wrap:balance}
+.zh-elfica .zh-frase::before,.zh-elfica .zh-frase::after{content:"";position:absolute;left:0;width:100%;height:2px;pointer-events:none;background:linear-gradient(90deg,transparent,#97976b77 15%,#d5b776 35%,#fff7e0 50%,#d5b776 65%,#97976b77 85%,transparent);clip-path:polygon(0 50%,35% 25%,50% 0,65% 25%,100% 50%,65% 75%,50% 100%,35% 75%)}
+.zh-elfica .zh-frase::before{top:0}.zh-elfica .zh-frase::after{bottom:0}
+.zh-elfica .zh-subtitulo,.zh-elfica .zh-seccion{display:block;position:relative;box-sizing:border-box;max-width:100%;margin:0;padding:16px 8px 24px;font:400 clamp(28px,4vw,44px)/1.55 Underdove,serif;text-align:center;text-wrap:balance;overflow-wrap:anywhere;color:var(--zh-oro);background:linear-gradient(100deg,var(--zh-verde),var(--zh-luz),var(--zh-oro),var(--zh-verde));background-size:230% 100%;background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:zh-brillo 9s ease-in-out infinite alternate,zh-aura 7s ease-in-out infinite alternate}
+/* ss03 está presente en el archivo original y contiene M.ss03 y el resto del alfabeto latino. */
+.zh-elfica :is(.ficha-nombre a,.zh-subtitulo,.zh-seccion){font-feature-settings:"ss03" 1!important}
+/* Imagen interior: contiene el PNG entero, sin degradar ni recortar su transparencia. */
+.zh-elfica .zh-imagen{--zh-png:linear-gradient(transparent,transparent);position:relative;isolation:isolate;width:min(100%,330px);aspect-ratio:1;margin:18px auto 20px;overflow:visible}
+.zh-elfica .zh-imagen>img{position:relative;z-index:1;display:block;width:100%;height:100%;object-fit:contain;object-position:center;filter:grayscale(1) contrast(1.04) brightness(1.06)}
+.zh-elfica .zh-imagen::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background:var(--zh-verde);mix-blend-mode:color;opacity:.72;mask:var(--zh-png) center/contain no-repeat;-webkit-mask:var(--zh-png) center/contain no-repeat}
+/* Anillos SOLO detrás del PNG de la imagen interior. */
+.zh-elfica .zh-anillos{position:absolute;inset:0;display:block;z-index:0;pointer-events:none}
+.zh-elfica .zh-anillo{display:block;position:absolute;inset:12% -3%;--zh-giro:-18deg;border:1px solid #d5b776b0;border-left-color:#fff4d477;border-bottom-color:#d5b77622;border-radius:43% 57% 49% 51% / 55% 42% 58% 45%;box-shadow:2px -2px 8px #d5b77633;animation:zh-ondas 9s ease-in-out infinite alternate}
+.zh-elfica .zh-anillo:nth-child(2){inset:6% 8%;--zh-giro:24deg;animation-duration:12s;animation-delay:-4s;border-top-color:#fff4d499;border-right-color:#d5b77633}
+.zh-elfica .zh-anillo:nth-child(3){inset:19% -7%;--zh-giro:57deg;animation-duration:11s;animation-delay:-7s;border-color:#d5b77688;border-left-color:#f2e0b244;border-bottom-color:transparent}
+/* Las dos imágenes exteriores reciben únicamente el tinte del grupo. */
 .zh-elfica :is(.ficha-avatar,.ficha-imagen){position:relative;isolation:isolate}
 .zh-elfica :is(.ficha-avatar,.ficha-imagen)>img{display:block;filter:grayscale(1) contrast(1.04) brightness(1.06)!important}
-.zh-elfica :is(.ficha-avatar,.ficha-imagen,.zh-imagen)::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:1;background:linear-gradient(125deg,var(--zh-verde),var(--zh-luz) 47%,var(--zh-oro) 72%,var(--zh-verde));background-size:220% 160%;mix-blend-mode:color;opacity:.48;animation:zh-tinte 10s ease-in-out infinite alternate}
-.zh-elfica .zh-imagen::after{mask-image:radial-gradient(ellipse,#000 28%,transparent 72%);-webkit-mask-image:radial-gradient(ellipse,#000 28%,transparent 72%)}
-.zh-elfica :is(.ficha-avatar,.ficha-imagen,.zh-imagen)::before{content:"";position:absolute;inset:7px -4px;z-index:2;pointer-events:none;border:1px solid #d5b77677;border-right-color:transparent;border-bottom-color:#f2e0b222;border-radius:43% 57% 49% 51% / 55% 42% 58% 45%;box-shadow:6px -3px 14px #d5b77638,-5px 5px 18px #97976b25,inset 3px -2px 12px #d5b77620;filter:drop-shadow(0 0 3px #d5b77666);animation:zh-ondas 8s ease-in-out infinite alternate}
-.zh-elfica .zh-imagen::before{inset:12% 4%;transform:rotate(-18deg);box-shadow:4px -2px 12px #d5b77644,-5px 3px 17px #d5b77622,inset 0 0 15px #d5b77622}
-.zh-elfica .ficha-imagen::before{inset:4px 2px}
+.zh-elfica :is(.ficha-avatar,.ficha-imagen)::before{content:none!important}
+.zh-elfica :is(.ficha-avatar,.ficha-imagen)::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:1;background:var(--zh-verde);mix-blend-mode:color;opacity:.72;animation:none;box-shadow:none;filter:none;border:0}
 .zh-elfica .ficha-diario{z-index:4}
-.zh-elfica .zh-icono{display:inline-block;flex-shrink:0;vertical-align:middle;width:48px;height:48px;color:var(--zh-oro);background:linear-gradient(135deg,var(--zh-verde),var(--zh-luz) 45%,var(--zh-oro));mask:var(--zh-sello) center/contain no-repeat;-webkit-mask:var(--zh-sello) center/contain no-repeat;filter:drop-shadow(0 0 5px #d5b77666);animation:zh-sello 6s ease-in-out infinite alternate}
-.zh-elfica .zh-icono-grande{width:68px;height:68px;margin:4px auto 12px}
-.zh-elfica .zh-seccion{padding:8px 0 17px;margin:23px auto 0;font-size:32px}
+/* Iconos de la fuente game-icon ya instalada en el foro. */
+.zh-elfica icon.zh-icono{display:inline-grid;place-items:center;flex-shrink:0;vertical-align:middle;width:48px;height:48px;line-height:1;color:var(--zh-oro)}
+.zh-elfica icon.zh-icono>i{display:block;font-size:42px;line-height:1;background:linear-gradient(135deg,var(--zh-verde),var(--zh-luz) 45%,var(--zh-oro));background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.zh-elfica icon.zh-icono-grande{width:68px;height:68px;margin:4px auto 12px}
+.zh-elfica icon.zh-icono-grande>i{font-size:58px}
+.zh-elfica .zh-seccion{padding:10px 0 20px;margin:23px auto 0;font-size:32px}
 .zh-elfica .zh-curiosidades{display:grid;grid-template-columns:minmax(0,1fr);gap:13px;margin:0 0 28px;padding:0;list-style:none}
 .zh-elfica .zh-curiosidad{position:relative;display:grid;grid-template-columns:29px minmax(0,1fr);align-items:start;gap:13px;box-sizing:border-box;padding:17px 18px!important;border:1px solid var(--zh-tinta);border-image:linear-gradient(120deg,var(--zh-verde),#d5b776aa,#97976b55,var(--zh-oro)) 1;background:linear-gradient(120deg,color-mix(in srgb,var(--zh-verde) 14%,transparent),#d5b77608 62%,#d5b7761c);text-align:justify;font:inherit;line-height:1.65;overflow-wrap:anywhere}
-.zh-elfica .zh-curiosidad .zh-icono{width:29px;height:29px;margin-top:2px}
+.zh-elfica .zh-curiosidad icon.zh-icono{width:29px;height:29px;margin-top:2px}
+.zh-elfica .zh-curiosidad icon.zh-icono>i{font-size:25px}
 .zh-elfica .zh-curiosidad span{min-width:0}
 @keyframes zh-brillo{from{background-position:0% 50%}to{background-position:100% 50%}}
-@keyframes zh-tinte{from{background-position:0% 20%;opacity:.33}to{background-position:100% 80%;opacity:.58}}
-@keyframes zh-ondas{0%{translate:-2px 0;rotate:-5deg;border-radius:43% 57% 49% 51% / 55% 42% 58% 45%;opacity:.52}50%{translate:2px -3px;rotate:2deg;border-radius:56% 44% 59% 41% / 43% 58% 42% 57%;opacity:.9}100%{translate:-1px 2px;rotate:5deg;border-radius:47% 53% 39% 61% / 59% 46% 54% 41%;opacity:.65}}
-@keyframes zh-letras{from{text-shadow:-1px 0 7px #97976b14,2px 1px 10px #d5b77616}to{text-shadow:1px -1px 9px #d5b77635,-2px 2px 12px #97976b20}}
-@keyframes zh-sello{from{opacity:.78}to{opacity:1}}
+@keyframes zh-aura{0%{filter:drop-shadow(-2px -1px 4px #d5b77666) drop-shadow(2px 2px 8px #97976b33)}50%{filter:drop-shadow(1px -2px 6px #f2e0b277) drop-shadow(-2px 2px 11px #d5b77644)}100%{filter:drop-shadow(2px 2px 5px #d5b77688) drop-shadow(-1px -2px 9px #97976b44)}}
+@keyframes zh-ondas{0%{transform:rotate(var(--zh-giro)) translate(-2px,0);border-radius:43% 57% 49% 51% / 55% 42% 58% 45%;opacity:.56}50%{transform:rotate(calc(var(--zh-giro) + 4deg)) translate(2px,-3px);border-radius:56% 44% 59% 41% / 43% 58% 42% 57%;opacity:.95}100%{transform:rotate(calc(var(--zh-giro) - 4deg)) translate(-1px,2px);border-radius:47% 53% 39% 61% / 59% 46% 54% 41%;opacity:.68}}
 @media(prefers-reduced-motion:reduce){.zh-elfica *,.zh-elfica *::before,.zh-elfica *::after{animation:none!important}}

@@ -1,13 +1,25 @@
-# Decoración élfica para fichas
+# Avalon Iralien · Decoración élfica
 
-Pega `ficha-plantilla.html` en tu ficha con el modo HTML activo. Sustituye `URL_AVATAR`, `URL_IMAGEN_LATERAL`, `LINK_DIARIO`, los datos, la historia y los textos de ejemplo. La ilustración central incluida es la referencia proporcionada por ti; puedes sustituir su URL.
+Pega ficha-plantilla.html en la ficha con HTML activo. Conserva zh-elfica en el contenedor exterior. Sustituye los datos y URLs de ejemplo.
 
-La plantilla conserva las clases y la estructura general del foro. `zh-elfica` en el contenedor exterior limita todos los efectos a esa ficha. La fuente Underdove se utiliza para el nombre, el subtítulo y Curiosidades. El texto largo conserva la fuente del foro.
+## Imagen interior
 
-`var(--groups)` toma el color de tu grupo; si no existe, usa `#97976b`. Los efectos oscilan entre este color y el dorado `#d5b776`. El fondo de la decoración es transparente. No es necesario JavaScript. Con movimiento reducido se desactivan las animaciones.
+Sustituye URL_PNG_TRANSPARENTE en sus DOS apariciones por el mismo enlace al PNG sin fondo: una es la imagen y la otra es la máscara del tinte, que conserva los huecos transparentes. La imagen se muestra entera con object-fit:contain, sin máscara radial ni recorte. Tres anillos de movimiento desigual quedan detrás de ese PNG.
 
-Para añadir otro recuadro, repite un bloque `zh-curiosidad`. El icono personalizado es una corona con hojas y una gema. Dentro de la ficha se inserta con `<i class="zh-icono" aria-hidden="true"></i>`. Se puede usar fuera envolviéndolo en `<span class="zh-elfica">…</span>`.
+## Dos imágenes exteriores
 
-La cabecera utiliza bloques consecutivos en el flujo: línea completa, frase, línea completa, subtítulo, imagen e icono. Las letras nunca se animan hacia negro. La imagen se desatura y recibe un tinte del grupo mezclado con dorado mediante CSS; el archivo original no se modifica.
+El avatar y la imagen lateral llevan únicamente un filtro de var(--groups), sin anillos, sin aura y sin animación.
 
-La vista previa utiliza una representación de la estructura del foro para comprobar los elementos decorativos. La distribución original depende del CSS ya instalado en tu foro y no se sustituye aquí.
+## Nombre y títulos
+
+Underdove con el conjunto alternativo ss03 activado mediante font-feature-settings:"ss03" 1. El archivo original contiene M.ss03 y alternativas para el alfabeto latino sin acentos. Esta regla selecciona esas formas automáticamente en el nombre, subtítulo y Curiosidades. El aura dorada se aplica únicamente a esos textos. El texto de la historia conserva su fuente y no tiene aura.
+
+La frase queda entre dos líneas completas, doradas con centro marfil y extremos más finos. El subtítulo ocupa un bloque independiente debajo. El fondo general es transparente.
+
+## Iconos
+
+Se usa la fuente game-icon ya instalada en el foro, con la estructura <icon><i class="game-icon game-icon-queen-crown"></i></icon>. Corona central: queen-crown; curiosidades: laurel-crown. Son iconos de Lorc disponibles en Game-icons.net (CC BY 3.0):
+https://game-icons.net/1x1/lorc/queen-crown.html
+https://game-icons.net/1x1/lorc/laurel-crown.html
+
+La vista previa representa la estructura del foro y conserva la imagen opaca proporcionada como referencia; para apreciar los anillos a través de la figura debes colocar tu PNG transparente. Los iconos necesitan la fuente game-icon del foro.
