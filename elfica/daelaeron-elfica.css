@@ -1,7 +1,6 @@
 @font-face{font-family:Underdove;src:url("./assets/Underdove-Regular.otf") format("opentype");font-weight:400;font-style:normal;font-display:swap}
 .hidethisprofile{--av-color:var(--groups,#97976b);--av-oro:#d5b776;--av-sombra:color-mix(in srgb,var(--groups,#97976b) 28%,#10110f)}
-.ficha-nombre{overflow:visible!important}
-.ficha-nombre a{font-family:Underdove,serif!important;font-weight:400!important;font-feature-settings:"ss03" 0!important;color:var(--av-color)!important;-webkit-text-fill-color:var(--av-color)!important;background:none!important;box-shadow:none!important;text-shadow:1px 2px 1px var(--av-sombra);text-decoration:none;animation:av-bruma 19s ease-in-out infinite}
+.ficha-nombre a{font-family:Underdove,serif!important;font-weight:400!important;font-feature-settings:"ss03" 0!important;color:var(--av-color)!important;-webkit-text-fill-color:var(--av-color)!important;text-shadow:1px 2px 1px var(--av-sombra);animation:av-bruma 19s ease-in-out infinite}
 .ficha-nombre::first-letter,.av-subtitulo::first-letter{font-feature-settings:"ss03" 1}
 .ficha-avatar,.ficha-imagen,.ficha-avatar>img,.ficha-imagen>img{border-color:transparent!important;outline-color:transparent!important;box-shadow:none!important}
 .ficha-avatar,.ficha-imagen{background-color:var(--groups,#97976b)!important;isolation:isolate}
@@ -23,7 +22,6 @@ icon.av-icono::before,icon.av-icono::after{content:none!important;border:0!impor
 .av-curiosidades{display:grid;gap:14px;margin:14px 0 24px}
 .av-curiosidad{display:grid;grid-template-columns:30px minmax(0,1fr);align-items:start;gap:13px;padding:16px;box-sizing:border-box;border:1px solid var(--av-color);border-image:linear-gradient(125deg,var(--av-color),color-mix(in srgb,var(--av-color) 75%,var(--av-oro)),var(--av-color)) 1;background:linear-gradient(115deg,color-mix(in srgb,var(--av-color) 13%,transparent),color-mix(in srgb,var(--av-color) 3%,transparent) 65%,color-mix(in srgb,var(--av-color) 10%,transparent))}
 .av-curiosidad icon.av-icono{width:30px;height:30px}.av-curiosidad icon.av-icono>i{font-size:22px}.av-curiosidad>div{min-width:0;overflow-wrap:anywhere}
-@keyframes av-brillo{from{background-position:0% 50%}to{background-position:100% 50%}}
 @keyframes av-bruma{0%,100%{filter:drop-shadow(-2px 1px 4px #d5b7763d) drop-shadow(2px -1px 11px #e3c5841f)}31%{filter:drop-shadow(2px -2px 7px #d5b77655) drop-shadow(-3px 2px 15px #e3c5842b)}67%{filter:drop-shadow(3px 2px 5px #d5b77647) drop-shadow(-2px -3px 13px #e3c58424)}}
 @keyframes av-hilos{0%{transform:translate(-3px,2px) rotate(-4deg) skewX(-3deg)}50%{transform:translate(3px,-3px) rotate(3deg) skewY(3deg)}100%{transform:translate(-2px,3px) rotate(-1deg) skewX(3deg)}}
 @media(prefers-reduced-motion:reduce){.ficha-nombre a,.av-subtitulo,icon.av-icono>i,.av-figura::before{animation:none!important}}
