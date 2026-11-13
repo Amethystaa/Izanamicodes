@@ -5,6 +5,7 @@
 .ficha-avatar,.ficha-imagen,.ficha-avatar>img,.ficha-imagen>img{border-color:transparent!important;outline-color:transparent!important;box-shadow:none!important}
 .ficha-avatar,.ficha-imagen{background-color:var(--groups,#97976b)!important;isolation:isolate}
 .ficha-avatar>img,.ficha-imagen>img{filter:grayscale(1)!important;mix-blend-mode:multiply!important}
+.ficha-avatar>br{display:none!important}.ficha-avatar>img{display:block!important;vertical-align:top!important}
 .av-decoracion{width:min(100%,380px);margin:22px auto 30px;text-align:center}
 .av-subtitulo{display:block;position:relative;margin:0 0 2px;font-family:Underdove,serif;font-weight:400;font-feature-settings:"ss03" 0;font-size:34px;line-height:1.1;color:var(--groups,#97976b);text-shadow:1px 2px 1px var(--av-sombra);animation:av-bruma 19s ease-in-out infinite}
 .av-curiosidades-titulo{margin:22px 0 16px;text-align:center}
