@@ -2440,3 +2440,10 @@
 @media(max-width:640px){.cs-set.cs-foro-libro .cs-libro .cs-pagina{padding-top:34px;padding-bottom:38px}.cs-set.cs-foro-libro .cs-libro .cs-parrafo{font-size:15px;line-height:1.85;margin-bottom:22px}.cs-set.cs-foro-libro .cs-libro .cs-parrafo:last-child{margin-bottom:0}}
 
 .cs-set.cs-foro-libro .cs-mascara-muestra>.cs-emblema,.cs-set.cs-foro-libro .cs-ornamento>.cs-emblema{width:auto;height:auto;margin:0;padding:0}
+
+@font-face{font-family:"Consejo Game Icons";src:url("https://cdn.jsdelivr.net/gh/seiyria/gameicons-font@753e30b2a77ecb8818368cdea2e293d010a9ceb0/dist/game-icons.woff") format("woff");font-weight:normal;font-style:normal;font-display:block}
+.cs-set.cs-foro-libro .game-icon::before{font-family:"Consejo Game Icons"!important;font-style:normal;font-weight:normal!important;line-height:1;letter-spacing:0;text-transform:none}
+.cs-set.cs-foro-libro .game-icon-stone-throne::before{content:"\fdb3"}
+.cs-set.cs-foro-libro .game-icon-skull-crossed-bones::before{content:"\fc9b"}
+.cs-set.cs-foro-libro .game-icon-skull-mask::before{content:"\fc9d"}
+.cs-set.cs-foro-libro .game-icon-domino-mask::before{content:"\f4b3"}
