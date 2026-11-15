@@ -2456,3 +2456,20 @@
 .cs-set.cs-foro-libro .cs-libro .cs-add-texto>.cs-titulo-3{padding:8px 0 20px;margin:0 0 18px;text-align:center;font-size:clamp(22px,2.5vw,30px);line-height:1.55}
 .cs-set.cs-foro-libro .cs-libro .cs-add-texto>.cs-parrafo{text-align:center;line-height:1.95}
 @media(max-width:640px){.cs-set.cs-foro-libro .cs-libro .cs-archivo.cs-add{padding:26px 18px;margin:32px 0}.cs-set.cs-foro-libro .cs-add-fondo{opacity:.34}.cs-set.cs-foro-libro .cs-libro .cs-add-texto>.cs-parrafo{text-align:left}}
+
+
+.cs-set.cs-foro-libro .cs-libro .cs-parrafo{margin:0 0 12px;line-height:1.75}
+.cs-set.cs-foro-libro .cs-libro .cs-parrafo:last-child{margin-bottom:0}
+.cs-set.cs-foro-anuncio .cs-anuncio-texto>.cs-parrafo{margin:0 0 12px;line-height:1.65}
+.cs-set.cs-foro-anuncio .cs-anuncio-texto>.cs-parrafo:last-child{margin-bottom:0}
+.cs-set.cs-foro-libro .cs-libro .cs-pagina{padding-top:28px;padding-bottom:30px}
+.cs-set.cs-foro-libro .cs-libro .cs-pagina .cs-titulo-2{margin-bottom:20px}
+.cs-set.cs-foro-libro .cs-libro .cs-archivo.cs-add{display:block;box-sizing:border-box;height:320px;min-height:0;max-height:320px;margin:26px 0;padding:24px 28px;border:1.5px solid color-mix(in srgb,var(--groups,#591b28) 65%,transparent)}
+.cs-set.cs-foro-libro .cs-libro .cs-add-texto{box-sizing:border-box;height:100%;min-height:0;max-height:100%;margin:0 auto;padding-right:14px;overflow-y:auto;overflow-x:hidden;overscroll-behavior-y:contain;scrollbar-width:thin;scrollbar-color:var(--groups,#591b28) transparent}
+.cs-set.cs-foro-libro .cs-libro .cs-add-texto::-webkit-scrollbar{width:4px}
+.cs-set.cs-foro-libro .cs-libro .cs-add-texto::-webkit-scrollbar-thumb{background:var(--groups,#591b28)}
+.cs-set.cs-foro-libro .cs-libro .cs-add-texto>.cs-parrafo{text-align:justify;line-height:1.75}
+.cs-set.cs-foro-libro .cs-libro .cs-add-texto>.cs-titulo-3{padding:4px 0 10px;margin:0 0 12px;line-height:1.4}
+.cs-set.cs-foro-libro .cs-libro .cs-pagina~.cs-pagina::before{content:"";position:absolute;top:0;left:clamp(18px,4%,48px);right:clamp(18px,4%,48px);height:1px;background:linear-gradient(90deg,transparent,var(--groups,#591b28),transparent);opacity:.65;pointer-events:none}
+.cs-set.cs-foro-libro .cs-libro>br,.cs-set.cs-foro-libro .cs-pagina>br,.cs-set.cs-foro-libro .cs-prosa>br,.cs-set.cs-foro-libro .cs-archivo>br,.cs-set.cs-foro-libro .cs-add-texto>br,.cs-set.cs-foro-libro .cs-tipos-mascaras>br,.cs-set.cs-foro-libro .cs-tipo>br,.cs-set.cs-foro-anuncio .cs-anuncio-texto>br{display:none}
+@media(max-width:640px){.cs-set.cs-foro-libro .cs-libro .cs-archivo.cs-add{padding:20px 18px;margin:22px 0}.cs-set.cs-foro-libro .cs-libro .cs-add-texto{padding-right:10px}}
