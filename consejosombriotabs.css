@@ -2487,3 +2487,16 @@
 .cs-set.cs-foro-libro .cs-libro .cs-add-texto>.cs-parrafo{color:#c7c4c6;font-size:14px;line-height:1.75;text-shadow:0 1px 2px #000}
 .cs-set.cs-foro-libro .cs-libro .game-icon{color:#090909;-webkit-text-fill-color:#090909;text-shadow:var(--cs-relieve);filter:none;opacity:1}
 .cs-set.cs-foro-libro .cs-libro .game-icon::before{color:inherit;-webkit-text-fill-color:currentColor;-webkit-text-stroke:.6px var(--groups,#591b28);text-shadow:var(--cs-relieve)}
+
+
+.cs-set.cs-foro-libro .cs-libro .cs-lamina>img{filter:grayscale(1) contrast(1.08) brightness(.32)}
+.cs-set.cs-foro-libro .cs-libro .cs-lamina::after{mix-blend-mode:multiply;opacity:.85}
+.cs-set.cs-foro-libro .cs-fondo-cabecera img{filter:grayscale(1) contrast(1.05) brightness(.3)}
+.cs-set.cs-foro-libro .cs-fondo-cabecera::after{mix-blend-mode:multiply;opacity:.75}
+.cs-set.cs-foro-libro .cs-add-fondo{opacity:1;-webkit-mask-image:none;mask-image:none}
+.cs-set.cs-foro-libro .cs-add-fondo>img{position:absolute;inset:0;z-index:0;filter:grayscale(1) contrast(1.05) brightness(.65)}
+.cs-set.cs-foro-libro .cs-add-fondo::after{z-index:1;background:var(--groups,#591b28);mix-blend-mode:multiply;opacity:.78}
+.cs-set.cs-foro-libro .cs-add-fondo::before{content:"";position:absolute;inset:0;z-index:2;background:rgba(0,0,0,.52);pointer-events:none}
+.cs-set.cs-foro-libro .cs-libro .cs-add-texto>.cs-parrafo{color:#ded9db;text-shadow:0 1px 2px #000,0 0 5px #0008}
+.cs-set.cs-foro-libro .cs-libro .cs-add-texto b,.cs-set.cs-foro-libro .cs-libro .cs-add-texto strong{color:#eee9eb}
+.cs-set.cs-foro-libro .cs-libro .cs-add-texto>.cs-titulo-3{-webkit-text-stroke:.45px color-mix(in srgb,var(--groups,#591b28) 45%,#d9c3ca);text-shadow:var(--cs-relieve)}
