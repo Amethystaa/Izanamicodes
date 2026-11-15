@@ -444,7 +444,6 @@
 .cs-foto {
   position: absolute;
   inset: 0;
-  background-image: var(--cs-foto);
   background-size: cover;
   background-position: center 25%;
   transition: opacity .4s,filter .4s;
@@ -1505,7 +1504,7 @@
 
 .cs-cubierta,.cs-libro .cs-pagina {
   background-color: var(--cs-papel);
-  background-image: linear-gradient(90deg,rgba(0,0,0,.75),transparent 5%,rgba(255,255,255,.018) 45%,transparent 78%,rgba(0,0,0,.65)),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.055'/%3E%3C/svg%3E");
+  background-image: linear-gradient(90deg,rgba(0,0,0,.75),transparent 5%,rgba(255,255,255,.018) 45%,transparent 78%,rgba(0,0,0,.65));
   box-shadow: inset 1px 0 0 #d1b4bf12,inset -5px 0 13px #0007,0 10px 25px #0002;
 }
 
@@ -1970,7 +1969,7 @@
 
 .cs-set .cs-libro {
   background-color: #0d0d10;
-  background-image: linear-gradient(90deg,rgba(0,0,0,.55),transparent 5%,rgba(255,255,255,.018) 45%,transparent 92%,rgba(0,0,0,.5)),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.055'/%3E%3C/svg%3E");
+  background-image: linear-gradient(90deg,rgba(0,0,0,.55),transparent 5%,rgba(255,255,255,.018) 45%,transparent 92%,rgba(0,0,0,.5));
   box-shadow: inset 1px 0 0 #d1b4bf12,inset -5px 0 13px #0007,0 10px 25px #0002;
   padding: 0 0 30px;
 }
@@ -2401,3 +2400,19 @@
   color: #bc6a7b;
   font-size: .75em;
 }
+
+
+.cs-set.cs-foro-anuncio,.cs-set.cs-foro-libro{width:100%;max-width:none;min-width:0;box-sizing:border-box}
+.cs-set.cs-foro-libro{margin:0 auto 30px}
+.cs-foro-libro>.cs-libro{width:100%;max-width:none}
+.cs-foro-libro .cs-tipos-mascaras{grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,2.5%,30px);align-items:start}
+.cs-foro-libro .cs-tipo{display:block;min-width:0}
+.cs-foro-libro .cs-tipo .cs-mascara-muestra{display:grid;place-items:center;width:100%;height:160px;margin:0 auto 16px;background:transparent;color:var(--groups,#591b28)}
+.cs-foro-libro .cs-tipo .cs-mascara-muestra>.game-icon{display:block;font-size:86px;line-height:1;font-style:normal}
+.cs-foro-libro .cs-tipo .cs-mascara-muestra>.cs-mascara-ejemplo{display:block;width:100%;height:100%;max-height:100%;object-fit:contain;object-position:center}
+.cs-foro-libro .cs-tipo .cs-mascara-muestra>.cs-mascara-ejemplo:not([src]),.cs-foro-libro .cs-tipo .cs-mascara-muestra>.cs-mascara-ejemplo[src=""]{display:none}
+.cs-foro-libro .cs-tipo .cs-mascara-muestra:has(>.cs-mascara-ejemplo[src]:not([src=""]))>.game-icon{display:none}
+.cs-foro-libro .cs-tipo-blanco .cs-mascara-muestra{color:#d5d0d3}
+.cs-foro-libro .cs-tipo-dorado .cs-mascara-muestra{color:#b79a61}
+.cs-foro-libro .cs-tipo .cs-parrafo{font-size:14px;line-height:1.7}
+@media(max-width:640px){.cs-foro-libro .cs-tipos-mascaras{grid-template-columns:1fr}.cs-foro-libro .cs-tipo .cs-mascara-muestra{height:180px;max-width:260px}}
