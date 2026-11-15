@@ -2416,3 +2416,12 @@
 .cs-foro-libro .cs-tipo-dorado .cs-mascara-muestra{color:#b79a61}
 .cs-foro-libro .cs-tipo .cs-parrafo{font-size:14px;line-height:1.7}
 @media(max-width:640px){.cs-foro-libro .cs-tipos-mascaras{grid-template-columns:1fr}.cs-foro-libro .cs-tipo .cs-mascara-muestra{height:180px;max-width:260px}}
+
+
+.cs-foro-libro{text-align:justify}
+.cs-foro-libro .cs-parrafo{text-align:justify}
+.cs-foro-libro .cs-fondo-cabecera{opacity:.75;-webkit-mask-image:linear-gradient(180deg,#000 0%,#000 20%,rgba(0,0,0,.5) 60%,transparent 100%);mask-image:linear-gradient(180deg,#000 0%,#000 20%,rgba(0,0,0,.5) 60%,transparent 100%)}
+.cs-foro-libro .cs-libro .cs-lamina{background:transparent;-webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 24%,#000 64%,transparent 100%);mask-image:linear-gradient(180deg,transparent 0%,#000 24%,#000 64%,transparent 100%)}
+.cs-foro-libro .cs-libro .cs-imagen-arriba,.cs-foro-libro .cs-libro .cs-imagen-abajo{height:clamp(240px,42vw,340px)}
+.cs-foro-libro .cs-libro .cs-imagen-izquierda,.cs-foro-libro .cs-libro .cs-imagen-derecha{height:clamp(240px,36vw,320px)}
+.cs-foro-libro .cs-libro .cs-lamina img{opacity:.72;filter:grayscale(1) contrast(1.05) brightness(.85);-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 14%,#000 86%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0%,#000 14%,#000 86%,transparent 100%)}
