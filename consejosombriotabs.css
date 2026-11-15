@@ -2425,3 +2425,16 @@
 .cs-foro-libro .cs-libro .cs-imagen-arriba,.cs-foro-libro .cs-libro .cs-imagen-abajo{height:clamp(240px,42vw,340px)}
 .cs-foro-libro .cs-libro .cs-imagen-izquierda,.cs-foro-libro .cs-libro .cs-imagen-derecha{height:clamp(240px,36vw,320px)}
 .cs-foro-libro .cs-libro .cs-lamina img{opacity:.72;filter:grayscale(1) contrast(1.05) brightness(.85);-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 14%,#000 86%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0%,#000 14%,#000 86%,transparent 100%)}
+
+
+.cs-set.cs-foro-libro .cs-libro .cs-pagina{font-size:16px;line-height:1.9;padding-top:44px;padding-bottom:48px;scroll-margin-top:24px}
+.cs-set.cs-foro-libro .cs-libro .cs-prosa,.cs-set.cs-foro-libro .cs-libro .cs-archivo{font-size:16px;line-height:1.9;white-space:normal}
+.cs-set.cs-foro-libro .cs-libro .cs-parrafo{display:block;margin:0 0 24px;padding:0;font-size:16px;line-height:1.9;letter-spacing:normal;word-spacing:normal;white-space:normal}
+.cs-set.cs-foro-libro .cs-libro .cs-parrafo:last-child{margin-bottom:0}
+.cs-set.cs-foro-libro .cs-libro .cs-archivo{margin-top:36px;margin-bottom:36px}
+.cs-set.cs-foro-libro .cs-libro .cs-titulo-2{margin-bottom:30px}
+.cs-set.cs-foro-libro .cs-libro .cs-titulo-3{margin-bottom:18px}
+.cs-set.cs-foro-libro .cs-libro .cs-indice{gap:12px 24px;font-size:12px;line-height:1.8}
+.cs-set.cs-foro-libro .izanami-icon{display:inline-block;font-style:normal;line-height:1;letter-spacing:0;text-transform:none;flex-shrink:0}
+.cs-set.cs-foro-libro .izanami-icon::before{display:block;font-style:normal;font-weight:normal;line-height:1}
+@media(max-width:640px){.cs-set.cs-foro-libro .cs-libro .cs-pagina{padding-top:34px;padding-bottom:38px}.cs-set.cs-foro-libro .cs-libro .cs-parrafo{font-size:15px;line-height:1.85;margin-bottom:22px}.cs-set.cs-foro-libro .cs-libro .cs-parrafo:last-child{margin-bottom:0}}
