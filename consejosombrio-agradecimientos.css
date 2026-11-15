@@ -33,7 +33,7 @@
 .cs-set.cs-foro-anuncio .cs-anuncio>summary>.cs-emblema::before{display:block;color:inherit;-webkit-text-fill-color:currentColor;-webkit-text-stroke:.6px var(--groups,#591b28);text-shadow:var(--cs-relieve);line-height:1}
 .cs-set.cs-foro-anuncio .cs-aviso-click{display:block;font:400 11px/1.4 "Consejo Texto",Georgia,serif;color:#bcb6b9;letter-spacing:.12em;text-transform:uppercase}
 .cs-set.cs-foro-anuncio .cs-anuncio>summary:hover>.cs-aviso-click{color:#e0dade}
-.cs-set.cs-foro-anuncio .cs-anuncio .cs-anuncio-titulo{-webkit-text-stroke:.4px color-mix(in srgb,var(--groups,#591b28) 45%,#d9c3ca)}
+.cs-set.cs-foro-anuncio .cs-anuncio .cs-anuncio-titulo{-webkit-text-stroke:0}
 .cs-set.cs-foro-anuncio .cs-anuncio .cs-anuncio-subtitulo{color:#bbb6b8;-webkit-text-fill-color:currentColor;text-shadow:0 1px 2px #000}
 .cs-set.cs-foro-anuncio .cs-anuncio-texto{color:#c7c4c6;font-size:14px;line-height:1.65;text-shadow:0 1px 2px #000}
 .cs-set.cs-foro-anuncio .cs-anuncio-visual{-webkit-mask-image:none;mask-image:none;border:1.5px solid color-mix(in srgb,var(--groups,#591b28) 65%,transparent)}
@@ -41,5 +41,3 @@
 .cs-set.cs-foro-anuncio .cs-anuncio-visual::after{background:var(--groups,#591b28);mix-blend-mode:multiply;opacity:.8}
 
 
-.cs-set.cs-foro-anuncio .cs-anuncio .cs-anuncio-cabecera .cs-anuncio-titulo{font-family:"Consejo Acentos",Georgia,serif;font-size:clamp(24px,3vw,32px);font-weight:400;line-height:1.35;letter-spacing:.03em;text-transform:none;white-space:normal;color:#d7cdd0;-webkit-text-fill-color:#d7cdd0;-webkit-text-stroke:0;background:none;text-shadow:0 2px 2px #000,0 0 8px color-mix(in srgb,var(--groups,#591b28) 45%,transparent);filter:none;animation:none}
-.cs-set.cs-foro-anuncio .cs-anuncio .cs-anuncio-cabecera .cs-anuncio-subtitulo{font:400 13px/1.6 "Consejo Texto",Georgia,serif;letter-spacing:.08em;color:#bcb3b7;-webkit-text-fill-color:#bcb3b7;-webkit-text-stroke:0;background:none;text-shadow:0 1px 2px #000;filter:none;animation:none}
