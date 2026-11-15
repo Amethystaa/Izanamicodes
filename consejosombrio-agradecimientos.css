@@ -41,3 +41,5 @@
 .cs-set.cs-foro-anuncio .cs-anuncio-visual::after{background:var(--groups,#591b28);mix-blend-mode:multiply;opacity:.8}
 
 
+
+.cs-set.cs-foro-anuncio .cs-anuncio .cs-anuncio-cabecera .cs-anuncio-subtitulo{color:inherit;-webkit-text-fill-color:currentColor;-webkit-text-stroke:0;text-shadow:none;background:none;filter:none;animation:none}
